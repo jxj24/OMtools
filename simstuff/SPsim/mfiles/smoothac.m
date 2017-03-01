@@ -1,0 +1,1 @@
+% smoothacc.m: slip smooth acceleration for Krauzlis-Lisberger modelfunction y = smoothacc(u)a = 28.0;b = 0.1;c = 0.0016;if abs(u) <= 18.5   y = sign(u)*c*(u^2)*a*log(b*abs(u)+1); else   y = sign(u)*a*log(b*abs(u)+1);end% saturation or cutoff?if abs(u) > 500   % saturation   %y = 125*sign(u);   % cutoff   y = 0;end

@@ -1,0 +1,68 @@
+tic;
+maglist = [];
+st = 0.5;
+
+if st == 0.25
+   stimdur = 0.010; %ms
+   maglist=[5.5 6 7 8 9 10]; %% for phasic gain = 5.0, best: 5
+ elseif st == 0.5
+   stimdur = 0.010; %ms
+   maglist=[8 9 10.7 11 12]; %% for phasic gain = 5.0, best: 10.7
+ elseif st == 1
+   stimdur = 0.0125; %ms
+   maglist=[5 10 15.25 20 25 30]; %% for phasic gain = 5.0, best: 15.25
+ elseif st == 2
+   stimdur = 0.025; %ms
+   maglist=[12.5 15.85 17.5 20 25]; %% for phasic gain = 5.0, best: 15.85
+ elseif st == 5
+   stimdur = 0.030; %ms
+   maglist=[25 30 33.75 35 40]; %% for phasic gain = 5.0, best: 33.75
+ elseif st == 10
+   stimdur = 0.040; %ms
+   maglist=[40 45 49.9202 55 60 65 70]; %% for phasic gain = 5.0, best: 49.9202
+ elseif st == 15
+   stimdur = 0.050; %ms
+   maglist=[55 61.50 65 70];  %% for phasic gain = 5.0, best: 61.5
+ elseif st == 20
+   stimdur = 0.060; %ms
+   maglist=[60 65 67 70 75];  %% for phasic gain = 5.0, best: 67
+ elseif st == 25
+   stimdur = 0.070; %ms
+   maglist=[60 65 70 72.5 75 80 90];  %% for phasic gain = 5.0, best: 72.5
+ elseif st == 30
+   stimdur = 0.080; %ms
+   maglist=[65 70 75 80 85 90];  %% for phasic gain = 5.0, best: 75.0
+ elseif st == 35
+   stimdur = 0.090; %ms
+   maglist=[75 77.25 80 82.5 85 87.5];  %% for phasic gain = 5.0, best: 77.25
+ elseif st == 40
+   stimdur = 0.100; %ms
+   maglist=[77.5 81 83.5 85 87.5];  %% for phasic gain = 5.0, best: 81
+ elseif st == 45
+   stimdur = 0.110; %ms
+   maglist=[80 82.8 85 87.5 90];  %% for phasic gain = 5.0, best: 82.8
+ elseif st == 50
+   stimdur = 0.120; %ms
+   maglist=[80 82.5 84.5 87.5 90 92.5 95];  %% for phasic gain = 5.0, best: 84.5
+end
+
+stimdur = PWnew(st);
+stoptime = 2.0;  % run the simulation this long (seconds)
+ss=[]; peak=[];
+figure;hold on
+for i =1:length(maglist)
+   stimamp=maglist(i);
+   [a,b,c]=rk45('testbed',stoptime);
+   peak(i)=max(out);
+   ss(i) = out(length(out));
+   %plot(out)
+   plot(t,out)
+   %plot(a,b(:,1))
+end
+
+toc
+title(['stimdur: ' num2str(1000*stimdur) 'ms    mags (bot to top): ' mat2str(maglist)])
+xlabel('Time (sec)')
+ylabel('Eye Pos (deg)')
+
+[maglist' peak' ss']

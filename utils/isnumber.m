@@ -1,0 +1,1 @@
+% isnumber.m: True for elements of a string that are:%   digits, '.', '+', or '-'% Written by:  Jonathan Jacobs%              May 1999  (last mod: 05/27/99)function out = isnumber(in)x = double(in);outmat = zeros(1,length(x));where = find(x==45 | x==43 | x==46);outmat(where) = 1;where = find(x>=48 & x<=57);outmat(where) = 1;out = outmat;

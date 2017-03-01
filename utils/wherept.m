@@ -1,0 +1,1 @@
+% Written by:  Jonathan Jacobs%              June 1997  (last mod:  06/25/97)function out = wherept(null);pt = get(gca,'Current');x_pt = pt(1,1);y_pt = pt(1,2);disp(['Current point: (' num2str(x_pt) ', ' num2str(y_pt) ')']) 

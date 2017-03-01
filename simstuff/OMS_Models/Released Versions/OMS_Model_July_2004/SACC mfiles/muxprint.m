@@ -1,0 +1,1 @@
+%% muxprint.m [mrow, mcol] = size(muxout);for k=1:mcol   subplot(mcol,1,k)   plot(t,muxout(:,k))end

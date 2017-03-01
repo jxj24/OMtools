@@ -1,0 +1,1 @@
+% THACNT.m: draws timed-interval horizontal area centralis on time plotfunction thacnt(tin, tfin)drawrad(0, 3, tin, tfin, [1 0.5 0])

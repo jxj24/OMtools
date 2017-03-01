@@ -1,0 +1,1 @@
+% nameclean.m: allow underscores and carets to print as is, rather than% interpreting them as sub- and superscripts.% usage: out = nameclean(in)% Written by:  Jonathan Jacobs%              July 2002  (last mod: 07/25/02)function out = nameclean(in)if ~isempty(in)	out = strrep(in,'_','\_');	out = strrep(out,'^','\^');	out = strrep(out,'''',''); else    out = '';end

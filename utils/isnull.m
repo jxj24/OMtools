@@ -1,0 +1,1 @@
+% isnull.m: combines isnan and isempty with a check for all zeros% Written by: Jonathan Jacobs%             November 2000  (last mod: 11/06/00)function out = isnull(in)flag1 = isempty(in);flag2 = isempty(stripnan(in));flag3 = all(in==0);out = flag1 | flag2 | flag3;

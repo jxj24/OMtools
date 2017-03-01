@@ -1,0 +1,1 @@
+% EFWIND.m draws the Effective FWIN w no data on a Phase Planedrawbox(0.6, 4.0, [.6 .6 .6], 1)

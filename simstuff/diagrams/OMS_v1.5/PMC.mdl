@@ -1,0 +1,6582 @@
+Model {
+  Name			  "PMC"
+  Version		  7.0
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.376"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "US-ASCII"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  CloseFcn		  ";slview('closediagram',bdroot);"
+  Created		  "Thu Jul 21 13:06:36 2005"
+  Creator		  "jacobs"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "lfd"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Oct  1 13:54:57 2010"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:376>"
+  ConfigurationManager	  "none"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.3.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.3.0"
+	  StartTime		  "0.0"
+	  StopTime		  "5"
+	  AbsTol		  "1e-3"
+	  FixedStep		  "0.001"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "0.001"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "ode4"
+	  SolverName		  "ode4"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.3.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.3.0"
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.3.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "None"
+	  LoggingUnavailableSignals "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.3.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.3.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Version		  "1.3.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  RTWCompilerOptimization "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Version		      "1.3.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Version		      "1.3.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant off
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      off
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      CombinatorialLogic
+      TruthTable	      "[0 0;0 1;0 1;1 0;0 1;1 0;1 0;1 1]"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Derivative
+      LinearizePole	      "inf"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "fixdt(1,16,0)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "[]"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      ContinuousStateAttributes	"''"
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeMode	      "Logical (see Configuration Parameters: Optimization)"
+      LogicDataType	      "uint(8)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      MATLABFcn
+      MATLABFcn		      "sin"
+      OutputDimensions	      "-1"
+      OutputSignalType	      "auto"
+      Output1D		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Memory
+      X0		      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      TransportDelay
+      DelayTime		      "1"
+      InitialOutput	      "0"
+      BufferSize	      "1024"
+      FixedBuffer	      off
+      TransDelayFeedthrough   off
+      PadeOrder		      "0"
+    }
+    Block {
+      BlockType		      VariableTransportDelay
+      VariableDelayType	      "Variable time delay"
+      MaximumDelay	      "1"
+      InitialOutput	      "0"
+      MaximumPoints	      "1024"
+      FixedBuffer	      off
+      ZeroDelay		      off
+      TransDelayFeedthrough   off
+      PadeOrder		      "0"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+    }
+    Block {
+      BlockType		      Abs
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      LogicOutDataTypeMode    "Logical (see Configuration Parameters: Optimization)"
+      LogicDataType	      "uint(8)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "PMC"
+    Location		    [2553, 57, 3041, 370]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "OMS v1.5 04/30/09"
+      Ports		      []
+      Position		      [225, 159, 295, 211]
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskInitialization      "k=0.25;loadmdlp;prolong_buffersize=5120;"
+      MaskDisplay	      "disp('OMS v1.5\\nModel')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"OMS v1.5 04/30/09"
+	Location		[2390, 156, 2690, 453]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "oscillating\nPMC1"
+	  Ports			  [3, 1]
+	  Position		  [110, 114, 155, 186]
+	  ForegroundColor	  "blue"
+	  BackgroundColor	  "lightBlue"
+	  DropShadow		  on
+	  ShowName		  off
+	  ShowPortLabels	  "none"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskDisplay		  "disp('PMC+')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "oscillating\nPMC1"
+	    Location		    [582, 234, 1534, 709]
+	    Open		    on
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired\nEye Vel"
+	      Position		      [60, 205, 80, 225]
+	      ForegroundColor	      "blue"
+	      NamePlacement	      "alternate"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Reset"
+	      Position		      [60, 325, 80, 345]
+	      ForegroundColor	      "red"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Null Side"
+	      Position		      [60, 400, 80, 420]
+	      ForegroundColor	      "red"
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "30 "
+	      Ports		      [1, 1]
+	      Position		      [190, 325, 230, 345]
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskPromptString	      "Prolong pulse by?  (msec)"
+	      MaskStyleString	      "edit"
+	      MaskTunableValueString  "on"
+	      MaskEnableString	      "on"
+	      MaskVisibilityString    "on"
+	      MaskToolTipString	      "on"
+	      MaskVariables	      "prolong=@1;"
+	      MaskDisplay	      "disp('prolong')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "5"
+	      System {
+		Name			"30 "
+		Location		[320, 353, 854, 678]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "value(in)"
+		  Position		  [25, 13, 55, 27]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  " x/1000"
+		  Position		  [91, 160, 119, 180]
+		  Orientation		  "up"
+		  Value			  "0.001"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Latch1"
+		  Ports			  [2, 2]
+		  Position		  [275, 60, 310, 115]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskType		  "Latch"
+		  MaskDescription	  "Latch"
+		  MaskHelp		  "Latches the S input.  When S (set) is one, the Q output  becomes one.  The output remains one until the R (reset) input becomes one, forcing the output to zero.  If both R and S are one, the latch will be in an undefined state."
+		  MaskPromptString	  "Initial State for Output \"Q\":"
+		  MaskStyleString	  "edit"
+		  MaskTunableValueString  "on"
+		  MaskEnableString	  "on"
+		  MaskVisibilityString	  "on"
+		  MaskToolTipString	  "on"
+		  MaskInitialization	  "ini=(@1~=0);"
+		  MaskDisplay		  "disp('S   Q\\n\\nR  !Q')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "0"
+		  System {
+		    Name		    "Latch1"
+		    Location		    [503, 214, 955, 459]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [20, 115, 40, 135]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_2"
+		    Position		    [20, 155, 40, 175]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    "Demux"
+		    Ports		    [1, 2]
+		    Position		    [275, 105, 315, 140]
+		    Outputs		    "2"
+		    }
+		    Block {
+		    BlockType		    CombinatorialLogic
+		    Name		    "Logic"
+		    Position		    [195, 105, 250, 145]
+		    TruthTable		    "[0 1;0 1;1 0;0 1;1 0;0 1;1 0;1 0]"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [210, 20, 250, 50]
+		    Orientation		    "left"
+		    X0			    "ini"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    Ports		    [3, 1]
+		    Position		    [135, 109, 165, 141]
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [355, 105, 375, 125]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_2"
+		    Position		    [355, 150, 375, 170]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    2
+		    Points		    [15, 0; 0, 30]
+		    DstBlock		    "out_2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Logic"
+		    SrcPort		    1
+		    DstBlock		    "Demux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "Logic"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -80]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-120, 0; 0, 80]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "in_2"
+		    SrcPort		    1
+		    Points		    [40, 0; 0, -30]
+		    DstBlock		    "Mux"
+		    DstPort		    3
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  Ports			  [2, 1]
+		  Position		  [130, 117, 160, 148]
+		  ShowName		  off
+		  CollapseMode		  "All dimensions"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "SampHold?2"
+		  Ports			  [2, 1]
+		  Position		  [410, 53, 455, 82]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('S=L\\nH=H')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "SampHold?2"
+		    Location		    [101, 558, 505, 813]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Input"
+		    Position		    [70, 120, 90, 140]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "S/H?"
+		    Position		    [70, 65, 90, 85]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [195, 10, 235, 40]
+		    Orientation		    "left"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [115, 62, 145, 88]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch2"
+		    Position		    [200, 60, 230, 90]
+		    ShowName		    off
+		    Threshold		    "0.5"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "output"
+		    Position		    [305, 65, 325, 85]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-30, 0; 0, 40]
+		    DstBlock		    "Switch2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Switch2"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    Branch {
+		    DstBlock		    "output"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Input"
+		    SrcPort		    1
+		    Points		    [75, 0; 0, -45]
+		    DstBlock		    "Switch2"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Switch2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "S/H?"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "When \"S/H?\" is LOW, then \"Input\" is switched directly to the\noutput (\"sample\").  When \"S/H?\" is HIGH, the current output is\nmaintained (\"hold\")."
+		    Position		    [192, 182]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  VariableTransportDelay
+		  Name			  "Variable\nTransport Delay"
+		  Position		  [205, 82, 235, 113]
+		  ShowName		  off
+		  MaximumDelay		  "10"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "leading edge\ndetect"
+		  Ports			  [1, 1]
+		  Position		  [105, 39, 165, 71]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('Leading\\nEdge Det')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "leading edge\ndetect"
+		    Location		    [423, 315, 798, 535]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [45, 60, 65, 80]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    Position		    [95, 58, 125, 82]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Derivative
+		    Name		    "Derivative"
+		    Position		    [145, 60, 175, 80]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [260, 63, 290, 87]
+		    ShowName		    off
+		    Operator		    "=="
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [200, 57, 230, 83]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Threshold\n1"
+		    Position		    [205, 89, 225, 111]
+		    ShowName		    off
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [320, 65, 340, 85]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Derivative"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Derivative"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Threshold\n1"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "leading edge detection"
+		    Position		    [180, 22]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "loop\nbreaker2"
+		  Position		  [330, 63, 345, 87]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "loop\nbreaker3"
+		  Position		  [365, 63, 380, 87]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "stretch"
+		  Position		  [60, 115, 100, 135]
+		  ShowName		  off
+		  Value			  "prolong"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "trailing edge\ndetect"
+		  Ports			  [1, 1]
+		  Position		  [105, 74, 165, 106]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('Trailing\\nEdge Det')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "trailing edge\ndetect"
+		    Location		    [32, 313, 407, 533]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 85, 55, 105]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    Position		    [95, 83, 125, 107]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Derivative
+		    Name		    "Derivative"
+		    Position		    [145, 85, 175, 105]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [260, 88, 290, 112]
+		    ShowName		    off
+		    Operator		    "=="
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [200, 82, 230, 108]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Threshold\n1"
+		    Position		    [205, 114, 225, 136]
+		    ShowName		    off
+		    Value		    "-1"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [330, 90, 350, 110]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Threshold\n1"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Derivative"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Derivative"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "trailing edge detection"
+		    Position		    [205, 42]
+		    VerticalAlignment	    "top"
+		    }
+		    Annotation {
+		    Name		    "It is also possible to remove the SIGNUM function\nand the '==', and replace them with a simple\nswitch with a threshold of (say) 150 or so."
+		    Position		    [192, 157]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "value(out)"
+		  Position		  [475, 63, 505, 77]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "Variable\nTransport Delay"
+		  SrcPort		  1
+		  DstBlock		  "Latch1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "leading edge\ndetect"
+		  SrcPort		  1
+		  Points		  [75, 0; 0, 20]
+		  DstBlock		  "Latch1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "loop\nbreaker3"
+		  SrcPort		  1
+		  DstBlock		  "SampHold?2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "loop\nbreaker2"
+		  SrcPort		  1
+		  DstBlock		  "loop\nbreaker3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Latch1"
+		  SrcPort		  1
+		  DstBlock		  "loop\nbreaker2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "value(in)"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [0, 35]
+		    Branch {
+		    DstBlock		    "leading edge\ndetect"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "trailing edge\ndetect"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [315, 0; 0, 40]
+		    DstBlock		    "SampHold?2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "trailing edge\ndetect"
+		  SrcPort		  1
+		  DstBlock		  "Variable\nTransport Delay"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "SampHold?2"
+		  SrcPort		  1
+		  DstBlock		  "value(out)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "stretch"
+		  SrcPort		  1
+		  DstBlock		  "Product"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -30]
+		  DstBlock		  "Variable\nTransport Delay"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  " x/1000"
+		  SrcPort		  1
+		  Points		  [0, -15]
+		  DstBlock		  "Product"
+		  DstPort		  2
+		}
+		Annotation {
+		  Name			  "Changed from 1 to 2 delays\non 2/16/01 to provide insurance that \nthe signal at the S input will be available "
+		  Position		  [424, 136]
+		}
+		Annotation {
+		  Name			  "init Q = 0"
+		  Position		  [293, 126]
+		}
+		Annotation {
+		  Name			  "Stretch the duration of an input pulse, latching it at its value at pulse onset."
+		  Position		  [256, 209]
+		}
+		Annotation {
+		  Name			  "The two integration step delays before the S&H block's S/H (bottom) input insures\nthat the input value to be latched is available to theS&H block's top input \nbefore the S&H block tries to 'hold'."
+		  Position		  [222, 241]
+		}
+		Annotation {
+		  Name			  "The start of the input pulse causes the value on input 1 to be held starting when the leading\nedge occurs, and this value remains latched until 'delay' seconds after the pulse ends (trailing edge)."
+		  Position		  [239, 285]
+		}
+		Annotation {
+		  Name			  "02/16/01"
+		  Position		  [429, 17]
+		  FontSize		  14
+		}
+		Annotation {
+		  Name			  "init = 0"
+		  Position		  [358, 101]
+		}
+		Annotation {
+		  Name			  "init = 0"
+		  Position		  [223, 126]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "30 1"
+	      Ports		      [1, 1]
+	      Position		      [350, 150, 390, 165]
+	      Orientation	      "up"
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskPromptString	      "Prolong pulse by?  (msec)"
+	      MaskStyleString	      "edit"
+	      MaskTunableValueString  "on"
+	      MaskEnableString	      "on"
+	      MaskVisibilityString    "on"
+	      MaskToolTipString	      "on"
+	      MaskVariables	      "prolong=@1;"
+	      MaskDisplay	      "disp('prolong')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "40"
+	      System {
+		Name			"30 1"
+		Location		[320, 375, 854, 700]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "value(in)"
+		  Position		  [25, 13, 55, 27]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  " x/1000"
+		  Position		  [91, 160, 119, 180]
+		  Orientation		  "up"
+		  Value			  "0.001"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Latch1"
+		  Ports			  [2, 2]
+		  Position		  [275, 60, 310, 115]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskType		  "Latch"
+		  MaskDescription	  "Latch"
+		  MaskHelp		  "Latches the S input.  When S (set) is one, the Q output  becomes one.  The output remains one until the R (reset) input becomes one, forcing the output to zero.  If both R and S are one, the latch will be in an undefined state."
+		  MaskPromptString	  "Initial State for Output \"Q\":"
+		  MaskStyleString	  "edit"
+		  MaskTunableValueString  "on"
+		  MaskEnableString	  "on"
+		  MaskVisibilityString	  "on"
+		  MaskToolTipString	  "on"
+		  MaskInitialization	  "ini=(@1~=0);"
+		  MaskDisplay		  "disp('S   Q\\n\\nR  !Q')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "0"
+		  System {
+		    Name		    "Latch1"
+		    Location		    [503, 214, 955, 459]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [20, 115, 40, 135]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_2"
+		    Position		    [20, 155, 40, 175]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    "Demux"
+		    Ports		    [1, 2]
+		    Position		    [275, 105, 315, 140]
+		    Outputs		    "2"
+		    }
+		    Block {
+		    BlockType		    CombinatorialLogic
+		    Name		    "Logic"
+		    Position		    [195, 105, 250, 145]
+		    TruthTable		    "[0 1;0 1;1 0;0 1;1 0;0 1;1 0;1 0]"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [210, 20, 250, 50]
+		    Orientation		    "left"
+		    X0			    "ini"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    Ports		    [3, 1]
+		    Position		    [135, 109, 165, 141]
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [355, 105, 375, 125]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_2"
+		    Position		    [355, 150, 375, 170]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    2
+		    Points		    [15, 0; 0, 30]
+		    DstBlock		    "out_2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Logic"
+		    SrcPort		    1
+		    DstBlock		    "Demux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "Logic"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -80]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-120, 0; 0, 80]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "in_2"
+		    SrcPort		    1
+		    Points		    [40, 0; 0, -30]
+		    DstBlock		    "Mux"
+		    DstPort		    3
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  Ports			  [2, 1]
+		  Position		  [130, 117, 160, 148]
+		  ShowName		  off
+		  CollapseMode		  "All dimensions"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "SampHold?2"
+		  Ports			  [2, 1]
+		  Position		  [410, 53, 455, 82]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('S=L\\nH=H')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "SampHold?2"
+		    Location		    [101, 558, 505, 813]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Input"
+		    Position		    [70, 120, 90, 140]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "S/H?"
+		    Position		    [70, 65, 90, 85]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [195, 10, 235, 40]
+		    Orientation		    "left"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [115, 62, 145, 88]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch2"
+		    Position		    [200, 60, 230, 90]
+		    ShowName		    off
+		    Threshold		    "0.5"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "output"
+		    Position		    [305, 65, 325, 85]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-30, 0; 0, 40]
+		    DstBlock		    "Switch2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Switch2"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    Branch {
+		    DstBlock		    "output"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Input"
+		    SrcPort		    1
+		    Points		    [75, 0; 0, -45]
+		    DstBlock		    "Switch2"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Switch2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "S/H?"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "When \"S/H?\" is LOW, then \"Input\" is switched directly to the\noutput (\"sample\").  When \"S/H?\" is HIGH, the current output is\nmaintained (\"hold\")."
+		    Position		    [192, 182]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  VariableTransportDelay
+		  Name			  "Variable\nTransport Delay"
+		  Position		  [205, 82, 235, 113]
+		  ShowName		  off
+		  MaximumDelay		  "10"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "leading edge\ndetect"
+		  Ports			  [1, 1]
+		  Position		  [105, 39, 165, 71]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('Leading\\nEdge Det')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "leading edge\ndetect"
+		    Location		    [423, 315, 798, 535]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [45, 60, 65, 80]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    Position		    [95, 58, 125, 82]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Derivative
+		    Name		    "Derivative"
+		    Position		    [145, 60, 175, 80]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [260, 63, 290, 87]
+		    ShowName		    off
+		    Operator		    "=="
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [200, 57, 230, 83]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Threshold\n1"
+		    Position		    [205, 89, 225, 111]
+		    ShowName		    off
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [320, 65, 340, 85]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Derivative"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Derivative"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Threshold\n1"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "leading edge detection"
+		    Position		    [180, 22]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "loop\nbreaker2"
+		  Position		  [330, 63, 345, 87]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "loop\nbreaker3"
+		  Position		  [365, 63, 380, 87]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "stretch"
+		  Position		  [60, 115, 100, 135]
+		  ShowName		  off
+		  Value			  "prolong"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "trailing edge\ndetect"
+		  Ports			  [1, 1]
+		  Position		  [105, 74, 165, 106]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('Trailing\\nEdge Det')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "trailing edge\ndetect"
+		    Location		    [32, 313, 407, 533]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 85, 55, 105]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    Position		    [95, 83, 125, 107]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Derivative
+		    Name		    "Derivative"
+		    Position		    [145, 85, 175, 105]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [260, 88, 290, 112]
+		    ShowName		    off
+		    Operator		    "=="
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [200, 82, 230, 108]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Threshold\n1"
+		    Position		    [205, 114, 225, 136]
+		    ShowName		    off
+		    Value		    "-1"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [330, 90, 350, 110]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Threshold\n1"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Derivative"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Derivative"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "trailing edge detection"
+		    Position		    [205, 42]
+		    VerticalAlignment	    "top"
+		    }
+		    Annotation {
+		    Name		    "It is also possible to remove the SIGNUM function\nand the '==', and replace them with a simple\nswitch with a threshold of (say) 150 or so."
+		    Position		    [192, 157]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "value(out)"
+		  Position		  [475, 63, 505, 77]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "Variable\nTransport Delay"
+		  SrcPort		  1
+		  DstBlock		  "Latch1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "leading edge\ndetect"
+		  SrcPort		  1
+		  Points		  [75, 0; 0, 20]
+		  DstBlock		  "Latch1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "loop\nbreaker3"
+		  SrcPort		  1
+		  DstBlock		  "SampHold?2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "loop\nbreaker2"
+		  SrcPort		  1
+		  DstBlock		  "loop\nbreaker3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Latch1"
+		  SrcPort		  1
+		  DstBlock		  "loop\nbreaker2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "value(in)"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [0, 35]
+		    Branch {
+		    DstBlock		    "leading edge\ndetect"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "trailing edge\ndetect"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [315, 0; 0, 40]
+		    DstBlock		    "SampHold?2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "trailing edge\ndetect"
+		  SrcPort		  1
+		  DstBlock		  "Variable\nTransport Delay"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "SampHold?2"
+		  SrcPort		  1
+		  DstBlock		  "value(out)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "stretch"
+		  SrcPort		  1
+		  DstBlock		  "Product"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -30]
+		  DstBlock		  "Variable\nTransport Delay"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  " x/1000"
+		  SrcPort		  1
+		  Points		  [0, -15]
+		  DstBlock		  "Product"
+		  DstPort		  2
+		}
+		Annotation {
+		  Name			  "Changed from 1 to 2 delays\non 2/16/01 to provide insurance that \nthe signal at the S input will be available "
+		  Position		  [424, 136]
+		}
+		Annotation {
+		  Name			  "init Q = 0"
+		  Position		  [293, 126]
+		}
+		Annotation {
+		  Name			  "Stretch the duration of an input pulse, latching it at its value at pulse onset."
+		  Position		  [256, 209]
+		}
+		Annotation {
+		  Name			  "The two integration step delays before the S&H block's S/H (bottom) input insures\nthat the input value to be latched is available to theS&H block's top input \nbefore the S&H block tries to 'hold'."
+		  Position		  [222, 241]
+		}
+		Annotation {
+		  Name			  "The start of the input pulse causes the value on input 1 to be held starting when the leading\nedge occurs, and this value remains latched until 'delay' seconds after the pulse ends (trailing edge)."
+		  Position		  [239, 285]
+		}
+		Annotation {
+		  Name			  "02/16/01"
+		  Position		  [429, 17]
+		  FontSize		  14
+		}
+		Annotation {
+		  Name			  "init = 0"
+		  Position		  [358, 101]
+		}
+		Annotation {
+		  Name			  "init = 0"
+		  Position		  [223, 126]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "30 2"
+	      Ports		      [1, 1]
+	      Position		      [405, 192, 445, 208]
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskPromptString	      "Prolong pulse by?  (msec)"
+	      MaskStyleString	      "edit"
+	      MaskTunableValueString  "on"
+	      MaskEnableString	      "on"
+	      MaskVisibilityString    "on"
+	      MaskToolTipString	      "on"
+	      MaskVariables	      "prolong=@1;"
+	      MaskDisplay	      "disp('prolong')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "35"
+	      System {
+		Name			"30 2"
+		Location		[320, 353, 854, 678]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "value(in)"
+		  Position		  [25, 13, 55, 27]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  " x/1000"
+		  Position		  [91, 160, 119, 180]
+		  Orientation		  "up"
+		  Value			  "0.001"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Latch1"
+		  Ports			  [2, 2]
+		  Position		  [275, 60, 310, 115]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskType		  "Latch"
+		  MaskDescription	  "Latch"
+		  MaskHelp		  "Latches the S input.  When S (set) is one, the Q output  becomes one.  The output remains one until the R (reset) input becomes one, forcing the output to zero.  If both R and S are one, the latch will be in an undefined state."
+		  MaskPromptString	  "Initial State for Output \"Q\":"
+		  MaskStyleString	  "edit"
+		  MaskTunableValueString  "on"
+		  MaskEnableString	  "on"
+		  MaskVisibilityString	  "on"
+		  MaskToolTipString	  "on"
+		  MaskInitialization	  "ini=(@1~=0);"
+		  MaskDisplay		  "disp('S   Q\\n\\nR  !Q')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "0"
+		  System {
+		    Name		    "Latch1"
+		    Location		    [503, 214, 955, 459]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [20, 115, 40, 135]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_2"
+		    Position		    [20, 155, 40, 175]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    "Demux"
+		    Ports		    [1, 2]
+		    Position		    [275, 105, 315, 140]
+		    Outputs		    "2"
+		    }
+		    Block {
+		    BlockType		    CombinatorialLogic
+		    Name		    "Logic"
+		    Position		    [195, 105, 250, 145]
+		    TruthTable		    "[0 1;0 1;1 0;0 1;1 0;0 1;1 0;1 0]"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [210, 20, 250, 50]
+		    Orientation		    "left"
+		    X0			    "ini"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    Ports		    [3, 1]
+		    Position		    [135, 109, 165, 141]
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [355, 105, 375, 125]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_2"
+		    Position		    [355, 150, 375, 170]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    2
+		    Points		    [15, 0; 0, 30]
+		    DstBlock		    "out_2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Logic"
+		    SrcPort		    1
+		    DstBlock		    "Demux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "Logic"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -80]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-120, 0; 0, 80]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "in_2"
+		    SrcPort		    1
+		    Points		    [40, 0; 0, -30]
+		    DstBlock		    "Mux"
+		    DstPort		    3
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  Ports			  [2, 1]
+		  Position		  [130, 117, 160, 148]
+		  ShowName		  off
+		  CollapseMode		  "All dimensions"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "SampHold?2"
+		  Ports			  [2, 1]
+		  Position		  [410, 53, 455, 82]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('S=L\\nH=H')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "SampHold?2"
+		    Location		    [101, 558, 505, 813]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Input"
+		    Position		    [70, 120, 90, 140]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "S/H?"
+		    Position		    [70, 65, 90, 85]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [195, 10, 235, 40]
+		    Orientation		    "left"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [115, 62, 145, 88]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch2"
+		    Position		    [200, 60, 230, 90]
+		    ShowName		    off
+		    Threshold		    "0.5"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "output"
+		    Position		    [305, 65, 325, 85]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-30, 0; 0, 40]
+		    DstBlock		    "Switch2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Switch2"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    Branch {
+		    DstBlock		    "output"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Input"
+		    SrcPort		    1
+		    Points		    [75, 0; 0, -45]
+		    DstBlock		    "Switch2"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Switch2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "S/H?"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "When \"S/H?\" is LOW, then \"Input\" is switched directly to the\noutput (\"sample\").  When \"S/H?\" is HIGH, the current output is\nmaintained (\"hold\")."
+		    Position		    [192, 182]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  VariableTransportDelay
+		  Name			  "Variable\nTransport Delay"
+		  Position		  [205, 82, 235, 113]
+		  ShowName		  off
+		  MaximumDelay		  "10"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "leading edge\ndetect"
+		  Ports			  [1, 1]
+		  Position		  [105, 39, 165, 71]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('Leading\\nEdge Det')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "leading edge\ndetect"
+		    Location		    [423, 315, 798, 535]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [45, 60, 65, 80]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    Position		    [95, 58, 125, 82]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Derivative
+		    Name		    "Derivative"
+		    Position		    [145, 60, 175, 80]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [260, 63, 290, 87]
+		    ShowName		    off
+		    Operator		    "=="
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [200, 57, 230, 83]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Threshold\n1"
+		    Position		    [205, 89, 225, 111]
+		    ShowName		    off
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [320, 65, 340, 85]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Derivative"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Derivative"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Threshold\n1"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "leading edge detection"
+		    Position		    [180, 22]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "loop\nbreaker2"
+		  Position		  [330, 63, 345, 87]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "loop\nbreaker3"
+		  Position		  [365, 63, 380, 87]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "stretch"
+		  Position		  [60, 115, 100, 135]
+		  ShowName		  off
+		  Value			  "prolong"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "trailing edge\ndetect"
+		  Ports			  [1, 1]
+		  Position		  [105, 74, 165, 106]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('Trailing\\nEdge Det')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "trailing edge\ndetect"
+		    Location		    [32, 313, 407, 533]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 85, 55, 105]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    Position		    [95, 83, 125, 107]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Derivative
+		    Name		    "Derivative"
+		    Position		    [145, 85, 175, 105]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [260, 88, 290, 112]
+		    ShowName		    off
+		    Operator		    "=="
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [200, 82, 230, 108]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Threshold\n1"
+		    Position		    [205, 114, 225, 136]
+		    ShowName		    off
+		    Value		    "-1"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [330, 90, 350, 110]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Threshold\n1"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Derivative"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Derivative"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "trailing edge detection"
+		    Position		    [205, 42]
+		    VerticalAlignment	    "top"
+		    }
+		    Annotation {
+		    Name		    "It is also possible to remove the SIGNUM function\nand the '==', and replace them with a simple\nswitch with a threshold of (say) 150 or so."
+		    Position		    [192, 157]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "value(out)"
+		  Position		  [475, 63, 505, 77]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "Variable\nTransport Delay"
+		  SrcPort		  1
+		  DstBlock		  "Latch1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "leading edge\ndetect"
+		  SrcPort		  1
+		  Points		  [75, 0; 0, 20]
+		  DstBlock		  "Latch1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "loop\nbreaker3"
+		  SrcPort		  1
+		  DstBlock		  "SampHold?2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "loop\nbreaker2"
+		  SrcPort		  1
+		  DstBlock		  "loop\nbreaker3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Latch1"
+		  SrcPort		  1
+		  DstBlock		  "loop\nbreaker2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "value(in)"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [0, 35]
+		    Branch {
+		    DstBlock		    "leading edge\ndetect"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "trailing edge\ndetect"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [315, 0; 0, 40]
+		    DstBlock		    "SampHold?2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "trailing edge\ndetect"
+		  SrcPort		  1
+		  DstBlock		  "Variable\nTransport Delay"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "SampHold?2"
+		  SrcPort		  1
+		  DstBlock		  "value(out)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "stretch"
+		  SrcPort		  1
+		  DstBlock		  "Product"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -30]
+		  DstBlock		  "Variable\nTransport Delay"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  " x/1000"
+		  SrcPort		  1
+		  Points		  [0, -15]
+		  DstBlock		  "Product"
+		  DstPort		  2
+		}
+		Annotation {
+		  Name			  "Changed from 1 to 2 delays\non 2/16/01 to provide insurance that \nthe signal at the S input will be available "
+		  Position		  [424, 136]
+		}
+		Annotation {
+		  Name			  "init Q = 0"
+		  Position		  [293, 126]
+		}
+		Annotation {
+		  Name			  "Stretch the duration of an input pulse, latching it at its value at pulse onset."
+		  Position		  [256, 209]
+		}
+		Annotation {
+		  Name			  "The two integration step delays before the S&H block's S/H (bottom) input insures\nthat the input value to be latched is available to theS&H block's top input \nbefore the S&H block tries to 'hold'."
+		  Position		  [222, 241]
+		}
+		Annotation {
+		  Name			  "The start of the input pulse causes the value on input 1 to be held starting when the leading\nedge occurs, and this value remains latched until 'delay' seconds after the pulse ends (trailing edge)."
+		  Position		  [239, 285]
+		}
+		Annotation {
+		  Name			  "02/16/01"
+		  Position		  [429, 17]
+		  FontSize		  14
+		}
+		Annotation {
+		  Name			  "init = 0"
+		  Position		  [358, 101]
+		}
+		Annotation {
+		  Name			  "init = 0"
+		  Position		  [223, 126]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "30 3"
+	      Ports		      [1, 1]
+	      Position		      [575, 330, 615, 350]
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskPromptString	      "Prolong pulse by?  (msec)"
+	      MaskStyleString	      "edit"
+	      MaskTunableValueString  "on"
+	      MaskEnableString	      "on"
+	      MaskVisibilityString    "on"
+	      MaskToolTipString	      "on"
+	      MaskVariables	      "prolong=@1;"
+	      MaskDisplay	      "disp('prolong')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "175"
+	      System {
+		Name			"30 3"
+		Location		[320, 353, 854, 678]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "value(in)"
+		  Position		  [25, 13, 55, 27]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  " x/1000"
+		  Position		  [91, 160, 119, 180]
+		  Orientation		  "up"
+		  Value			  "0.001"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Latch1"
+		  Ports			  [2, 2]
+		  Position		  [275, 60, 310, 115]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskType		  "Latch"
+		  MaskDescription	  "Latch"
+		  MaskHelp		  "Latches the S input.  When S (set) is one, the Q output  becomes one.  The output remains one until the R (reset) input becomes one, forcing the output to zero.  If both R and S are one, the latch will be in an undefined state."
+		  MaskPromptString	  "Initial State for Output \"Q\":"
+		  MaskStyleString	  "edit"
+		  MaskTunableValueString  "on"
+		  MaskEnableString	  "on"
+		  MaskVisibilityString	  "on"
+		  MaskToolTipString	  "on"
+		  MaskInitialization	  "ini=(@1~=0);"
+		  MaskDisplay		  "disp('S   Q\\n\\nR  !Q')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  MaskValueString	  "0"
+		  System {
+		    Name		    "Latch1"
+		    Location		    [503, 214, 955, 459]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [20, 115, 40, 135]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_2"
+		    Position		    [20, 155, 40, 175]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    "Demux"
+		    Ports		    [1, 2]
+		    Position		    [275, 105, 315, 140]
+		    Outputs		    "2"
+		    }
+		    Block {
+		    BlockType		    CombinatorialLogic
+		    Name		    "Logic"
+		    Position		    [195, 105, 250, 145]
+		    TruthTable		    "[0 1;0 1;1 0;0 1;1 0;0 1;1 0;1 0]"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [210, 20, 250, 50]
+		    Orientation		    "left"
+		    X0			    "ini"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    Ports		    [3, 1]
+		    Position		    [135, 109, 165, 141]
+		    Inputs		    "3"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [355, 105, 375, 125]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_2"
+		    Position		    [355, 150, 375, 170]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    2
+		    Points		    [15, 0; 0, 30]
+		    DstBlock		    "out_2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Logic"
+		    SrcPort		    1
+		    DstBlock		    "Demux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "Logic"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -80]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-120, 0; 0, 80]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "in_2"
+		    SrcPort		    1
+		    Points		    [40, 0; 0, -30]
+		    DstBlock		    "Mux"
+		    DstPort		    3
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  Ports			  [2, 1]
+		  Position		  [130, 117, 160, 148]
+		  ShowName		  off
+		  CollapseMode		  "All dimensions"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "SampHold?2"
+		  Ports			  [2, 1]
+		  Position		  [410, 53, 455, 82]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('S=L\\nH=H')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "SampHold?2"
+		    Location		    [101, 558, 505, 813]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Input"
+		    Position		    [70, 120, 90, 140]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "S/H?"
+		    Position		    [70, 65, 90, 85]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Memory
+		    Name		    "Memory"
+		    Position		    [195, 10, 235, 40]
+		    Orientation		    "left"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [115, 62, 145, 88]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch2"
+		    Position		    [200, 60, 230, 90]
+		    ShowName		    off
+		    Threshold		    "0.5"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "output"
+		    Position		    [305, 65, 325, 85]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Memory"
+		    SrcPort		    1
+		    Points		    [-30, 0; 0, 40]
+		    DstBlock		    "Switch2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Switch2"
+		    SrcPort		    1
+		    Points		    [25, 0]
+		    Branch {
+		    DstBlock		    "output"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Input"
+		    SrcPort		    1
+		    Points		    [75, 0; 0, -45]
+		    DstBlock		    "Switch2"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Switch2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "S/H?"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "When \"S/H?\" is LOW, then \"Input\" is switched directly to the\noutput (\"sample\").  When \"S/H?\" is HIGH, the current output is\nmaintained (\"hold\")."
+		    Position		    [192, 182]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  VariableTransportDelay
+		  Name			  "Variable\nTransport Delay"
+		  Position		  [205, 82, 235, 113]
+		  ShowName		  off
+		  MaximumDelay		  "10"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "leading edge\ndetect"
+		  Ports			  [1, 1]
+		  Position		  [105, 39, 165, 71]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('Leading\\nEdge Det')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "leading edge\ndetect"
+		    Location		    [423, 315, 798, 535]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [45, 60, 65, 80]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    Position		    [95, 58, 125, 82]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Derivative
+		    Name		    "Derivative"
+		    Position		    [145, 60, 175, 80]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [260, 63, 290, 87]
+		    ShowName		    off
+		    Operator		    "=="
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [200, 57, 230, 83]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Threshold\n1"
+		    Position		    [205, 89, 225, 111]
+		    ShowName		    off
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [320, 65, 340, 85]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Derivative"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Derivative"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Threshold\n1"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "leading edge detection"
+		    Position		    [180, 22]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "loop\nbreaker2"
+		  Position		  [330, 63, 345, 87]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "loop\nbreaker3"
+		  Position		  [365, 63, 380, 87]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "stretch"
+		  Position		  [60, 115, 100, 135]
+		  ShowName		  off
+		  Value			  "prolong"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "trailing edge\ndetect"
+		  Ports			  [1, 1]
+		  Position		  [105, 74, 165, 106]
+		  ShowName		  off
+		  ShowPortLabels	  "none"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('Trailing\\nEdge Det')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "trailing edge\ndetect"
+		    Location		    [32, 313, 407, 533]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 85, 55, 105]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    Position		    [95, 83, 125, 107]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Derivative
+		    Name		    "Derivative"
+		    Position		    [145, 85, 175, 105]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [260, 88, 290, 112]
+		    ShowName		    off
+		    Operator		    "=="
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Sign"
+		    Ports		    [1, 1]
+		    Position		    [200, 82, 230, 108]
+		    ShowName		    off
+		    ShowPortLabels	    "none"
+		    MinAlgLoopOccurrences   off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    MaskType		    "Sign"
+		    MaskDescription	    "y = sign(x)"
+		    MaskHelp		    "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		    MaskDisplay		    "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		    MaskIconFrame	    on
+		    MaskIconOpaque	    on
+		    MaskIconRotate	    "none"
+		    MaskIconUnits	    "autoscale"
+		    System {
+		    Name		    "Sign"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Threshold\n1"
+		    Position		    [205, 114, 225, 136]
+		    ShowName		    off
+		    Value		    "-1"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [330, 90, 350, 110]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Threshold\n1"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sign"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Derivative"
+		    SrcPort		    1
+		    DstBlock		    "Sign"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Derivative"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    Name		    "trailing edge detection"
+		    Position		    [205, 42]
+		    VerticalAlignment	    "top"
+		    }
+		    Annotation {
+		    Name		    "It is also possible to remove the SIGNUM function\nand the '==', and replace them with a simple\nswitch with a threshold of (say) 150 or so."
+		    Position		    [192, 157]
+		    VerticalAlignment	    "top"
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "value(out)"
+		  Position		  [475, 63, 505, 77]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "Variable\nTransport Delay"
+		  SrcPort		  1
+		  DstBlock		  "Latch1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "leading edge\ndetect"
+		  SrcPort		  1
+		  Points		  [75, 0; 0, 20]
+		  DstBlock		  "Latch1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "loop\nbreaker3"
+		  SrcPort		  1
+		  DstBlock		  "SampHold?2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "loop\nbreaker2"
+		  SrcPort		  1
+		  DstBlock		  "loop\nbreaker3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Latch1"
+		  SrcPort		  1
+		  DstBlock		  "loop\nbreaker2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "value(in)"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [0, 35]
+		    Branch {
+		    DstBlock		    "leading edge\ndetect"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "trailing edge\ndetect"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [315, 0; 0, 40]
+		    DstBlock		    "SampHold?2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "trailing edge\ndetect"
+		  SrcPort		  1
+		  DstBlock		  "Variable\nTransport Delay"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "SampHold?2"
+		  SrcPort		  1
+		  DstBlock		  "value(out)"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "stretch"
+		  SrcPort		  1
+		  DstBlock		  "Product"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -30]
+		  DstBlock		  "Variable\nTransport Delay"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  " x/1000"
+		  SrcPort		  1
+		  Points		  [0, -15]
+		  DstBlock		  "Product"
+		  DstPort		  2
+		}
+		Annotation {
+		  Name			  "Changed from 1 to 2 delays\non 2/16/01 to provide insurance that \nthe signal at the S input will be available "
+		  Position		  [424, 136]
+		}
+		Annotation {
+		  Name			  "init Q = 0"
+		  Position		  [293, 126]
+		}
+		Annotation {
+		  Name			  "Stretch the duration of an input pulse, latching it at its value at pulse onset."
+		  Position		  [256, 209]
+		}
+		Annotation {
+		  Name			  "The two integration step delays before the S&H block's S/H (bottom) input insures\nthat the input value to be latched is available to theS&H block's top input \nbefore the S&H block tries to 'hold'."
+		  Position		  [222, 241]
+		}
+		Annotation {
+		  Name			  "The start of the input pulse causes the value on input 1 to be held starting when the leading\nedge occurs, and this value remains latched until 'delay' seconds after the pulse ends (trailing edge)."
+		  Position		  [239, 285]
+		}
+		Annotation {
+		  Name			  "02/16/01"
+		  Position		  [429, 17]
+		  FontSize		  14
+		}
+		Annotation {
+		  Name			  "init = 0"
+		  Position		  [358, 101]
+		}
+		Annotation {
+		  Name			  "init = 0"
+		  Position		  [223, 126]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Boolify1"
+	      Ports		      [1, 1]
+	      Position		      [255, 325, 295, 345]
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskDisplay	      "disp('Boolify')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Boolify1"
+		Location		[668, 545, 926, 687]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 38, 55, 52]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Abs
+		  Name			  "Abs2"
+		  Position		  [80, 33, 110, 57]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch2"
+		  Position		  [155, 25, 185, 55]
+		  Threshold		  "0.1"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Threshold\n5"
+		  Position		  [30, 15, 60, 35]
+		  ShowName		  off
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Threshold\n6"
+		  Position		  [30, 70, 60, 90]
+		  ShowName		  off
+		  Value			  "0"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [200, 33, 230, 47]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "Threshold\n5"
+		  SrcPort		  1
+		  Points		  [75, 0]
+		  DstBlock		  "Switch2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Threshold\n6"
+		  SrcPort		  1
+		  Points		  [75, 0]
+		  DstBlock		  "Switch2"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Switch2"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Abs2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Abs2"
+		  SrcPort		  1
+		  Points		  [0, -5]
+		  DstBlock		  "Switch2"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Boolify2"
+	      Ports		      [1, 1]
+	      Position		      [240, 360, 280, 380]
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskDisplay	      "disp('Boolify')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Boolify2"
+		Location		[668, 545, 926, 687]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 38, 55, 52]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Abs
+		  Name			  "Abs2"
+		  Position		  [80, 33, 110, 57]
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch2"
+		  Position		  [155, 25, 185, 55]
+		  Threshold		  "0.1"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Threshold\n5"
+		  Position		  [30, 15, 60, 35]
+		  ShowName		  off
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Threshold\n6"
+		  Position		  [30, 70, 60, 90]
+		  ShowName		  off
+		  Value			  "0"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [200, 33, 230, 47]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "Threshold\n5"
+		  SrcPort		  1
+		  Points		  [75, 0]
+		  DstBlock		  "Switch2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Threshold\n6"
+		  SrcPort		  1
+		  Points		  [75, 0]
+		  DstBlock		  "Switch2"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Switch2"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Abs2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Abs2"
+		  SrcPort		  1
+		  Points		  [0, -5]
+		  DstBlock		  "Switch2"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator1"
+	      Ports		      [2, 1]
+	      Position		      [325, 329, 350, 351]
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator2"
+	      Ports		      [1, 1]
+	      Position		      [650, 329, 675, 351]
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "NI hold"
+	      Position		      [810, 206, 840, 244]
+	      ForegroundColor	      "blue"
+	      Threshold		      "0.5"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product6"
+	      Ports		      [2, 1]
+	      Position		      [725, 204, 750, 226]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      CollapseMode	      "All dimensions"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [3, 1]
+	      Position		      [180, 197, 200, 233]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Inputs		      "-++"
+	      CollapseMode	      "All dimensions"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch2"
+	      Position		      [200, 80, 230, 150]
+	      Orientation	      "left"
+	      ForegroundColor	      "blue"
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      Threshold		      "0.5"
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Switch3"
+	      Position		      [470, 177, 495, 223]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Threshold		      "0.5"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Target Change\nDetection"
+	      Ports		      [1, 2]
+	      Position		      [270, 390, 355, 425]
+	      ForegroundColor	      "red"
+	      BackgroundColor	      "yellow"
+	      DropShadow	      on
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskDisplay	      "disp('Null Mod')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Target Change\nDetection"
+		Location		[551, 782, 1237, 1058]
+		Open			on
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Null Side\n[nsd]"
+		  Position		  [60, 65, 80, 85]
+		  ForegroundColor	  "red"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Boolify2"
+		  Ports			  [1, 1]
+		  Position		  [200, 215, 240, 235]
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskDisplay		  "disp('Boolify')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Boolify2"
+		    Location		    [668, 545, 926, 687]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    Position		    [25, 38, 55, 52]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs2"
+		    Position		    [80, 33, 110, 57]
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Switch
+		    Name		    "Switch2"
+		    Position		    [155, 25, 185, 55]
+		    Threshold		    "0.1"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Threshold\n5"
+		    Position		    [30, 15, 60, 35]
+		    ShowName		    off
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Threshold\n6"
+		    Position		    [30, 70, 60, 90]
+		    ShowName		    off
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    Position		    [200, 33, 230, 47]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Threshold\n5"
+		    SrcPort		    1
+		    Points		    [75, 0]
+		    DstBlock		    "Switch2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Threshold\n6"
+		    SrcPort		    1
+		    Points		    [75, 0]
+		    DstBlock		    "Switch2"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Switch2"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Abs2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Abs2"
+		    SrcPort		    1
+		    Points		    [0, -5]
+		    DstBlock		    "Switch2"
+		    DstPort		    2
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Logic
+		  Name			  "Logical\nOperator1"
+		  Ports			  [1, 1]
+		  Position		  [290, 214, 315, 236]
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  Operator		  "NOT"
+		  Inputs		  "1"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product1"
+		  Ports			  [2, 1]
+		  Position		  [245, 52, 270, 83]
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  CollapseMode		  "All dimensions"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product2"
+		  Ports			  [3, 1]
+		  Position		  [425, 144, 450, 196]
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  Inputs		  "3"
+		  CollapseMode		  "All dimensions"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum2"
+		  Ports			  [2, 1]
+		  Position		  [505, 162, 525, 198]
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  CollapseMode		  "All dimensions"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch1"
+		  Position		  [425, 203, 455, 247]
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  Threshold		  "0.05"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Switch7"
+		  Position		  [355, 90, 380, 140]
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  Threshold		  "0.05"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "bs_scale"
+		  Position		  [195, 49, 215, 71]
+		  ForegroundColor	  "red"
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  Value			  "-3"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "direction"
+		  Ports			  [1, 1]
+		  Position		  [145, 60, 175, 90]
+		  ForegroundColor	  "red"
+		  MinAlgLoopOccurrences	  off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  MaskType		  "Sign"
+		  MaskDescription	  "y = sign(x)"
+		  MaskHelp		  "Sign Function:\\n\\t\\t\\ty = 1 if x > 0\\n\\t\\t\\ty = 0 if x = 0\\n\\t\\t\\ty = -1 if x < 0"
+		  MaskDisplay		  "plot(-50,-50,50,50,[-50,50],[0,0],[0,0],[-50,50],[-40,0],[-30,-30],[0,40],[30,30])"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "direction"
+		    Location		    [159, 417, 467, 586]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "in_1"
+		    Position		    [35, 30, 55, 50]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    Position		    [65, 105, 85, 125]
+		    Value		    "0"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    Position		    [140, 32, 170, 63]
+		    Operator		    ">"
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator1"
+		    Position		    [140, 92, 170, 123]
+		    Operator		    "<"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    Ports		    [2, 1]
+		    Position		    [215, 64, 235, 91]
+		    Inputs		    "+-"
+		    CollapseMode	    "All dimensions"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "out_1"
+		    Position		    [265, 70, 285, 90]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "in_1"
+		    SrcPort		    1
+		    Points		    [35, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 60]
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -60]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator1"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, -25]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [10, 0; 0, 20]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "out_1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "oppose1"
+		  Position		  [370, 230, 390, 250]
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  Value			  "1.5"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "oppose10"
+		  Position		  [370, 200, 390, 220]
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "oppose7"
+		  Position		  [320, 174, 345, 196]
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  Value			  "mdlparamlist(26)"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "oppose8"
+		  Position		  [290, 92, 325, 108]
+		  ForegroundColor	  "red"
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  Value			  "0.003"
+		  VectorParams1D	  off
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "oppose9"
+		  Position		  [285, 122, 325, 138]
+		  ForegroundColor	  "red"
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  Value			  "-0.003"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "rNI IC\n[rniic]"
+		  Position		  [605, 60, 625, 80]
+		  ForegroundColor	  "red"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Null Mod\n[nullmod]"
+		  Position		  [605, 170, 625, 190]
+		  ForegroundColor	  "red"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "sfix(16)"
+		  OutScaling		  "2^0"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "oppose8"
+		  SrcPort		  1
+		  DstBlock		  "Switch7"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "oppose9"
+		  SrcPort		  1
+		  DstBlock		  "Switch7"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Switch7"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, 40]
+		  DstBlock		  "Product2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "oppose7"
+		  SrcPort		  1
+		  DstBlock		  "Product2"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Null Side\n[nsd]"
+		  SrcPort		  1
+		  Points		  [30, 0]
+		  Branch {
+		    Points		    [0, 95]
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Boolify2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [140, 0]
+		    Branch {
+		    DstBlock		    "Product2"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -55]
+		    DstBlock		    "Switch7"
+		    DstPort		    2
+		    }
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "direction"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Sum2"
+		  SrcPort		  1
+		  DstBlock		  "Null Mod\n[nullmod]"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Switch1"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, -35]
+		  DstBlock		  "Sum2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Boolify2"
+		  SrcPort		  1
+		  DstBlock		  "Logical\nOperator1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Logical\nOperator1"
+		  SrcPort		  1
+		  DstBlock		  "Switch1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "oppose10"
+		  SrcPort		  1
+		  DstBlock		  "Switch1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "oppose1"
+		  SrcPort		  1
+		  DstBlock		  "Switch1"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "bs_scale"
+		  SrcPort		  1
+		  DstBlock		  "Product1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "direction"
+		  SrcPort		  1
+		  DstBlock		  "Product1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Product1"
+		  SrcPort		  1
+		  DstBlock		  "rNI IC\n[rniic]"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product2"
+		  SrcPort		  1
+		  DstBlock		  "Sum2"
+		  DstPort		  1
+		}
+		Annotation {
+		  Name			  "Slope to the left of the null"
+		  Position		  [333, 150]
+		}
+		Annotation {
+		  Name			  "Slope to the right of the null"
+		  Position		  [349, 84]
+		}
+		Annotation {
+		  Name			  "alaw enable"
+		  Position		  [286, 187]
+		}
+		Annotation {
+		  Name			  "Gain modulatin to PMC output"
+		  Position		  [575, 230]
+		}
+		Annotation {
+		  Name			  "+/-0.006 for sharp \n +/- 0.003 for medium"
+		  Position		  [465, 107]
+		}
+		Annotation {
+		  Position		  [550, 96]
+		}
+		Annotation {
+		  Name			  "Null Modulation"
+		  Position		  [147, 27]
+		  VerticalAlignment	  "top"
+		  FontSize		  12
+		  FontWeight		  "bold"
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      TransportDelay
+	      Name		      "Transport\nDelay17"
+	      Position		      [130, 324, 165, 346]
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      DelayTime		      "0.035"
+	      MaskDisplay	      "disp('delay')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      MATLABFcn
+	      Name		      "accel\nsaturation"
+	      Ports		      [1, 1]
+	      Position		      [225, 203, 265, 227]
+	      ForegroundColor	      "blue"
+	      MATLABFcn		      "accsat"
+	      MaskDisplay	      "plot([-80 -4 4 80],[-120 -40 40 120], [0 0],[-120 120],[-80 80],[0 0])"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      FromWorkspace
+	      Name		      "double pulse5"
+	      Position		      [136, 240, 174, 270]
+	      Orientation	      "up"
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      VariableName	      "[0, t1, t1+.001, t1+d1, t1+d1+.001, t1+d1+.001+ipd, t1+d1+.001+ipd, t1+d1+.001+ipd+d2, t1+d1+.001+ipd+d2, 10000; 0, 0, p1, p1, 0, 0, p2, p2, 0, 0 ]'"
+	      MaskDescription	      "Double Pulse"
+	      MaskPromptString	      "Pulse 1 Magnitude|Time of Pulse 1 Onset|Pulse 1 Duration|Interpulse Delay|Pulse 2 Magnitude|Pulse 2 Duration"
+	      MaskStyleString	      "edit,edit,edit,edit,edit,edit"
+	      MaskTunableValueString  "on,on,on,on,on,on"
+	      MaskCallbackString      "|||||"
+	      MaskEnableString	      "on,on,on,on,on,on"
+	      MaskVisibilityString    "on,on,on,on,on,on"
+	      MaskToolTipString	      "on,on,on,on,on,on"
+	      MaskVarAliasString      ",,,,,"
+	      MaskInitialization      "p1=@1; t1=@2; d1=@3; ipd=@4; p2=@5; d2=@6;"
+	      MaskDisplay	      "disp('Double\\nPulse')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "825|0|.002|.05|-925|.002"
+	      MaskTabNameString	      ",,,,,"
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "r Integrator"
+	      Ports		      [3, 1]
+	      Position		      [560, 193, 615, 227]
+	      ForegroundColor	      "blue"
+	      ExternalReset	      "level"
+	      InitialConditionSource  "external"
+	    }
+	    Block {
+	      BlockType		      TransportDelay
+	      Name		      "tau4"
+	      Position		      [305, 202, 345, 228]
+	      ForegroundColor	      "blue"
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      DelayTime		      "pmctau2/1000"
+	    }
+	    Block {
+	      BlockType		      TransportDelay
+	      Name		      "tau5"
+	      Position		      [425, 127, 465, 153]
+	      Orientation	      "left"
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      DelayTime		      "pmctau3/1000"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "xx1"
+	      Position		      [650, 194, 690, 226]
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Gain		      "pmcgain"
+	      ParameterDataType	      "sfix(16)"
+	      ParameterScaling	      "2^0"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Eefference\nCopy\nEye Vel"
+	      Position		      [875, 215, 895, 235]
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	      OutDataType	      "sfix(16)"
+	      OutScaling	      "2^0"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "tau5"
+	      SrcPort		      1
+	      DstBlock		      "Switch2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "xx1"
+	      SrcPort		      1
+	      DstBlock		      "Product6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Reset"
+	      SrcPort		      1
+	      DstBlock		      "Transport\nDelay17"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "30 "
+	      SrcPort		      1
+	      DstBlock		      "Boolify1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Desired\nEye Vel"
+	      SrcPort		      1
+	      Points		      [40, 0]
+	      Branch {
+		DstBlock		"Sum1"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 70; 660, 0; 0, -50]
+		DstBlock		"NI hold"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "double pulse5"
+	      SrcPort		      1
+	      Points		      [0, -10]
+	      DstBlock		      "Sum1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "tau4"
+	      SrcPort		      1
+	      DstBlock		      "Switch3"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Switch3"
+	      SrcPort		      1
+	      DstBlock		      "r Integrator"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "r Integrator"
+	      SrcPort		      1
+	      DstBlock		      "xx1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "accel\nsaturation"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		DstBlock		"tau4"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"Switch3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Switch2"
+	      SrcPort		      1
+	      Points		      [-40, 0; 0, 90]
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "accel\nsaturation"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Boolify1"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "30 1"
+	      SrcPort		      1
+	      Points		      [0, -30]
+	      DstBlock		      "Switch2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "30 2"
+	      SrcPort		      1
+	      DstBlock		      "Switch3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product6"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		DstBlock		"NI hold"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -75; -270, 0]
+		Branch {
+		  DstBlock		  "tau5"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -50]
+		  DstBlock		  "Switch2"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "30 3"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator2"
+	      SrcPort		      1
+	      Points		      [90, 0; 0, -115]
+	      DstBlock		      "NI hold"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "NI hold"
+	      SrcPort		      1
+	      DstBlock		      "Eefference\nCopy\nEye Vel"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Transport\nDelay17"
+	      SrcPort		      1
+	      DstBlock		      "30 "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Null Side"
+	      SrcPort		      1
+	      Points		      [125, 0]
+	      Branch {
+		DstBlock		"Target Change\nDetection"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -40]
+		DstBlock		"Boolify2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Target Change\nDetection"
+	      SrcPort		      1
+	      Points		      [175, 0; 0, -180]
+	      DstBlock		      "r Integrator"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Target Change\nDetection"
+	      SrcPort		      2
+	      Points		      [340, 0; 0, -195]
+	      DstBlock		      "Product6"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator1"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		Points			[0, -140]
+		Branch {
+		  DstBlock		  "30 1"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "30 2"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[155, 0]
+		Branch {
+		  Points		  [0, -130]
+		  DstBlock		  "r Integrator"
+		  DstPort		  2
+		}
+		Branch {
+		  DstBlock		  "30 3"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Boolify2"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -25]
+	      DstBlock		      "Logical\nOperator1"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Name		      "PMC Gain"
+	      Position		      [665, 239]
+	      ForegroundColor	      "blue"
+	    }
+	    Annotation {
+	      Name		      "10ms"
+	      Position		      [210, 356]
+	      ForegroundColor	      "red"
+	    }
+	    Annotation {
+	      Name		      "35ms"
+	      Position		      [148, 358]
+	      ForegroundColor	      "red"
+	    }
+	    Annotation {
+	      Name		      "tau3=40ms"
+	      Position		      [435, 119]
+	    }
+	    Annotation {
+	      Name		      "(tau2 Default=35ms)"
+	      Position		      [322, 239]
+	    }
+	    Annotation {
+	      Name		      "motor\nerror"
+	      Position		      [172, 167]
+	      VerticalAlignment	      "top"
+	    }
+	    Annotation {
+	      Name		      "PMC+ block"
+	      Position		      [142, 47]
+	      VerticalAlignment	      "top"
+	      FontSize		      12
+	      FontWeight	      "bold"
+	    }
+	    Annotation {
+	      Name		      "Null Modulation"
+	      Position		      [584, 408]
+	      ForegroundColor	      "red"
+	    }
+	    Annotation {
+	      Position		      [424, 387]
+	    }
+	    Annotation {
+	      Name		      "rNI Reset"
+	      Position		      [434, 333]
+	      ForegroundColor	      "red"
+	    }
+	    Annotation {
+	      Name		      "Initial Condition"
+	      Position		      [447, 393]
+	      ForegroundColor	      "red"
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "oscillating\nPMC1"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	}
+      }
+    }
+    Line {
+      Points		      [300, 185; 20, 0]
+    }
+  }
+}

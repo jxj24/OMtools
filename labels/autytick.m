@@ -1,0 +1,1 @@
+% autytick.m Sets y-axis ticks to 'auto'% Click on axis and runset (gca,'ytickmode','auto')

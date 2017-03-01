@@ -1,0 +1,1 @@
+% FVEL draws foveal velocity on time plotdrawrad(0,xvval)

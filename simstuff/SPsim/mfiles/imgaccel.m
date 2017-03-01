@@ -1,0 +1,1 @@
+% imgaccel.m: for Krauzlis & Miles model% input is velocity; output is accelerationfunction y = imgaccel(u)a = 90;b = 200;c = 62;y = a*sign(u) .* exp( -((abs(u)-b).^2)/(2*c^2) );

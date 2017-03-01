@@ -1,0 +1,1459 @@
+Model {
+  Name			  "plantlib"
+  Version		  6.2
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.2"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "US-ASCII"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Fri Jul 22 15:16:41 2005"
+  Creator		  "jacobs"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "jacobs"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Jul 22 15:20:18 2005"
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  ConfigurationManager	  "none"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "999999"
+	  AbsTol		  "1e-3"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "10"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  on
+	  SaveTime		  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.1.0"
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.STFCustomTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant off
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      off
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SystemTargetFile	      "grt.tlc"
+	      DialogCategory	      0
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      DeadZone
+      LowerValue	      "-0.5"
+      UpperValue	      "0.5"
+      SaturateOnIntegerOverflow	on
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimit	      "0.5"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      Realization	      "auto"
+    }
+    Block {
+      BlockType		      ZeroPole
+      Zeros		      "[1]"
+      Poles		      "[0 1]"
+      Gain		      "[1]"
+      AbsoluteTolerance	      "auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "plantlib"
+    Location		    [345, 72, 682, 243]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Human Plants"
+      Ports		      []
+      Position		      [70, 84, 130, 131]
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskDisplay	      "disp('Human\\nPlants')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Human Plants"
+	Location		[5, 72, 674, 708]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "2-PPlntSat"
+	  Ports			  [1, 1]
+	  Position		  [545, 80, 605, 120]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskDisplay		  "disp('2-P Plant\\n[Sat]')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "2-PPlntSat"
+	    Location		    [581, 532, 1026, 805]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_1"
+	      Position		      [25, 60, 45, 80]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      ZeroPole
+	      Name		      "2 pole"
+	      Position		      [95, 50, 155, 90]
+	      ShowName		      off
+	      Zeros		      "[ ]"
+	      Poles		      "[ -1/.18 -1/.007]"
+	      Gain		      "[1/.18 * 1/.007]"
+	      MaskDisplay	      "disp('2-pole\\nPlant')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "DZ slope"
+	      Position		      [230, 160, 260, 180]
+	      Value		      "0.05"
+	    }
+	    Block {
+	      BlockType		      DeadZone
+	      Name		      "Dead Zone"
+	      Position		      [230, 110, 260, 140]
+	      LowerValue	      "-55"
+	      UpperValue	      "55"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [300, 116, 320, 149]
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      Position		      [230, 55, 260, 85]
+	      UpperLimit	      "55"
+	      LowerLimit	      "-55"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [2, 1]
+	      Position		      [360, 62, 380, 98]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_1"
+	      Position		      [405, 70, 425, 90]
+	      IconDisplay	      "Port number"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "in_1"
+	      SrcPort		      1
+	      DstBlock		      "2 pole"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "2 pole"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		Points			[0, 55]
+		DstBlock		"Dead Zone"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Saturation"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Dead Zone"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      DstBlock		      "out_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -45]
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "DZ slope"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -30]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Name		      "A 2-pole plant can be simulated by:\n1."
+" no limitation on lateral gaze\n2. a hard limitation - placing a saturation i"
+"n the plant [eg, 55 deg]\n3. a soft limitation - add the dead zone  [DZ slope"
+">0]   "
+	      Position		      [262, 238]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Dell'Osso et al--2Pole"
+	  Position		  [325, 171, 450, 229]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.007 -1/.150]"
+	  Gain			  "[(1/.007)*(1/.150)]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Harris (12,250)"
+	  Position		  [325, 547, 425, 593]
+	  Denominator		  "[.003 .262 1]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Harris--2Pole"
+	  Position		  [325, 261, 450, 319]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.012 -1/.250]"
+	  Gain			  "[(1/.012)*(1/.250)]"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "MG-Plant"
+	  Ports			  [1, 1]
+	  Position		  [350, 80, 410, 120]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskDisplay		  "disp('MG Plant\\n[K,tau,sat]')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "MG-Plant"
+	    Location		    [238, 269, 781, 585]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_1"
+	      Position		      [15, 55, 35, 75]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      ZeroPole
+	      Name		      "2 pole"
+	      Position		      [230, 55, 290, 95]
+	      ShowName		      off
+	      Zeros		      "[ ]"
+	      Poles		      "[ -1/.18 -1/.007]"
+	      Gain		      "[1/.18 * 1/.007]"
+	      MaskDisplay	      "disp('2-pole\\nPlant')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "DZ slope"
+	      Position		      [345, 165, 375, 185]
+	      Value		      "0.2"
+	    }
+	    Block {
+	      BlockType		      DeadZone
+	      Name		      "Dead Zone"
+	      Position		      [340, 115, 370, 145]
+	      LowerValue	      "-5"
+	      UpperValue	      "5"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain P"
+	      Position		      [170, 60, 210, 90]
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "GainK"
+	      Position		      [180, 115, 220, 145]
+	      Orientation	      "left"
+	      Gain		      "0"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [410, 121, 430, 154]
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      Position		      [350, 60, 380, 90]
+	      UpperLimit	      "5"
+	      LowerLimit	      "-5"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      Ports		      [2, 1]
+	      Position		      [115, 55, 140, 90]
+	      ShowName		      off
+	      Inputs		      "+-"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [2, 1]
+	      Position		      [465, 67, 485, 103]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_1"
+	      Position		      [505, 75, 525, 95]
+	      IconDisplay	      "Port number"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "DZ slope"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -30]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -45]
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      DstBlock		      "out_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Dead Zone"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "2 pole"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		Points			[0, 55]
+		Branch {
+		  DstBlock		  "Dead Zone"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "GainK"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"Saturation"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Gain P"
+	      SrcPort		      1
+	      DstBlock		      "2 pole"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "Gain P"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "in_1"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GainK"
+	      SrcPort		      1
+	      Points		      [-95, 0; 0, -50]
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Name		      "MG can be simulated by:\n1. a staticgai"
+"n deficit -  reducing the plant gain (P) [eg, gain P=0.6]\n2. a tonic gain de"
+"ficit - reducing the effective time constant of the plant [eg, gain K=0.6]\n3"
+". a hard paresis - placing a saturation in the plant [eg, 5 - 20 deg]\n4. a s"
+"oft paresis - add the dead zone  [DZ slope>0]   "
+	      Position		      [262, 238]
+	    }
+	    Annotation {
+	      Name		      "Place MG Plant as fixating eye and  fee"
+"d output of normal plant to a testpoint [eg, coveye]"
+	      Position		      [247, 290]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "MG-Plant1"
+	  Ports			  [1, 1]
+	  Position		  [435, 80, 495, 120]
+	  ForegroundColor	  "cyan"
+	  BackgroundColor	  "gray"
+	  DropShadow		  on
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskDisplay		  "disp('MG Plant\\n[K,tau,sat]')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "MG-Plant1"
+	    Location		    [458, 553, 1001, 869]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_1"
+	      Position		      [15, 55, 35, 75]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      ZeroPole
+	      Name		      "2 pole"
+	      Position		      [230, 55, 290, 95]
+	      ShowName		      off
+	      Zeros		      "[ ]"
+	      Poles		      "[ -1/.18 -1/.007]"
+	      Gain		      "[1/.18 * 1/.007]"
+	      MaskDisplay	      "disp('2-pole\\nPlant')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "DZ slope"
+	      Position		      [345, 165, 375, 185]
+	      Value		      "0"
+	    }
+	    Block {
+	      BlockType		      DeadZone
+	      Name		      "Dead Zone"
+	      Position		      [340, 115, 370, 145]
+	      LowerValue	      "-5"
+	      UpperValue	      "12"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain P"
+	      Position		      [170, 60, 210, 90]
+	      Gain		      "0.3"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "GainK"
+	      Position		      [180, 115, 220, 145]
+	      Orientation	      "left"
+	      Gain		      "0"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [410, 121, 430, 154]
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation"
+	      Position		      [350, 60, 380, 90]
+	      UpperLimit	      "50"
+	      LowerLimit	      "-50"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      Ports		      [2, 1]
+	      Position		      [115, 55, 140, 90]
+	      ShowName		      off
+	      Inputs		      "+-"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum3"
+	      Ports		      [2, 1]
+	      Position		      [465, 67, 485, 103]
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_1"
+	      Position		      [505, 75, 525, 95]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "DZ slope"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -30]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -45]
+	      DstBlock		      "Sum3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum3"
+	      SrcPort		      1
+	      DstBlock		      "out_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Saturation"
+	      SrcPort		      1
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Dead Zone"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "2 pole"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		Points			[0, 55]
+		Branch {
+		  DstBlock		  "Dead Zone"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "GainK"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"Saturation"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Gain P"
+	      SrcPort		      1
+	      DstBlock		      "2 pole"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "Gain P"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "in_1"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "GainK"
+	      SrcPort		      1
+	      Points		      [-95, 0; 0, -50]
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      Name		      "MG can be simulated by:\n1. a static ga"
+"in deficit -  reducing the plant gain (P) [eg, gain P=0.6]\n2. a tonic gain d"
+"eficit - reducing the effective time constant of the plant [eg, gain K=0.6]\n"
+"3. a hard paresis - placing a saturation in the plant [eg, 5 - 20 deg]\n4. a "
+"soft paresis - add the dead zone  [DZ slope>0]   "
+	      Position		      [262, 238]
+	    }
+	    Annotation {
+	      Name		      "Place MG Plant as fixating eye and  fee"
+"d output of normal plant to a testpoint [eg, coveye]"
+	      Position		      [247, 290]
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Optican-Zee--2Pole"
+	  Position		  [25, 261, 150, 319]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.015-1/.100]"
+	  Gain			  "[(1/.015)*(1/.100)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Robinson\n1Pole"
+	  Position		  [55, 75, 135, 125]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.250]"
+	  Gain			  "[(1/.250)]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Robinson (7,180)"
+	  Position		  [30, 546, 160, 594]
+	  Denominator		  "[.00126 .187 1]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Robinson--1Zero-2Pole"
+	  Position		  [25, 351, 225, 409]
+	  Zeros			  "[-1/.020]"
+	  Poles			  "[-1/.012 -1/.285]"
+	  Gain			  "[(.020)*(1/.012)*(1/.285)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Robinson--2Pole"
+	  Position		  [25, 171, 150, 229]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.007 -1/.180]"
+	  Gain			  "[(1/.007)*(1/.180)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Robinson--2Pole-MG"
+	  Position		  [490, 171, 615, 229]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.007 -1/.180]"
+	  Gain			  "[(1/.007)*(1/.180)]*0.5"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Robinson-vel\n (15)"
+	  Position		  [200, 546, 280, 594]
+	  Denominator		  "[.015 1]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Robinson-vel\n1Pole"
+	  Position		  [200, 75, 280, 125]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.015]"
+	  Gain			  "[(1/.015)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Robinson-vrg--1Zero-3Pole"
+	  Position		  [245, 351, 485, 409]
+	  Zeros			  "[-1/.020]"
+	  Poles			  "[-1/.0083 -1/.285 -1/.5]"
+	  Gain			  "[(.020)*(1/.0083)*(1/.285)*(1/.5)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Tusa et al--2Pole"
+	  Position		  [175, 261, 300, 319]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.010-1/.150]"
+	  Gain			  "[(1/.010)*(1/.150)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Zee et al--1Zero-2Pole"
+	  Position		  [25, 441, 225, 499]
+	  Zeros			  "[-1/.080]"
+	  Poles			  "[-1/.012 -1/.300]"
+	  Gain			  "[(.080)*(1/.012)*(1/.300)]"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Zee et al--1Zero-2Pole-2CmplxPole"
+	  Ports			  [1, 1]
+	  Position		  [245, 441, 490, 499]
+	  ShowPortLabels	  off
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  MaskDisplay		  "disp('(.080)*(1/.010)*(1/.300)*40000(s+1/.0"
+"80)\\n----------------------------------------------------------\\n(s+1/.010)"
+"(s+1/.300)(s2+240s+40000)')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Zee et al--1Zero-2Pole-2CmplxPole"
+	    Location		    [120, 535, 561, 670]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_1"
+	      Position		      [10, 60, 30, 80]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      TransferFcn
+	      Name		      "Zee et al\n2CmplxPole"
+	      Position		      [280, 45, 380, 95]
+	      Numerator		      "[40000]"
+	      Denominator	      "[1 240 40000]"
+	    }
+	    Block {
+	      BlockType		      ZeroPole
+	      Name		      "Zee et al--1Zero-2Pole"
+	      Position		      [55, 41, 255, 99]
+	      Zeros		      "[-1/.080]"
+	      Poles		      "[-1/.012 -1/.300]"
+	      Gain		      "[(.080)*(1/.012)*(1/.300)]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_1"
+	      Position		      [410, 60, 430, 80]
+	      IconDisplay	      "Port number"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "in_1"
+	      SrcPort		      1
+	      DstBlock		      "Zee et al--1Zero-2Pole"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Zee et al\n2CmplxPole"
+	      SrcPort		      1
+	      DstBlock		      "out_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Zee et al--1Zero-2Pole"
+	      SrcPort		      1
+	      DstBlock		      "Zee et al\n2CmplxPole"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Zee-Robinson--2Pole"
+	  Position		  [175, 171, 300, 229]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.012 -1/.150]"
+	  Gain			  "[(1/.012)*(1/.150)]"
+	}
+	Annotation {
+	  Name			  "Last mod:\n04/21/99"
+	  Position		  [363, 27]
+	  VerticalAlignment	  "top"
+	  FontSize		  12
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  "Human Plant Lib\n\"plntlibh\""
+	  Position		  [153, 28]
+	  VerticalAlignment	  "top"
+	  FontSize		  12
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Monkey Plants"
+      Ports		      []
+      Position		      [195, 84, 255, 131]
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      off
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskDisplay	      "disp('Monkey\\nPlants')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Monkey Plants"
+	Location		[428, 82, 938, 554]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Chun-Robinson\n1Pole (cat)"
+	  Position		  [180, 70, 260, 120]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.200]"
+	  Gain			  "[(1/.200)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Fuchs et al--1Zero-2Pole"
+	  Position		  [255, 358, 455, 412]
+	  Zeros			  "[-1/.140]"
+	  Poles			  "[-1/.012 -1/.260]"
+	  Gain			  "[(.140)*(1/.012)*(1/.260)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Goldstein (abs)--1Zero-2Pole"
+	  Position		  [20, 253, 220, 307]
+	  Zeros			  "[-1/.100]"
+	  Poles			  "[-1/.012 -1/.200]"
+	  Gain			  "[(.100)*(1/.012)*(1/.200)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Goldstein--1Zero-2Pole"
+	  Position		  [20, 168, 220, 222]
+	  Zeros			  "[-1/.068]"
+	  Poles			  "[-1/.012 -1/.180]"
+	  Gain			  "[(.068)*(1/.012)*(1/.180)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Goldstein-Robinson(sfn)--1Zero-2Pole"
+	  Position		  [250, 168, 450, 222]
+	  Zeros			  "[-1/.090]"
+	  Poles			  "[-1/.020 -1/.170]"
+	  Gain			  "[(.090)*(1/.020)*(1/.170)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Keller/Goldstein--1Zero-2Pole"
+	  Position		  [240, 253, 460, 307]
+	  Zeros			  "[-1/.072]"
+	  Poles			  "[-1/.012 -1/.260]"
+	  Gain			  "[(.072)*(1/.012)*(1/.260)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Robinson\n1Pole"
+	  Position		  [70, 70, 150, 120]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.160]"
+	  Gain			  "[(1/.160)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Robinson et al--1Zero-2Pole"
+	  Position		  [15, 358, 235, 412]
+	  Zeros			  "[-1/.092]"
+	  Poles			  "[-1/.012 -1/.260]"
+	  Gain			  "[(.092)*(1/.012)*(1/.260)]"
+	}
+	Block {
+	  BlockType		  ZeroPole
+	  Name			  "Zee-Robinson--2Pole"
+	  Position		  [290, 70, 415, 120]
+	  Zeros			  "[ ]"
+	  Poles			  "[ -1/.012 -1/.150]"
+	  Gain			  "[(1/.012)*(1/.150)]"
+	}
+	Annotation {
+	  Name			  "Monkey Plant Lib\n\"plntlibm\""
+	  Position		  [122, 23]
+	  VerticalAlignment	  "top"
+	  FontSize		  12
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  "Last mod:\n06/04/98"
+	  Position		  [352, 22]
+	  VerticalAlignment	  "top"
+	  FontSize		  12
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Annotation {
+      Name		      "Plant Lib"
+      Position		      [102, 23]
+      VerticalAlignment	      "top"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      Name		      "Last mod:\n04/08/99"
+      Position		      [227, 22]
+      VerticalAlignment	      "top"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+  }
+}

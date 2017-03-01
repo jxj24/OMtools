@@ -1,0 +1,1 @@
+function fick = mat2fick(mat)% Converts 3x3xN rotation matrices into Nx3 Fick angles.% The Fick angles are returned in degrees: [horz vert tors].vert = asin(squeeze(mat(3,1,:)));horz = asin(squeeze(mat(2,1,:)) ./ cos(vert));tors = asin(squeeze(mat(3,2,:)) ./ cos(vert));fick = [horz -vert tors] .* (180/pi);

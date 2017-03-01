@@ -1,0 +1,1 @@
+fig=gcf;figure(fig);% Size used <8/16/00% set(fig,'Pos',[89 141 786 515]);% Size altered on 8/16/00 (used with Matlab Fig Size ON)% set(fig,'Pos',[89 141 850 600]);% Size altered on 8/17/00 to allow a blue borderset(fig,'Pos',[89 141 730 470]);% In Matlab: Preferences-Copying-Honor Fig Size should be OFF

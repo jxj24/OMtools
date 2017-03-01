@@ -1,0 +1,1 @@
+% autxtick.m Sets x-axis ticks to 'auto'% Click on axis and runset (gca,'xtickmode','auto')

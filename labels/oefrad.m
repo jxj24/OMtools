@@ -1,0 +1,1 @@
+% OEFRAD draws offset effective foveal radius on time plotfunction oefrad(offset)drawrad(offset,0.6,0,tmax,[.6 .6 .6])

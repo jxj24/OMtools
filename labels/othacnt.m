@@ -1,0 +1,1 @@
+% OTHACNT.m: draws offset, timed-interval horizontal area centralis%            on time plotfunction othacnt(offset, tin, tfin)drawrad(offset, 3, tin, tfin)

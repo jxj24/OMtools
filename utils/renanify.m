@@ -1,0 +1,1 @@
+% zeronans.m:  take an array, swap the NaNs for zeros.% We preserve the orientation of the original array.% Written by Jonathan Jacobs%            October 2003 (last mod:  10/27/03)function [out] = renanify(in,nan_pts);out = in;out(nan_pts) = NaN;

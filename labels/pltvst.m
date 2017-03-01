@@ -1,0 +1,1 @@
+figuret=maket(rv);plot(t,rv,'c',t,lv,'y--',stv,'r')maxpt=max(max([lv,rv,stv]));minpt=min(min([lv,rv,stv]));maxt=max(t);revH=text(maxt,maxpt,'REV');stmv=text(maxt,-(maxpt-minpt)*.5,'VSTIM');levH=text(maxt,minpt,'LEV');set(revH,'color','c');set(stmv,'color','r');set(levH,'color','y');title(nameclean(namelist))eptdragger

@@ -1,0 +1,1 @@
+% HTACNT.m: draws horizontal extent of area centralis timed interval on time plotfunction htacnt(tin, tfin)drawrad(0, 3, tin, tfin, [1 0.5 0])

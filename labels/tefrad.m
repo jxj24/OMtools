@@ -1,0 +1,1 @@
+% TEFRAD draws timed-interval effective foveal radius on time plotfunction tefrad(tin, tfin)drawrad(0, 0.6, tin, tfin, [.6 .6 .6])

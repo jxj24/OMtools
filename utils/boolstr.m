@@ -1,0 +1,1 @@
+% boolstr.m: Convert a numerical zero or one%  into an 'off' or 'on' string%% Usage:  out=boolstr(in)% Written by:  Jonathan Jacobs%              November 2006 (last mod:  11/29/06)function out = boolstr(in)if in == 0   out = 'off'; else   out = 'on';end   

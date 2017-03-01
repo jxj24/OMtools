@@ -1,0 +1,1 @@
+% manxtick.m Sets x-axis ticks to 'manual'% Click on axis and runset (gca,'xtickmode','manual')

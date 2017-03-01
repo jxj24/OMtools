@@ -1,0 +1,1 @@
+% OTEFRAD draws offset, timed-interval, effective foveal radius on time plotfunction otefrad(offset, tin, tfin)drawrad(offset, 0.6, tin, tfin, [.6 .6 .6])

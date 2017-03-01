@@ -1,0 +1,1 @@
+% XFRAD draws expanded foveal radius on time plot% function xfrad(xpval)drawrad(0,xpval)

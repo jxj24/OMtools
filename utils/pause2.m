@@ -1,0 +1,1 @@
+% pause2.m: a true pause function for delays under a second% Usage: pause2(delay)% where delay is the desired time in milliseconds% NOTE: accuracy is generally good within about 10 ms% Written by:  Jonathan Jacobs%              October 1999  (last mod: 10/19/99)function pause2(delay)diff = 0;tic;while diff*1000 < (delay-0.25)  %idiosyncratic   diff = toc;end

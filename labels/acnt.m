@@ -1,0 +1,1 @@
+% ACNT.m: draws area centralisfunction acnt(color)if nargin == 0  color = [1 0.5 0];enddrawcirc(3, 1.5, color,'none','-.')

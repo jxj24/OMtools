@@ -1,0 +1,7 @@
+better beginning, end of saccade detection:
+
+'seg' endings may ALREADY be too far out, possibly due to velocity contribution to good/bad points list.
+
+1. Use PV point as starting location.
+
+2. Find Accel peaks on either side and walk down to find where accel drops below thresh.

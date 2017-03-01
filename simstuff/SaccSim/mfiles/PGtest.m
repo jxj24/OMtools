@@ -1,0 +1,1 @@
+% PGtest.m: test the PG.  "Use PG+NI->OMN->Plant" in "testbed"stimlist = [1:5, 10, 15 20, 25, 30];stoptime = 0.8;figure;hold onindex = 0;for i = stimlist   index=index+1;   stimhgt=stimlist(index);   stimdur=stoptime;   [a,b,c]=rk45('testbed',stoptime, [], [1e-3,0.001,0.001,0,0,2]);   plot(t,muxout)   drawnowend

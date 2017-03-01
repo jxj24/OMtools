@@ -1,0 +1,1 @@
+% impacc.m: slip smooth acceleration for Krauzlis-Lisberger modelfunction y = impacc(u)a = 17500;b = 0.00015;if abs(u) >= 3000   y = sign(u)*log(b*abs(u)+1) * a; else   y = 0;end% saturationif abs(u) > 80000   y = 50000*sign(u);end

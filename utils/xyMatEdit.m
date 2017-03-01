@@ -1,0 +1,1 @@
+% xyMatEdit.m: examine and modify the xy% Written by:  Jonathan Jacobs%              March 2004  (last mod: 03/09/04)function xyMatEditglobal xyCur1Mat xyCur2Mat xyCur1Ctr xyCur2Ctr

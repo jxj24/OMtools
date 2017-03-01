@@ -1,0 +1,1 @@
+figureif ~isempty(lrf)   t=maket(lrf); elseif ~isempty(rrf)   t=maket(rrf); else   disp('No radial data!?!')   returnend plot(t,lrf,'y')maxpt=max(max([lrf]));minpt=min(min([lrf]));maxt=max(t);lerR=text(maxt,maxpt,'LER');set(lerR,'color','y');if exist('namelist','var'), title(nameclean(namelist)); endeptdragger

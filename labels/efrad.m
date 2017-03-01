@@ -1,0 +1,1 @@
+% EFRAD draws effective foveal radius on time plotdrawrad(0,.6,0,tmax,[.6 .6 .6])

@@ -1,0 +1,1 @@
+% VTACNT.m: draws vertical extent of area centralis timed interval on time plotfunction vtacnt(tin, tfin)drawrad(0, 1.5, tin, tfin, [1 0.5 0])

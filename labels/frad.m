@@ -1,0 +1,1 @@
+% FRAD draws foveal radius on time plotdrawrad(0,.5,0,0,[1 0.5 0])

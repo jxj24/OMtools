@@ -1,0 +1,7 @@
+About the "mfiles" folders:
+
+These folders contain external scripts and functions that the model needs to run.
+
+When you add the main model directory to your MATLAB path you should also add these mfile directories, too.
+
+Hopefully this is a temporary condition that will be addressed in the next release.

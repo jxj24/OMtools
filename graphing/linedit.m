@@ -1,0 +1,1 @@
+% linedit.m:   front end to call either linedit4 or linedit5% Written by:  Jonathan Jacobs%              December 1997  (last mod: 12/21/97)function  linedit(null)mlVer = version;if mlVer(1) >= '5'   linedit5 elseif mlVer(1) == '4'   linedit4 else   disp(['Unknown MATLAB version: ' mlVer])end

@@ -1,0 +1,1944 @@
+Model {
+  Name			  "OMSblk"
+  Version		  7.0
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    1
+    Inport {
+      Name		      "Target Position"
+    }
+    NumRootOutports	    1
+    Outport {
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      Name		      "Eye Position"
+    }
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.56"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ISO-8859-1"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Feb  8 13:43:09 2007"
+  Creator		  "lfd"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "lfd"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Jun 25 15:07:24 2009"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement:56>"
+  ConfigurationManager	  "none"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.3.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.3.0"
+	  StartTime		  "0.0"
+	  StopTime		  "999999"
+	  AbsTol		  "1e-3"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "10"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.3.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.3.0"
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.3.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "None"
+	  LoggingUnavailableSignals "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.3.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.3.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Version		  "1.3.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  RTWCompilerOptimization "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Version		      "1.3.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Version		      "1.3.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant off
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      off
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Derivative
+      LinearizePole	      "inf"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "fixdt(1,16,0)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "[]"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Lookup
+      InputValues	      "[-4:5]"
+      Table		      " rand(1,10)-0.5"
+      LookUpMeth	      "Interpolation-Extrapolation"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+      LUTDesignTableMode      "Redesign Table"
+      LUTDesignDataSource     "Block Dialog"
+      LUTDesignFunctionName   "sqrt(x)"
+      LUTDesignUseExistingBP  on
+      LUTDesignRelError	      "0.01"
+      LUTDesignAbsError	      "1e-6"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "OMSblk"
+    Location		    [2269, 72, 3444, 557]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "portrait"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Inport
+      Name		      "Target\nPosition"
+      Position		      [25, 310, 45, 330]
+      ForegroundColor	      "cyan"
+      BackgroundColor	      "gray"
+      IconDisplay	      "Port number"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Fixation"
+      Ports		      [3, 1]
+      Position		      [515, 222, 585, 258]
+      ForegroundColor	      "lightBlue"
+      BackgroundColor	      "blue"
+      DropShadow	      on
+      ShowName		      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskDisplay	      "disp('Fixation')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Fixation"
+	Location		[466, 455, 1025, 719]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "fs\n[fsmc30]"
+	  Position		  [30, 68, 60, 82]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Tvel'"
+	  Position		  [30, 153, 60, 167]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Evel'"
+	  Position		  [30, 198, 60, 212]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "position\nsensitivity W2"
+	  Position		  [30, 284, 75, 306]
+	  InputValues		  "[-5 -2  -1 -0.5   0.5   1    2    5]"
+	  Table			  "[ 0   0.125    0.5     1      1     0.5    0.125  0]"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Lookup
+	  Name			  "velocity\nsensitivity W2"
+	  Position		  [30, 369, 75, 391]
+	  NamePlacement		  "alternate"
+	  InputValues		  "[-30 -15   -8  -4   4     8  15  30]"
+	  Table			  "[0  0.125   0.5    1    1    0.5   0.125  0]"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  " CorrVel\n[velcorr]"
+	  Position		  [505, 78, 535, 92]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  Points		  [485, 85]
+	  DstBlock		  " CorrVel\n[velcorr]"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Fixation (counter-signal)"
+	  Position		  [104, 22]
+	  FontSize		  14
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  "Last mod: 02/22/01"
+	  Position		  [388, 22]
+	  FontSize		  12
+	  FontWeight		  "bold"
+	}
+	Annotation {
+	  Name			  "Positional error is passed through a gaussian-like function whose greatest\nresponse occurs between ±0.5 deg (approx), corresponding to the sensitivity\nof the fovea."
+	  Position		  [293, 291]
+	}
+	Annotation {
+	  Name			  "This factor is used (with an additional gain factor) to scale the velocity error,\nwhich is then subtracted from the velocity signal that is sent from the \ncommon neural integrator to the ocular motor neurons."
+	  Position		  [295, 334]
+	}
+	Annotation {
+	  Name			  "This should have the effect of reducing the high velocity error (due\nto CN oscillation or other sources) enough to permit an extension of\nthe foveation period."
+	  Position		  [299, 383]
+	}
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gf"
+      Position		      [660, 222, 700, 258]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "lightBlue"
+      Gain		      "0.5"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gs=1-Gf"
+      Position		      [660, 347, 700, 383]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "lightBlue"
+      Gain		      "0.5"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "IM Sacc"
+      Ports		      [9, 7]
+      Position		      [245, 143, 330, 357]
+      ForegroundColor	      "red"
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      NamePlacement	      "alternate"
+      ShowName		      off
+      ShowPortLabels	      "none"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskDisplay	      "disp('INTERNAL\\nMONITOR\\n[Sacc,FS/BS,\\nSP,AL,\\nNI Control]')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"IM Sacc"
+	Location		[7, 118, 296, 574]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"red"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "_RetErr\n(e)"
+	  Position		  [20, 15, 40, 35]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "RSV"
+	  Position		  [25, 65, 45, 85]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "ECPY vek"
+	  Position		  [20, 105, 40, 125]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "L/D"
+	  Position		  [25, 145, 45, 165]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "ECPY P + SP"
+	  Position		  [30, 200, 50, 220]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "ECPY pos"
+	  Position		  [30, 255, 50, 275]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "PG"
+	  Position		  [30, 300, 50, 320]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "TI"
+	  Position		  [35, 345, 55, 365]
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "TI1"
+	  Position		  [40, 410, 60, 430]
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "null mod"
+	  Position		  [195, 60, 215, 80]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Trgt Vel"
+	  Position		  [200, 115, 220, 135]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Sacc Mot Cmd"
+	  Position		  [200, 170, 220, 190]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "NI Hold"
+	  Position		  [200, 230, 220, 250]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "TIAL + SP"
+	  Position		  [200, 285, 220, 305]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "fs mot cmd"
+	  Position		  [200, 335, 220, 355]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "fs mot cmd1"
+	  Position		  [200, 390, 220, 410]
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Light=1\nDark=0"
+      Position		      [20, 267, 80, 283]
+      ShowName		      off
+      Value		      "Light / Dark"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Light=1\nDark=1"
+      Position		      [160, 340, 180, 360]
+      ForegroundColor	      "cyan"
+      BackgroundColor	      "gray"
+      ShowName		      off
+      Value		      "TI"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "NI Real1"
+      Ports		      [2, 1]
+      Position		      [770, 408, 835, 452]
+      ForegroundColor	      "magenta"
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      ShowName		      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskDisplay	      "disp('rNeural\\nIntegrator\\n(Slow)')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"NI Real1"
+	Location		[407, 939, 872, 1154]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "PG +\n(TIAL+SP)"
+	  Position		  [55, 65, 75, 85]
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "yellow"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "PG +\n(TIAL+SP)1"
+	  Position		  [50, 115, 70, 135]
+	  ForegroundColor	  "green"
+	  BackgroundColor	  "orange"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "NIOUT\n[epospr]"
+	  Position		  [395, 75, 415, 95]
+	  ForegroundColor	  "magenta"
+	  BackgroundColor	  "yellow"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+	Annotation {
+	  Name			  "Slow Resettable NI"
+	  Position		  [102, 22]
+	  VerticalAlignment	  "top"
+	  FontSize		  12
+	  FontWeight		  "bold"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "OMN1"
+      Ports		      [2, 1]
+      Position		      [1040, 291, 1090, 344]
+      ForegroundColor	      "cyan"
+      BackgroundColor	      "gray"
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      "none"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskDisplay	      "disp('OM\\nPlant')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"OMN1"
+	Location		[118, 162, 292, 278]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "from NI"
+	  Position		  [35, 100, 55, 120]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "from PG"
+	  Position		  [35, 55, 55, 75]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [115, 65, 135, 85]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "OMN2"
+      Ports		      [2, 1]
+      Position		      [960, 236, 1005, 374]
+      ForegroundColor	      "cyan"
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      "none"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskDisplay	      "disp('OMN\\n(Fast)\\n[Tonic +\\nPhasic]')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"OMN2"
+	Location		[118, 140, 292, 256]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "from NI"
+	  Position		  [35, 100, 55, 120]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "from PG"
+	  Position		  [35, 55, 55, 75]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [115, 65, 135, 85]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "OMN3"
+      Ports		      [1, 1]
+      Position		      [770, 274, 830, 316]
+      ForegroundColor	      "magenta"
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      "none"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskDisplay	      "disp('Neural \\nIntegrator\\n(Fast)')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"OMN3"
+	Location		[118, 161, 292, 277]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "from NI"
+	  Position		  [30, 40, 50, 60]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [115, 40, 135, 60]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "OMN4"
+      Ports		      [1, 1]
+      Position		      [960, 402, 1000, 448]
+      ForegroundColor	      "cyan"
+      BackgroundColor	      "yellow"
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      "none"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskDisplay	      "disp('OMN\\n(Slow)\\n[Tonic]')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"OMN4"
+	Location		[118, 162, 292, 278]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "from NI"
+	  Position		  [35, 100, 55, 120]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [115, 65, 135, 85]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Saccades"
+      Ports		      [2, 2]
+      Position		      [415, 295, 475, 355]
+      ForegroundColor	      "green"
+      BackgroundColor	      "orange"
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      "none"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskDisplay	      "disp('Saccadic\\n[PG,rNI\\nNI Hold]')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Saccades"
+	Location		[6, 122, 282, 243]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"blue"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "trgt pos"
+	  Position		  [40, 15, 60, 35]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  ""
+	  Position		  [45, 65, 65, 85]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "eye pos"
+	  Position		  [190, 45, 210, 65]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "eye pos1"
+	  Position		  [200, 90, 220, 110]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Smooth Pursuit"
+      Ports		      [3, 1]
+      Position		      [415, 147, 470, 233]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      ShowName		      off
+      ShowPortLabels	      "none"
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskDisplay	      "disp('Smooth\\nPursuit')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Smooth Pursuit"
+	Location		[6, 118, 290, 274]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"cyan"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "trgt pos"
+	  Position		  [60, 60, 80, 80]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "null mod"
+	  Position		  [55, 105, 75, 125]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "null mod1"
+	  Position		  [125, 115, 145, 135]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "eye pos"
+	  Position		  [195, 60, 215, 80]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  InitialOutput		  "0"
+	}
+      }
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      Ports		      [2, 1]
+      Position		      [95, 314, 115, 336]
+      ForegroundColor	      "green"
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      Inputs		      "+-"
+      CollapseMode	      "All dimensions"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      Ports		      [2, 1]
+      Position		      [895, 408, 910, 437]
+      ForegroundColor	      "red"
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      CollapseMode	      "All dimensions"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum3"
+      Ports		      [2, 1]
+      Position		      [890, 214, 910, 321]
+      ForegroundColor	      "red"
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      CollapseMode	      "All dimensions"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum4"
+      Ports		      [2, 1]
+      Position		      [730, 266, 745, 324]
+      ForegroundColor	      "red"
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      CollapseMode	      "All dimensions"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum5"
+      Ports		      [3, 1]
+      Position		      [615, 204, 630, 276]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      Inputs		      "+++"
+      CollapseMode	      "All dimensions"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum7"
+      Ports		      [2, 1]
+      Position		      [843, 175, 872, 190]
+      Orientation	      "up"
+      ForegroundColor	      "magenta"
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      CollapseMode	      "All dimensions"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Derivative
+      Name		      "derivative"
+      Position		      [155, 290, 185, 310]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      MaskDisplay	      "disp('s')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "xx"
+      Position		      [770, 226, 810, 254]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      Gain		      "k"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "xx1"
+      Position		      [770, 351, 810, 379]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "lightBlue"
+      ShowName		      off
+      Gain		      "k"
+      ParameterDataType	      "sfix(16)"
+      ParameterScaling	      "2^0"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "Eye\nPosition"
+      Position		      [1130, 310, 1150, 330]
+      ForegroundColor	      "cyan"
+      BackgroundColor	      "gray"
+      IconDisplay	      "Port number"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      InitialOutput	      "0"
+    }
+    Line {
+      SrcBlock		      "xx"
+      SrcPort		      1
+      DstBlock		      "Sum3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "OMN3"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"Sum3"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Sum7"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Sum3"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"OMN2"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -170; -735, 0; 0, 125]
+	DstBlock		"IM Sacc"
+	DstPort			4
+      }
+    }
+    Line {
+      SrcBlock		      "OMN2"
+      SrcPort		      1
+      DstBlock		      "OMN1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "OMN1"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"Eye\nPosition"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 140; -1035, 0; 0, -130]
+	DstBlock		"Sum"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Sum4"
+      SrcPort		      1
+      DstBlock		      "OMN3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum5"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	DstBlock		"Gf"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 125]
+	DstBlock		"Gs=1-Gf"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Target\nPosition"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "xx1"
+      SrcPort		      1
+      Points		      [60, 0; 0, 50]
+      DstBlock		      "Sum1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "NI Real1"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	DstBlock		"Sum1"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Sum7"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Sum1"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[0, -335; -755, 0; 0, 160]
+	DstBlock		"IM Sacc"
+	DstPort			5
+      }
+      Branch {
+	DstBlock		"OMN4"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "OMN4"
+      SrcPort		      1
+      Points		      [15, 0; 0, -95]
+      DstBlock		      "OMN1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "derivative"
+      SrcPort		      1
+      DstBlock		      "IM Sacc"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"IM Sacc"
+	DstPort			8
+      }
+      Branch {
+	Points			[0, -25]
+	DstBlock		"derivative"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Light=1\nDark=1"
+      SrcPort		      1
+      DstBlock		      "IM Sacc"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "IM Sacc"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	DstBlock		"Smooth Pursuit"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 80]
+	DstBlock		"Fixation"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "IM Sacc"
+      SrcPort		      2
+      DstBlock		      "Smooth Pursuit"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "IM Sacc"
+      SrcPort		      3
+      DstBlock		      "Smooth Pursuit"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "IM Sacc"
+      SrcPort		      7
+      DstBlock		      "Saccades"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "IM Sacc"
+      SrcPort		      6
+      DstBlock		      "Saccades"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "IM Sacc"
+      SrcPort		      5
+      Points		      [255, 0; 0, -15]
+      DstBlock		      "Sum5"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Fixation"
+      SrcPort		      1
+      DstBlock		      "Sum5"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Smooth Pursuit"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	Points			[0, 0]
+	Branch {
+	  Points		  [0, 40]
+	  DstBlock		  "Fixation"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 0; 0, -60; -265, 0; 0, 20]
+	  DstBlock		  "IM Sacc"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[105, 0; 0, 25]
+	DstBlock		"Sum5"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "IM Sacc"
+      SrcPort		      4
+      DstBlock		      "Fixation"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Sum7"
+      SrcPort		      1
+      Points		      [0, -60; -660, 0; 0, 90]
+      DstBlock		      "IM Sacc"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Light=1\nDark=0"
+      SrcPort		      1
+      DstBlock		      "IM Sacc"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Saccades"
+      SrcPort		      2
+      Points		      [15, 0]
+      Branch {
+	Points			[0, 100]
+	DstBlock		"NI Real1"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 0]
+	Branch {
+	  Points		  [0, -220; -285, 0; 0, 55]
+	  DstBlock		  "IM Sacc"
+	  DstPort		  2
+	}
+	Branch {
+	  DstBlock		  "OMN2"
+	  DstPort		  2
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Saccades"
+      SrcPort		      1
+      DstBlock		      "Sum4"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Gs=1-Gf"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"xx1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 55]
+	DstBlock		"NI Real1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Gf"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	DstBlock		"xx"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 40]
+	DstBlock		"Sum4"
+	DstPort			1
+      }
+    }
+    Annotation {
+      Name		      "OMS Block Diagram"
+      Position		      [486, 22]
+      VerticalAlignment	      "top"
+      FontSize		      18
+    }
+    Annotation {
+      Name		      "PG Hold"
+      Position		      [522, 312]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "Saccadic Motor\nCommand"
+      Position		      [372, 342]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "Reconstructed\nTarget  Velocity"
+      Position		      [372, 137]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "Efference\nCopy\n[Pos]"
+      Position		      [837, 112]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "Efference\nCopy\n[Fast]"
+      Position		      [902, 112]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "Retinal Position Error"
+      Position		      [187, 327]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "E"
+      Position		      [1107, 302]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "e"
+      Position		      [127, 312]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "E "
+      Position		      [77, 347]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "T"
+      Position		      [57, 302]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "Retinal Feedback"
+      Position		      [412, 447]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "Evel'"
+      Position		      [527, 177]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "E'f"
+      Position		      [852, 302]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "Retinal Slip\nVelocity"
+      Position		      [212, 277]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "RETINA"
+      Position		      [102, 304]
+    }
+    Annotation {
+      Name		      "fsmc*"
+      Position		      [350, 241]
+    }
+    Annotation {
+      Name		      "* Foveating Saccade Motor Cmd"
+      Position		      [378, 376]
+    }
+    Annotation {
+      Name		      "Null  Side"
+      Position		      [370, 212]
+    }
+    Annotation {
+      Name		      "(v1.5)"
+      Position		      [483, 55]
+      FontSize		      14
+    }
+    Annotation {
+      Name		      "TIAL"
+      Position		      [365, 274]
+    }
+    Annotation {
+      Name		      "NI Hold"
+      Position		      [370, 318]
+    }
+    Annotation {
+      Name		      "Reset"
+      Position		      [391, 183]
+    }
+    Annotation {
+      Name		      "Efference\nCopy\n[Slow]"
+      Position		      [962, 112]
+      VerticalAlignment	      "top"
+    }
+    Annotation {
+      Name		      "PG Out"
+      Position		      [521, 124]
+    }
+    Annotation {
+      Name		      "E's"
+      Position		      [866, 440]
+    }
+    Annotation {
+      Name		      "E'"
+      Position		      [870, 164]
+    }
+  }
+}

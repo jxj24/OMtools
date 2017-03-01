@@ -1,0 +1,1 @@
+% XFWIN.m draws the eXpanded FWIN in black on a Phase Plane% USAGE: xpval=#; xvval=#; xfwindrawbox(xpos, xvel, 'k', 'none')

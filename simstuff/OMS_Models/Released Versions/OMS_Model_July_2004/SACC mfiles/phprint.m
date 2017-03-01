@@ -1,0 +1,1 @@
+%% print the finalstim array in a form that is easily pasted into%% the PHfn function.len = fix(length(finalstim)/5);spt = stimlist(1);delta = stimlist(2)-stimlist(1);for i=1:len   s=sprintf('%9.4f %9.4f %9.4f %9.4f %9.4f',...         finalstim(5*(i-1)+1:5*i));   disp(['    ' s ' ...  %% ' num2str(5*delta*(i-1)+spt)...         ' - ' num2str((5*delta*i)+spt-delta)])end

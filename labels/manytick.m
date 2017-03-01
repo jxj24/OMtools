@@ -1,0 +1,1 @@
+% manytick.m Sets y-axis ticks to 'manual'% Click on axis and runset (gca,'ytickmode','manual')

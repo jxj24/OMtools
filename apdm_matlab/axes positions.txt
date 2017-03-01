@@ -1,0 +1,28 @@
+
+1: eye [0.033 0.24 0.444 0.628]
+
+2:eye [0.033 0.539 0.444 0.329]
+hand [0.033 0.252 0.444 0.261]
+
+
+3:
+eye [0.033 0.641 0.444 0.227]
+hand [0.033 0.439 0.444 0.187]
+head [0.033 0.239 0.444 0.187]
+
+
+apdm - velocity & position:
+How can I measure the velocity and position of my inertial monitors?
+
+Avatar	Lars Holmstrom
+October 26, 2016 13:26
+Follow
+This is actually a complicated question and there is some deep signal processing required to do it correctly. Simply integrating the acceleration signal to get velocity or double integrating the acceleration signal to get position is not only problematic due to sensor bias and noise, but also because you need to have a good estimation of the orientation of the device so that you can accurately remove the effects of gravity from the accelerometer signal. This task requires a complex fusion of the accelerometer, gyroscope, and magnetometer data and is beyond the scope of what this FAQ entry can provide. Below are references to a couple relevant papers in addition to the ISBN of a standard text on inertial navigation using IMUs is 1563476932. It is available on Amazon.
+
+Bebek, O.; Suster, M.A.; Rajgopal, S.; Fu, M.J.; Xuemei Huang; Çavuşoǧlu, M.C.; Young, D.J.; Mehregany, M.; van den Bogert, A.J.; Mastrangelo, C.H., "Personal Navigation via High-Resolution Gait-Corrected Inertial Measurement Units," Instrumentation and Measurement, IEEE Transactions on , vol.59, no.11, pp.3018,3027, Nov. 2010
+doi: 10.1109/TIM.2010.2046595
+
+Foxlin, E., "Pedestrian tracking with shoe-mounted inertial sensors," Computer Graphics and Applications, IEEE , vol.25, no.6, pp.38,46, Nov.-Dec. 2005
+doi: 10.1109/MCG.2005.140
+
+Strapdown inertial navigation technology, ISBN 1563476932

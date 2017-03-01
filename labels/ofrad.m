@@ -1,0 +1,1 @@
+% OFRAD draws offset foveal radius on time plotfunction ofrad(offset)drawrad(offset,.5,0,0,[1 0.5 0])

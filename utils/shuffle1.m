@@ -1,0 +1,1 @@
+% shuffle.m: shuffle an input vectorfunction out = shuffle(in)i=1;while length(in)   len = length(in);   x = fix(len * rand(1)+1);   out(i) = in(x);   i=i+1;   temp =  [];   temp = [in(1:x-1) in(x+1:len)];   in = temp;    end

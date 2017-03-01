@@ -1,0 +1,1 @@
+% HACNT.m: draws horizontal extent of area centralis on time plotdrawrad(0,3,0,0,[1 0.5 0])
