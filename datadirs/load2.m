@@ -1,0 +1,1 @@
+% load2.m: GUI to load a file.[fn, pn]=uigetfile('*.*', 'Select a file to load');if fn   eval(['cd ' '''' pn ''''])   eval(['load ' fn])endclear fn pn
