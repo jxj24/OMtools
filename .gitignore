@@ -1,0 +1,14 @@
+
+.DS_Store
+Icon
+
+# Matlab
+# OSX / *nix default autosave extension
+*.m~
+
+# Compiled MEX binaries (all platforms)
+*.mex*
+
+# bullets in front of directory
+•*/
+•*

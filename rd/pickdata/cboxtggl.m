@@ -1,0 +1,1 @@
+function cBoxTggl( cBoxH )% Toggle the velue of a check box%% Written by: Jonathan Jacobs%             December 2000  (last mod: 12/10/00)oldval = get(cBoxH,'value');newval = rem(oldval+1,2);set(cBoxH,'value', newval);
