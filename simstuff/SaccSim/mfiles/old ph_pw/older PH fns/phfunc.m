@@ -1,1 +1,0 @@
-% PHsimp.m: Called by 'PG(simp)' to determine the pulse height% This is a simple example of how to use an m-file from within SIMULINK% Written by:  Jonathan Jacobs%              October 1997 function y = PHfunc( u )if abs(u) <= 0.25   y = 0; else   y = 0.26 * 590*u/(7.5+abs(u));end

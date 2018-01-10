@@ -1,1 +1,0 @@
-% accsat.m: used in Robinson model.function y = accsat(u)eo = 4;if abs(u) > eo   y = sign(u) * (40 + 5*abs(u)); elseif abs(u) <= eo   y = sign(u) * ((5+40/eo)*abs(u));end
