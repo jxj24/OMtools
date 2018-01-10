@@ -1,8 +1,8 @@
 % applybias.m:
-% Apply the offset and scaling factor(s) found by 'getbias' to the data being loaded.
+% Apply the offset and scaling factor found by 'getbias/readbias' to the data.
 
 % written by: Jonathan Jacobs
-%             February 2004  (last mod: 01/25/04)
+%             February 2004  (last mod: 03/13/17)
 
 % clear the eyelink blinks
 %newdata=deblink(newdata);  % BIG problem with deblink is that
@@ -17,6 +17,15 @@
 % This is maintained for historical reasons
 unfold
 
+z_adj = adjbiasvals.z_adj;
+max_adj = adjbiasvals.max_adj;
+min_adj = adjbiasvals.min_adj;
+maxcalpt = adjbiasvals.maxcalpt;
+mincalpt = adjbiasvals.mincalpt;
+rectype = lower(adjbiasvals.rectype);
+chName = adjbiasvals.chName;
+numcalpts = size(max_adj,2);
+
 doScaling = enviroG(3);
 if ~doScaling
    return
@@ -24,13 +33,13 @@ end
 
 % if the data file does not have its own stored channel names, we will use the ones
 % read in from the bias file.
-if ~exist('chnlstr2','var')
-   chnlstr2='';
-   for i=1:length(chName)
-      chnlstr2 = [chnlstr2 char(chName(i)) ','];
-   end
-   chnlstr2=chnlstr2(1:end-1);
-end
+% if ~exist('chnlstr2','var')
+%    chnlstr2='';
+%    for i=1:length(chName)
+%       chnlstr2 = [chnlstr2 char(chName(i)) ','];
+%    end
+%    chnlstr2=chnlstr2(1:end-1);
+% end
 
 % parse the channel list to find channel names, in particular which is hor stim
 % and which is vert stim.
@@ -42,13 +51,13 @@ end
 %	return % break?
 %end
 
-channel = {}; hor_stm=[]; vrt_stm=[];
-rem = strtrim(lower(chnlstr2));
-for i=1:chan_count
-   [channel{i}, rem] = strtok(rem, ',');
-   if strcmp('st', channel{i} ), hor_ind=i; end
-   if strcmp('sv', channel{i} ), vrt_ind=i; end
+hor_stm=[]; vrt_stm=[];
+%rem = strtrim(lower(chnlstr));
+for i=1:chan_count   
+   if strcmp('st', chName{i} ), hor_ind=i; end
+   if strcmp('sv', chName{i} ), vrt_ind=i; end
 end
+
 
 if exist('hor_ind','var')
    hor_stm = newdata(:,hor_ind);
@@ -81,7 +90,6 @@ neworder=stripnan(neworder);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % we now have the data and the needed offset/scaling factors.
 % so let's do the offset and scaling
-rectype = lower(rectype);
 %scalemethod = lower(input('Use old piecewise (l)inear or new (s)mooth scaling? ','s'));
 scalemethod = 'l';
 
@@ -107,9 +115,9 @@ for i = neworder;
          if (0) %if strcmp( scalemethod(1),'s' )
             % the smooth scaling will only be applied to eye-movement data channels
             % we leave stim channels alone because there is no reason to use it.
-            if ( strcmp(channel{i},'rh') || strcmp(channel{i},'lh') )
+            if ( strcmp(chName{i},'rh') || strcmp(chName{i},'lh') )
                % which plane are we working in, and which is the corresponding stim?
-               temp = channel{i};
+               temp = chName{i};
                plane = temp(2);
                if strcmp(plane, 'h')
                   stim = hor_stm;

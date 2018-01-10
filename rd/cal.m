@@ -58,14 +58,14 @@ scalelim = 4;	% determins how many times larger pos (or neg) data can be in rela
 tempFigH = figure;
 tempFigColor = get(tempFigH,'color');
 if tempFigColor(1) >= 0.8
-    lhColor = 'g';
-    rhColor = 'b';
+   lhColor = 'g';
+   rhColor = 'b';
 elseif tempFigColor(1) == 0;
-    lhColor = 'y';
-    rhColor = 'c';
+   lhColor = 'y';
+   rhColor = 'c';
 else
-    lhColor = 'y';
-    rhColor = 'c';
+   lhColor = 'y';
+   rhColor = 'c';
 end
 close(tempFigH)
 
@@ -82,63 +82,63 @@ if ~isempty(sv), disp(' 8) sv'); end
 
 whichCh=-1;
 while whichCh < 0
-    whichCh = str2double( input('Calibrate which channel? ','s') );
-    if isnan(whichCh), whichCh=-1; end
+   whichCh = str2double( input('Calibrate which channel? ','s') );
+   if isnan(whichCh), whichCh=-1; end
 end
 
 switch whichCh
-    case 0, disp('Aborted.'), return
-    case 1, pos = rh; whatChStr = 'rh'; dir1str = 'rightward';
-        dir2str = 'leftward'; lcolor = rhColor;
-    case 2, pos = lh; whatChStr = 'lh'; dir1str = 'rightward';
-        dir2str = 'leftward'; lcolor = lhColor;
-    case 3, pos = rv; whatChStr = 'rv'; dir1str = 'upward';
-        dir2str = 'downward'; lcolor = 'b';
-    case 4, pos = lv; whatChStr = 'lv'; dir1str = 'upward';
-        dir2str = 'downward'; lcolor = [0.7 0.3 0];
-    case 5, pos = rt; whatChStr = 'rt'; dir1str = 'clockwise';
-        dir2str = 'counter-clockwise'; lcolor = 'c';
-    case 6, pos = lt; whatChStr = 'lt'; dir1str = 'clockwise';
-        dir2str = 'counter-clockwise'; lcolor = 'y';
-    case 7, pos = st; whatChStr = 'st'; dir1str = 'rightward';
-        dir2str = 'leftward'; lcolor = 'r';
-    case 8, pos = sv; whatChStr = 'sv'; dir1str = 'upward';
-        dir2str = 'downward'; lcolor = 'g';
-    otherwise, disp('Invalid selection.	Run ''cal'' again.'), return
+   case 0, disp('Aborted.'), return
+   case 1, pos = rh; whatChStr = 'rh'; dir1str = 'rightward';
+      dir2str = 'leftward'; lcolor = rhColor;
+   case 2, pos = lh; whatChStr = 'lh'; dir1str = 'rightward';
+      dir2str = 'leftward'; lcolor = lhColor;
+   case 3, pos = rv; whatChStr = 'rv'; dir1str = 'upward';
+      dir2str = 'downward'; lcolor = 'b';
+   case 4, pos = lv; whatChStr = 'lv'; dir1str = 'upward';
+      dir2str = 'downward'; lcolor = [0.7 0.3 0];
+   case 5, pos = rt; whatChStr = 'rt'; dir1str = 'clockwise';
+      dir2str = 'counter-clockwise'; lcolor = 'c';
+   case 6, pos = lt; whatChStr = 'lt'; dir1str = 'clockwise';
+      dir2str = 'counter-clockwise'; lcolor = 'y';
+   case 7, pos = st; whatChStr = 'st'; dir1str = 'rightward';
+      dir2str = 'leftward'; lcolor = 'r';
+   case 8, pos = sv; whatChStr = 'sv'; dir1str = 'upward';
+      dir2str = 'downward'; lcolor = 'g';
+   otherwise, disp('Invalid selection.	Run ''cal'' again.'), return
 end
 
 if isempty(pos)
-    disp('You have selected an empty data channel.	Please run "cal" again.')
-    return
+   disp('You have selected an empty data channel.	Please run "cal" again.')
+   return
 end
 
 [len, numCols] = size( pos );
 if numCols > len
-    pos = pos';
-    [len, numCols] = size( pos );
+   pos = pos';
+   [len, numCols] = size( pos );
 end
 
 if numCols > 1
-    disp('Please use "pickdata" to select only one data channel ')
-    disp('from one file and then run "cal" again.')
-    return
+   disp('Please use "pickdata" to select only one data channel ')
+   disp('from one file and then run "cal" again.')
+   return
 end
 
 % How many calibration points?
 numcalpts = input('How many calibration point pairs (e.g. +/-15 = one pair)? ');
 numMaxCalpts = numcalpts+1; numLcalpts = numcalpts+1;
 
-pos = ao_deblink(pos); % get rid of the worst artifacts
+%pos = ao_deblink(pos); % get rid of the worst artifacts
 t = maket(pos);
 figure;
 calaxis = gca;
 plotH = plot(t, pos, 'color', lcolor);
 if exist('st','var')&& ~strcmp(whatChStr,'st')
-    if ~isempty(st), hold on; plot(t,st,'r'); end
+   if ~isempty(st), hold on; plot(t,st,'r'); end
 end
 
 if exist('sv','var') && ~strcmp(whatChStr,'sv')
-    if ~isempty(sv), hold on; plot(t,sv,'g'); end
+   if ~isempty(sv), hold on; plot(t,sv,'g'); end
 end
 yData = get(plotH, 'Ydata');
 title( nameclean( [currentfile ' -- ' whatChStr ' cal'] ) )
@@ -162,31 +162,31 @@ nanarray = find(isnan(pos));
 y_or_n = 'n';
 %cmdw_enab=1;
 while strcmpi(y_or_n, 'n')
-    % set plot, lims to original values
-    set(plotH, 'Ydata', yData);
-    autorange_y(calaxis)
-    
-    xyCur1Mat = [];
-    xyCur1Ctr = 0;
-    cursmatr('cur1_clr')
-    disp( ' ' )
-    disp( 'Place Cursor ONE on the new zero point' )
-    disp( 'and click the "C1 get" button.')
-    disp( '	<< Press ENTER to continue, or "q" to quit>> ');
-    
-    waitfor(cur1getH,'String', 'C1 get  (1)' )
-    z_adjust = xyCur1Mat(xyCur1Ctr,2);
-    shiftedData = yData - z_adjust;
-    set(plotH, 'Ydata', shiftedData);
-    
-    % update the plot and the zoomtool y axis
-    autorange_y(calaxis)
-    commandwindow
-    y_or_n = input( 'Are you happy with this result (y/n)? ', 's');
-    if isempty(y_or_n), y_or_n = 'y'; end
-    if strcmpi(y_or_n, 'q')
-        return
-    end
+   % set plot, lims to original values
+   set(plotH, 'Ydata', yData);
+   autorange_y(calaxis)
+   
+   xyCur1Mat = [];
+   xyCur1Ctr = 0;
+   cursmatr('cur1_clr')
+   disp( ' ' )
+   disp( 'Place Cursor ONE on the new zero point' )
+   disp( 'and click the "C1 get" button.')
+   disp( '	<< Press ENTER to preview the change, or "q" to quit>> ');
+   
+   waitfor(cur1getH,'String', 'C1 get  (1)' )
+   z_adjust = xyCur1Mat(xyCur1Ctr,2);
+   shiftedData = yData - z_adjust;
+   set(plotH, 'Ydata', shiftedData);
+   
+   % update the plot and the zoomtool y axis
+   autorange_y(calaxis)
+   commandwindow
+   y_or_n = input( 'Are you happy with this result (y/n)? ', 's');
+   if isempty(y_or_n), y_or_n = 'y'; end
+   if strcmpi(y_or_n, 'q')
+      return
+   end
 end
 
 zeroPtIndex = xyCur1Mat(xyCur1Ctr,1);
@@ -219,118 +219,118 @@ xyCur1Mat = [];
 xyCur1Ctr = 0;
 i=2; % because 0 degrees is entry 1.
 while i <= numcalpts+1
-    % only want positive (rightward/upward/CW) values
-    temp = -100000;
-    while (temp<max_cal(i-1)) || isempty(temp)
-        disp(' ')
-        temp = input( ['Enter ' dir1str ' cal. value #' num2str(i-1) ': '],'s');
-        temp = str2double(temp);
-        if (isempty(temp)||temp==0)||isnan(temp), temp = -100000; end
-    end
-    max_cal(i) = temp;
-    
-    maxScaledData = zeros(1,len);
-    restOfTheData = zeros(1,len);
-    
-    y_or_n  = 'n';
-    while( lower(y_or_n) == 'n' )
-        % if the scaled pos data and the unscaled neg data have wildly different
-        % scales, the graph will look crappy.	So temporarily scale the leftward
-        % data using the rtward scale value.
-        % blinks/dropout artifacts will create artificially large spikes in the data.
-        % remove the spikes by LP filtering the crap out of a TEMP copy of the data.
-        maxPos = max( lpf(maxUpdatedData,4,samp_freq/100,samp_freq) );
-        maxNeg = min( lpf(maxUpdatedData,4,samp_freq/100,samp_freq) );
-        %disp('rt cal: scale leftward data -- code block 1')
-        displayData = maxUpdatedData;
-        if abs(maxNeg/maxPos)>scalelim || abs(maxPos/maxNeg)>scalelim
-            % create a temporary array of scaled data for the lower
-            % half of the fig.  This way we still see the data in context,
-            % instead of only seeing the positive half.
-            displayData(negPts) = negData*max_scale(2);
-        end
-        
-        % set plot, lims to their zero-adjusted values
-        set(plotH, 'Ydata', displayData);
-        autorange_y(calaxis)
-        
-        rAbrtFlag = 0; rSkipFlag = 0;
-        xyCur1Mat = []; xyCur1Ctr = 0;
-        cursmatr('cur1_clr')
-        disp( ' ' )
-        disp( ['Place Cursor One at ' num2str(max_cal(i)) ' degrees and click the "C1 get" button.'] )
-        disp(  ' Press ENTER to continue,' )
-        disp(  '  "s" to skip this point,' )
-        disp( ['  "n" to replace ' num2str(max_cal(i)) ' as the current calibration value,' ] )
-        disp( ['  or "q" to quit if there is no good ' dir1str ' calibration point: '])
-        waitfor(cur1getH,'String', 'C1 get  (1)' )
-        commandwindow
-        temp=input( '--> ' , 's');
-        if strcmp(temp,'q'), return; end
-        %if strcmp(temp,'x'), rAbrtFlag = 1; break; end
-        if strcmp(temp,'s'), rSkipFlag = 1; break; end
-        if strcmp(temp,'n')
-            temp=input('Enter a replacement calibration value: ','s');
-            max_cal(i)=str2double(temp);
-        end
-        
-        maxScalePts						= find( maxUpdatedData > max_cal(i-1) );
-        restPts							= find( maxUpdatedData <= max_cal(i-1) );
-        maxScaledData(maxScalePts) = maxUpdatedData(maxScalePts);
-        restOfTheData(restPts)		= maxUpdatedData(restPts);
-        
-        if rAbrtFlag, numMaxCalpts=i-1; i=numcalpts+2; return; end % prob need min_cal_line stuff here, as below
-        if rSkipFlag
-            max_scale(i) = 1; maxScaleIndex(i) = NaN;
-            max_cal_line(i) = line([0 max(t)],[NaN NaN]);
-            set(max_cal_line(i),'Color',[0.6 0.6 0.6]);
-            set(max_cal_line(i),'LineStyle','-.');
-            break;
-        end
-        
-        backedupData = displayData;
-        max_scale(i) = (max_cal(i)-max_cal(i-1)) / (xyCur1Mat(xyCur1Ctr,2)-max_cal(i-1));
-        maxScaledData(maxScalePts) = ((maxScaledData(maxScalePts)...
-            - max_cal(i-1)) * max_scale(i)) + max_cal(i-1);
-        maxUpdatedData = maxScaledData + restOfTheData;
-        maxUpdatedData(nanarray) = NaN*ones(size(nanarray));	% reinsert the NaNs
-        
-        maxPos = max( lpf(maxUpdatedData,4,samp_freq/100,samp_freq) );
-        maxNeg = min( lpf(maxUpdatedData,4,samp_freq/100,samp_freq) );
-        displayData = maxUpdatedData;
-        %disp('rt cal: scale leftward data -- code block 2')
-        if abs(maxNeg/maxPos)>scalelim || abs(maxPos/maxNeg)>scalelim
-            displayData(negPts) = negData*max_scale(2);  % since we only need the 1st -- yes '2' is
-        end														  % the 1st -- scale value to get pos&neg
-        % in same range
-        
-        % update the plot and the zoomtool y axis
-        set(plotH, 'Ydata', displayData);
-        autorange_y(calaxis)
-        
-        % put up a line at this cal point
-        max_cal_line(i) = line([0 max(t)],[max_cal(i) max_cal(i)]);
-        set(max_cal_line(i),'Color',[0.6 0.6 0.6]);
-        set(max_cal_line(i),'LineStyle','-.');
-        
-        y_or_n = lower(input('Are you happy with this result (y/n)? ', 's'));
-        if y_or_n == 'n'
-            % undo the scaling
-            maxUpdatedData = backedupData;
-            delete(max_cal_line(i));
-        elseif y_or_n == 'q'
-            return
-        end
-        
-    end
-    if ~rSkipFlag
-        maxScaleIndex(i) = xyCur1Mat(xyCur1Ctr,1);
-        max_cal_time(i-1) = maxScaleIndex(i)/samp_freq(1);
-        disp(['Scaling factor for ' num2str(max_cal(i))	 ' deg (' dir1str ') is: ' num2str(max_scale(i)) ...
-            '	 Time index: ' num2str( max_cal_time(i-1) )])
-    end
-    i=i+1;
-    
+   % only want positive (rightward/upward/CW) values
+   temp = -100000;
+   while (temp<max_cal(i-1)) || isempty(temp)
+      disp(' ')
+      temp = input( ['Enter ' dir1str ' cal. value #' num2str(i-1) ': '],'s');
+      temp = str2double(temp);
+      if (isempty(temp)||temp==0)||isnan(temp), temp = -100000; end
+   end
+   max_cal(i) = temp;
+   
+   maxScaledData = zeros(1,len);
+   restOfTheData = zeros(1,len);
+   
+   y_or_n  = 'n';
+   while( lower(y_or_n) == 'n' )
+      % if the scaled pos data and the unscaled neg data have wildly different
+      % scales, the graph will look crappy.	So temporarily scale the leftward
+      % data using the rtward scale value.
+      % blinks/dropout artifacts will create artificially large spikes in the data.
+      % remove the spikes by LP filtering the crap out of a TEMP copy of the data.
+      maxPos = max( lpf(maxUpdatedData,4,samp_freq/100,samp_freq) );
+      maxNeg = min( lpf(maxUpdatedData,4,samp_freq/100,samp_freq) );
+      %disp('rt cal: scale leftward data -- code block 1')
+      displayData = maxUpdatedData;
+      if abs(maxNeg/maxPos)>scalelim || abs(maxPos/maxNeg)>scalelim
+         % create a temporary array of scaled data for the lower
+         % half of the fig.  This way we still see the data in context,
+         % instead of only seeing the positive half.
+         displayData(negPts) = negData*max_scale(2);
+      end
+      
+      % set plot, lims to their zero-adjusted values
+      set(plotH, 'Ydata', displayData);
+      autorange_y(calaxis)
+      
+      rAbrtFlag = 0; rSkipFlag = 0;
+      xyCur1Mat = []; xyCur1Ctr = 0;
+      cursmatr('cur1_clr')
+      disp( ' ' )
+      disp( ['Place Cursor One at ' num2str(max_cal(i)) ' degrees and click the "C1 get" button.'] )
+      disp(  'Hit ENTER to preview the change,' )
+      disp(  '    "s" to skip this point,' )
+      disp( ['    "n" to replace ' num2str(max_cal(i)) ' as the current calibration value,' ] )
+      disp( ['    "q" to quit if there is no good ' dir1str ' calibration point: '])
+      waitfor(cur1getH,'String', 'C1 get  (1)' )
+      commandwindow
+      temp=input( '--> ' , 's');
+      if strcmp(temp,'q'), return; end
+      %if strcmp(temp,'x'), rAbrtFlag = 1; break; end
+      if strcmp(temp,'s'), rSkipFlag = 1; break; end
+      if strcmp(temp,'n')
+         temp=input('Enter a replacement calibration value: ','s');
+         max_cal(i)=str2double(temp);
+      end
+      
+      maxScalePts						= find( maxUpdatedData > max_cal(i-1) );
+      restPts							= find( maxUpdatedData <= max_cal(i-1) );
+      maxScaledData(maxScalePts) = maxUpdatedData(maxScalePts);
+      restOfTheData(restPts)		= maxUpdatedData(restPts);
+      
+      if rAbrtFlag, numMaxCalpts=i-1; i=numcalpts+2; return; end % prob need min_cal_line stuff here, as below
+      if rSkipFlag
+         max_scale(i) = 1; maxScaleIndex(i) = NaN;
+         max_cal_line(i) = line([0 max(t)],[NaN NaN]);
+         set(max_cal_line(i),'Color',[0.6 0.6 0.6]);
+         set(max_cal_line(i),'LineStyle','-.');
+         break;
+      end
+      
+      backedupData = displayData;
+      max_scale(i) = (max_cal(i)-max_cal(i-1)) / (xyCur1Mat(xyCur1Ctr,2)-max_cal(i-1));
+      maxScaledData(maxScalePts) = ((maxScaledData(maxScalePts)...
+         - max_cal(i-1)) * max_scale(i)) + max_cal(i-1);
+      maxUpdatedData = maxScaledData + restOfTheData;
+      maxUpdatedData(nanarray) = NaN*ones(size(nanarray));	% reinsert the NaNs
+      
+      maxPos = max( lpf(maxUpdatedData,4,samp_freq/100,samp_freq) );
+      maxNeg = min( lpf(maxUpdatedData,4,samp_freq/100,samp_freq) );
+      displayData = maxUpdatedData;
+      %disp('rt cal: scale leftward data -- code block 2')
+      if abs(maxNeg/maxPos)>scalelim || abs(maxPos/maxNeg)>scalelim
+         displayData(negPts) = negData*max_scale(2);  % since we only need the 1st -- yes '2' is
+      end														  % the 1st -- scale value to get pos&neg
+      % in same range
+      
+      % update the plot and the zoomtool y axis
+      set(plotH, 'Ydata', displayData);
+      autorange_y(calaxis)
+      
+      % put up a line at this cal point
+      max_cal_line(i) = line([0 max(t)],[max_cal(i) max_cal(i)]);
+      set(max_cal_line(i),'Color',[0.6 0.6 0.6]);
+      set(max_cal_line(i),'LineStyle','-.');
+      
+      y_or_n = lower(input('Are you happy with this result (y/n)? ', 's'));
+      if y_or_n == 'n'
+         % undo the scaling
+         maxUpdatedData = backedupData;
+         delete(max_cal_line(i));
+      elseif y_or_n == 'q'
+         return
+      end
+      
+   end
+   if ~rSkipFlag
+      maxScaleIndex(i) = xyCur1Mat(xyCur1Ctr,1);
+      max_cal_time(i-1) = maxScaleIndex(i)/samp_freq(1);
+      disp(['Scaling factor for ' num2str(max_cal(i))	 ' deg (' dir1str ') is: ' num2str(max_scale(i)) ...
+         '	 Time index: ' num2str( max_cal_time(i-1) )])
+   end
+   i=i+1;
+   
 end
 
 posDataFinal = displayData(posPts);
@@ -362,120 +362,120 @@ minScaleIndex = zeros(1,numcalpts+1);
 xyCur1Mat = [];
 xyCur1Ctr = 0;
 i=2; % because 0 degrees is entry 1.
-while i <= numcalpts+1    
-    minScaledData = zeros(1,len);
-    restOfTheData = zeros(1,len);    
-    % only want negative (leftward or downward) values
-    temp = 100000;
-    while (temp>min_cal(i-1)) || isempty(temp)
-        disp(' ')
-        temp = input( ['Enter ' dir2str ' cal. value #' num2str(i-1) ': '],'s');
-        temp = str2double(temp);
-        if isempty(temp)||(temp==0), temp = 100000; end
-    end
-    min_cal(i) = temp;
-    
-    y_or_n = 'n';
-    while( lower(y_or_n) == 'n' )
-        % 1st time we execute this, it sets pos data range to match as-of-yet unscaled
-        % negative data range.	We shouldn't have to execute it again, though?
-        maxPos = max( lpf(minUpdatedData,4,samp_freq/100,samp_freq) );
-        maxNeg = min( lpf(minUpdatedData,4,samp_freq/100,samp_freq) );
-        displayData = minUpdatedData;
-        %disp('left cal: scale rtward data -- code block 1')
-        if abs(maxNeg/maxPos)>scalelim || abs(maxPos/maxNeg)>scalelim
-            displayData(posPts) = posData ;			 % set pos data to orig val to match unscaled neg data
-        end
-        % redraw the max cal lines
-        for z = 2:length(max_cal_line)
-            if ~isnan(maxScaleIndex(z))
-                set(max_cal_line(z),'YData',[displayData(maxScaleIndex(z)) displayData(maxScaleIndex(z)) ]);
-            end
-        end
-        set(plotH, 'Ydata', displayData);
-        autorange_y(calaxis)
-        
-        lAbrtFlag = 0; lSkipFlag=0;
-        xyCur1Mat = []; xyCur1Ctr = 0;
-        cursmatr('cur1_clr')
-        disp( ' ' )
-        disp( ['Place Cursor One at ' num2str(min_cal(i)) ' degrees and click the "C1 get" button.'] )
-        disp(  ' Press ENTER to continue,' )
-        disp(  ' "s" to skip this point, ' )
-        disp( [' "n" to replace ' num2str(min_cal(i)) ' as the current calibration value,' ] )
-        disp( [' or "q" to quit if there is no good ' dir2str ' calibration point: '] )
-        waitfor(cur1getH,'String', 'C1 get  (1)' )
-        commandwindow
-        temp=input('--> ','s');
-        if strcmp(temp,'q'), return; end
-        %if strcmp(temp,'x'), lAbrtFlag = 1; break; end
-        if strcmp(temp,'s'), lSkipFlag = 1; break; end
-        if strcmp(temp,'n')
-            temp=input('Enter a replacement calibration value: ','s');
-            min_cal(i)=str2double(temp);
-        end
-        
-        minScalePts				   = find(minUpdatedData < min_cal(i-1));
-        restPts					   = find(minUpdatedData >= min_cal(i-1));
-        minScaledData(minScalePts) = minUpdatedData(minScalePts);
-        restOfTheData(restPts)	   = minUpdatedData(restPts);
-        
-        if lAbrtFlag, numLcalpts=i-1; i=numcalpts+2; return; end % prob need min_cal_line stuff here, as below
-        if lSkipFlag
-            min_scale(i) = 1; minScaleIndex(i) = NaN;
-            min_cal_line(i) = line([0 max(t)],[NaN NaN]);
-            set(min_cal_line(i), 'Color',[0.6 0.6 0.6]);
-            set(min_cal_line(i),'LineStyle','-.');
-            break
-        end
-        
-        backedupData = displayData;
-        min_scale(i) = (min_cal(i)-min_cal(i-1)) / (xyCur1Mat(xyCur1Ctr,2)-min_cal(i-1));
-        minScaledData(minScalePts) = ((minScaledData(minScalePts)...
-            - min_cal(i-1)) * min_scale(i)) + min_cal(i-1);
-        minUpdatedData = minScaledData + restOfTheData;
-        minUpdatedData(nanarray) = NaN*ones(size(nanarray));  % reinsert the NaNs
-        
-        % Adjust displayed data to show results of the calibration.
-        % Should only be necessary after setting 1st min cal point.
-        maxPos = max( lpf(minUpdatedData,4,samp_freq/100,samp_freq) );
-        maxNeg = min( lpf(minUpdatedData,4,samp_freq/100,samp_freq) );
-        displayData = minUpdatedData;
-        if abs(maxNeg/maxPos)>scalelim || abs(maxPos/maxNeg)>scalelim
-            displayData(posPts) = posData * max_scale(2);			% yes, this is MAX scale
-        end
-        %disp('left cal: scale rtward data -- code block 2')
-        for z = 2:length(max_cal_line)
-            if ~isnan(maxScaleIndex(z))
-                set(max_cal_line(z),'YData',[displayData(maxScaleIndex(z)) displayData(maxScaleIndex(z))] );
-            end
-        end
-        
-        set(plotH, 'Ydata', displayData);
-        autorange_y(calaxis)
-        
-        % put up a line at this cal point
-        min_cal_line(i) = line([0 max(t)],[min_cal(i) min_cal(i)]);
-        set(min_cal_line(i), 'Color',[0.6 0.6 0.6]);
-        set(min_cal_line(i),'LineStyle','-.');
-        
-        y_or_n = lower(input('Are you happy with this result (y/n)? ', 's'));
-        if y_or_n == 'n'
-            delete(min_cal_line(i));
-            minUpdatedData = backedupData;
-        elseif y_or_n == 'q'
-            return
-        end
-        
-    end
-    if ~lSkipFlag
-        minScaleIndex(i) = xyCur1Mat(xyCur1Ctr,1);
-        min_cal_time(i-1) = minScaleIndex(i)/samp_freq(1);
-        disp(['Scaling factor for ' num2str(min_cal(i)) ' ' dir2str ' is: ' num2str(min_scale(i)) ...
-            '	 Time index: ' num2str( min_cal_time(i-1) )])
-    end
-    i=i+1;
-    
+while i <= numcalpts+1
+   minScaledData = zeros(1,len);
+   restOfTheData = zeros(1,len);
+   % only want negative (leftward or downward) values
+   temp = 100000;
+   while (temp>min_cal(i-1)) || isempty(temp)
+      disp(' ')
+      temp = input( ['Enter ' dir2str ' cal. value #' num2str(i-1) ': '],'s');
+      temp = str2double(temp);
+      if isempty(temp)||(temp==0), temp = 100000; end
+   end
+   min_cal(i) = temp;
+   
+   y_or_n = 'n';
+   while( lower(y_or_n) == 'n' )
+      % 1st time we execute this, it sets pos data range to match as-of-yet unscaled
+      % negative data range.	We shouldn't have to execute it again, though?
+      maxPos = max( lpf(minUpdatedData,4,samp_freq/100,samp_freq) );
+      maxNeg = min( lpf(minUpdatedData,4,samp_freq/100,samp_freq) );
+      displayData = minUpdatedData;
+      %disp('left cal: scale rtward data -- code block 1')
+      if abs(maxNeg/maxPos)>scalelim || abs(maxPos/maxNeg)>scalelim
+         displayData(posPts) = posData ;			 % set pos data to orig val to match unscaled neg data
+      end
+      % redraw the max cal lines
+      for z = 2:length(max_cal_line)
+         if ~isnan(maxScaleIndex(z))
+            set(max_cal_line(z),'YData',[displayData(maxScaleIndex(z)) displayData(maxScaleIndex(z)) ]);
+         end
+      end
+      set(plotH, 'Ydata', displayData);
+      autorange_y(calaxis)
+      
+      lAbrtFlag = 0; lSkipFlag=0;
+      xyCur1Mat = []; xyCur1Ctr = 0;
+      cursmatr('cur1_clr')
+      disp( ' ' )
+      disp( ['Place Cursor One at ' num2str(min_cal(i)) ' degrees and click the "C1 get" button.'] )
+      disp(  'Hit ENTER to preview the change,' )
+      disp(  '    "s" to skip this point, ' )
+      disp( ['    "n" to replace ' num2str(min_cal(i)) ' as the current calibration value,' ] )
+      disp( ['    "q" to quit if there is no good ' dir2str ' calibration point: '] )
+      waitfor(cur1getH,'String', 'C1 get  (1)' )
+      commandwindow
+      temp=input('--> ','s');
+      if strcmp(temp,'q'), return; end
+      %if strcmp(temp,'x'), lAbrtFlag = 1; break; end
+      if strcmp(temp,'s'), lSkipFlag = 1; break; end
+      if strcmp(temp,'n')
+         temp=input('Enter a replacement calibration value: ','s');
+         min_cal(i)=str2double(temp);
+      end
+      
+      minScalePts				   = find(minUpdatedData < min_cal(i-1));
+      restPts					   = find(minUpdatedData >= min_cal(i-1));
+      minScaledData(minScalePts) = minUpdatedData(minScalePts);
+      restOfTheData(restPts)	   = minUpdatedData(restPts);
+      
+      if lAbrtFlag, numLcalpts=i-1; i=numcalpts+2; return; end % prob need min_cal_line stuff here, as below
+      if lSkipFlag
+         min_scale(i) = 1; minScaleIndex(i) = NaN;
+         min_cal_line(i) = line([0 max(t)],[NaN NaN]);
+         set(min_cal_line(i), 'Color',[0.6 0.6 0.6]);
+         set(min_cal_line(i),'LineStyle','-.');
+         break
+      end
+      
+      backedupData = displayData;
+      min_scale(i) = (min_cal(i)-min_cal(i-1)) / (xyCur1Mat(xyCur1Ctr,2)-min_cal(i-1));
+      minScaledData(minScalePts) = ((minScaledData(minScalePts)...
+         - min_cal(i-1)) * min_scale(i)) + min_cal(i-1);
+      minUpdatedData = minScaledData + restOfTheData;
+      minUpdatedData(nanarray) = NaN*ones(size(nanarray));  % reinsert the NaNs
+      
+      % Adjust displayed data to show results of the calibration.
+      % Should only be necessary after setting 1st min cal point.
+      maxPos = max( lpf(minUpdatedData,4,samp_freq/100,samp_freq) );
+      maxNeg = min( lpf(minUpdatedData,4,samp_freq/100,samp_freq) );
+      displayData = minUpdatedData;
+      if abs(maxNeg/maxPos)>scalelim || abs(maxPos/maxNeg)>scalelim
+         displayData(posPts) = posData * max_scale(2);			% yes, this is MAX scale
+      end
+      %disp('left cal: scale rtward data -- code block 2')
+      for z = 2:length(max_cal_line)
+         if ~isnan(maxScaleIndex(z))
+            set(max_cal_line(z),'YData',[displayData(maxScaleIndex(z)) displayData(maxScaleIndex(z))] );
+         end
+      end
+      
+      set(plotH, 'Ydata', displayData);
+      autorange_y(calaxis)
+      
+      % put up a line at this cal point
+      min_cal_line(i) = line([0 max(t)],[min_cal(i) min_cal(i)]);
+      set(min_cal_line(i), 'Color',[0.6 0.6 0.6]);
+      set(min_cal_line(i),'LineStyle','-.');
+      
+      y_or_n = lower(input('Are you happy with this result (y/n)? ', 's'));
+      if y_or_n == 'n'
+         delete(min_cal_line(i));
+         minUpdatedData = backedupData;
+      elseif y_or_n == 'q'
+         return
+      end
+      
+   end
+   if ~lSkipFlag
+      minScaleIndex(i) = xyCur1Mat(xyCur1Ctr,1);
+      min_cal_time(i-1) = minScaleIndex(i)/samp_freq(1);
+      disp(['Scaling factor for ' num2str(min_cal(i)) ' ' dir2str ' is: ' num2str(min_scale(i)) ...
+         '	 Time index: ' num2str( min_cal_time(i-1) )])
+   end
+   i=i+1;
+   
 end
 
 %negDataFinal = displayData(negPts);  %% unneeded.
@@ -492,7 +492,7 @@ cursmatr('cur1_clr')
 %finalData(negPts) = negDataFinal;
 %set(plotH,'YData',finalData);
 for z=2:length(max_cal_line)
-    set(max_cal_line(z),'YData',[max_cal(z) max_cal(z)])
+   set(max_cal_line(z),'YData',[max_cal(z) max_cal(z)])
 end
 
 % during the scaling of the min (left or down) pts, the max (up or right)
@@ -551,39 +551,39 @@ numMaxCalpts=max(numLcalpts,numMaxCalpts);
 numLcalpts=numMaxCalpts;
 
 for i=2:numMaxCalpts
-    calPtStr = num2str(max_cal(i));
-    scaleStr = num2str(max_scale(i));
-    disp([dir1str ' cal factor ' calPtStr ' deg: ' scaleStr] )
-    %disp([dir1str ' cal factor ' calPtStr ' deg: ' scaleStr '	 (time: ' num2str(maxScaleIndex(i)) ')'] )
+   calPtStr = num2str(max_cal(i));
+   scaleStr = num2str(max_scale(i));
+   disp([dir1str ' cal factor ' calPtStr ' deg: ' scaleStr] )
+   %disp([dir1str ' cal factor ' calPtStr ' deg: ' scaleStr '	 (time: ' num2str(maxScaleIndex(i)) ')'] )
 end
 rStr1 = mat2str(max_cal(2:numMaxCalpts),4);	  % do not include the '0' first entry
 rStr2 = mat2str(max_scale(2:numMaxCalpts),4);  % do not include the '0' first entry
 if numMaxCalpts == 2
-    rStr1 = ['[' rStr1 ']'];  %% mat of len 1 does not add brackets
+   rStr1 = ['[' rStr1 ']'];  %% mat of len 1 does not add brackets
 else
-    rStr2 = rStr2(2:end-1);	  %% do not want brackets on the scaling data
+   rStr2 = rStr2(2:end-1);	  %% do not want brackets on the scaling data
 end
 rStr = [ rStr1 '	' rStr2 ];
 
 for i=2:numLcalpts
-    calPtStr = num2str(min_cal(i));
-    scaleStr = num2str(min_scale(i));
-    disp([dir2str ' cal factor ' calPtStr ' deg: ' scaleStr] )
-    %disp([dir2str ' cal factor ' calPtStr ' deg: ' scaleStr '	 (time: ' num2str(minScaleIndex(i)) ')'] )
+   calPtStr = num2str(min_cal(i));
+   scaleStr = num2str(min_scale(i));
+   disp([dir2str ' cal factor ' calPtStr ' deg: ' scaleStr] )
+   %disp([dir2str ' cal factor ' calPtStr ' deg: ' scaleStr '	 (time: ' num2str(minScaleIndex(i)) ')'] )
 end
 lStr1 = mat2str(min_cal(2:numLcalpts),4);
 lStr2 = mat2str(min_scale(2:numLcalpts),4);
 if numLcalpts == 2
-    lStr1 = ['[' lStr1 ']'];
+   lStr1 = ['[' lStr1 ']'];
 else
-    lStr2 = lStr2(2:end-1);
+   lStr2 = lStr2(2:end-1);
 end
 lStr = [ lStr1 '	' lStr2 ];
 
 disp(' ')
 disp( [currentfile ' cal points formatted to paste into ''adjbias.txt'':'] )
 disp( [ '% ' whatChStr ' times: ' num2str(zeroPtTime) ' ' rStr1 ' ' mat2str(max_cal_time) ' ' ...
-    lStr1 ' ' mat2str(min_cal_time) ] )
+   lStr1 ' ' mat2str(min_cal_time) ] )
 disp([whatChStr '	 ' zStr '  ' rStr '	' lStr])
 disp( ' ' )
 

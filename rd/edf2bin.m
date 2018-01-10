@@ -27,9 +27,14 @@
 %              and modifications of intermediate .ASC file.
 % 15 Apr 13 -- Fixed for case when EDF time index (column 1) changes from 6 digits to 7
 % 31 Jan 17 -- Oh so many new things!
+% 03 Jul 17 -- Fixed for when there is more than 1 record - there is a h_pix_deg & v_pix_deg for each record
+%              There is a h_pix_deg & v_pix_deg for each record.
+%			   Saccades, fixations, blinks, and video frams are also now separated by
+%			   record and saved in the proper _extras.mat file
 
-function edf2bin(~)
+function success = edf2bin(fn,pn)
 
+success=0;
 curdir = pwd;
 cd(findomtools); cd('rd')
 
@@ -42,11 +47,13 @@ if (exist('edf2asc','file') ~= 2)
    return
 end
 
-try cd(curdir); catch, cd(matlabroot)
+try cd(curdir); catch, cd(matlabroot); end
+
+if nargin<2
+   [fn, pn]=uigetfile({'*.edf'}, 'Select an EDF file to load');
+   if fn == 0, disp('Aborted.'); return, end
 end
 
-[fn, pn]=uigetfile({'*.edf'}, 'Select an EDF file to load');
-if fn == 0, disp('Aborted.'); return, end
 fname = lower(strtok(fn,'.'));
 
 % stripped_uscore = 0;
@@ -61,31 +68,77 @@ msgsfile =  ['''' pn fname '_msgs' ''''];
 datafile =  ['''' pn fname '_data' ''''];
 eventfile = ['''' pn fname '_events' ''''];
 
+% for scenelink info edf2asc must be called in the same folder that also
+% has the *.ett file. That's just edf2asc.
 cd(findomtools); cd('rd')
+rd_path_str = pwd;  % the path to rd so we know how to call edf2asc
+cd(pn)
+
+% disp('')
+% disp('Export samples as [G]aze (eye in space) or [H]REF (eye in head)?')
+% horg = input('-> ','s');
+% if strcmpi(horg,'h')
+%    disp('Exporting HREF data')
+%    exp = ' -sh ';
+%    samptype = 'HREF';
+% elseif strcmpi(horg,'g')
+%    disp('Exporting Gaze data')
+%    exp = ' -sg ';
+%    samptype = 'GAZE';
+% end
+
+% HREF is not supported yet, so I'm commenting the option to ask for it out for now
+exp = ' -sg ';
+samptype = 'GAZE';
+
+sc_flag = '';
+ett_file = strrep(fn,'.EDF', '0.ett');
+if exist(ett_file, 'file') % matching the file name is case sensitive!
+   sc_flag = ' -scenecam';
+end
 
 % search the EDF file for sampling frequency and recorded eye channel(s)
 % This is what an entry looks like:  MSG	3964147 RECCFG CR 1000 2 1 LR
-eval( [ '! ./edf2asc ' inputfile ' ' msgsfile '  -neye -ns -y ' ] )
-eval( [ '! ./edf2asc ' inputfile ' ' eventfile '  -nmsg -ns -y ' ] )
+% eval( [ '! ./edf2asc ' inputfile ' ' msgsfile '  -neye -ns -y ' ] )
+% eval( [ '! ./edf2asc ' inputfile ' ' eventfile '  -nmsg -ns -y ' ] )
+eval( [ '! ' rd_path_str '/edf2asc ' inputfile ' ' msgsfile exp sc_flag ' -neye -ns -y ' ] );
+eval( [ '! ' rd_path_str '/edf2asc ' inputfile ' ' eventfile exp ' -nmsg -ns -y ' ] );
 disp('EDF messages exported.')
 disp('Searching for channel and frequency information.')
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Search the MESSAGES file for important keywords
+%  "START", "RECCFG", "END", "DISPLAY", "RES", "VFRAME"
 % Use carriage return as delimiter. Each line of msgs is a single MSG.
-
-% Search the MESSAGES file for important keywords
-% "START", "RECCFG", "END", "DISPLAY", "RES"
-ind = 0; ind2 = 0; sfpos=NaN(); sf=NaN();
+ind = 0; ind2 = 1; sfpos=NaN(); sf=NaN();
 msgs = importdata([pn fname '_msgs.asc'],char(13)); % '13' is CR char.
-v_pix_deg=1; h_pix_deg=1;eyes=cell(1); start_times=[]; %start_times=cell(1);
+eyes=cell(1); chname=cell();
+v_found=1; %gaze = 0; href = 0;
+vf = struct;
+fix = struct;
+sacc = struct;
+blink = struct;
+v_pix_deg = zeros(); h_pix_deg = zeros();
+start_time = zeros(); end_time = zeros();
+%filestops = zeros(); filestarts = zeros();
 
-%gaze = 0; href = 0;
 for ii = 1:length(msgs)
    
    str_temp = strfind( msgs{ii}, 'START');
    if str_temp == 1
-      ind2 = ind2 + 1;
       [~, temp] = strtok(msgs{ii});
       [temp,~] = strtok(temp);
-      start_times(ind2) = str2double( temp );
+      start_time(ind2) = str2double( temp );
+   end
+   
+   % e.g. DISPLAY_COORDS 0 0 1279 1023
+   disp_coords = strfind( msgs{ii}, 'DISPLAY_COORDS');
+   if disp_coords
+      %get last two entries in line
+      [disp_words,~] = proclinec( msgs{ii} );
+      h_pix_z = (str2double( disp_words{end-1})+1)/2;
+      v_pix_z = (str2double( disp_words{end} )+1)/2;
    end
    
    k=strfind( msgs{ii},'RECCFG' );
@@ -120,40 +173,71 @@ for ii = 1:length(msgs)
       end
    end % if k
    
-   % e.g. DISPLAY_COORDS 0 0 1279 1023
-   disp_coords = strfind( msgs{ii}, 'DISPLAY_COORDS');
-   if disp_coords
-      %get last two entries in line
-      [disp_words,~] = proclinec( msgs{ii} );
-      h_pix_z = (str2double( disp_words{end-1})+1)/2;
-      v_pix_z = (str2double( disp_words{end} )+1)/2;
-   end
-   
    pixres = ~isempty(strfind( msgs{ii},'RES')) && strcmp( msgs{ii}(1:3), 'END' );
    if pixres
       %get last two entries in line
       [pix_words,~] = proclinec( msgs{ii} );
       disp(['Vertical pixels/deg: ' pix_words{end}])
       disp(['Horizontal pixels/deg: ' pix_words{end-1}])
-      v_pix_deg = str2double( pix_words{end-1} );
-      h_pix_deg = str2double( pix_words{end} );
+      v_pix_deg(ind2) = str2double( pix_words{end-1} );
+      h_pix_deg(ind2) = str2double( pix_words{end} );
    end
+   vframe = ~isempty(strfind( msgs{ii},'VFRAME'));
+   if vframe
+      [vframe_words,~] = proclinec( msgs{ii} );
+      vf(ind2).framenum(v_found)  = str2double(vframe_words{4});
+      vf(ind2).frametime(v_found) = str2double(vframe_words{2});
+      v_found=v_found+1;
+   end
+   str_temp = strfind( msgs{ii}, 'END');
+   if str_temp == 1
+      [~, temp] = strtok(msgs{ii});
+      [temp,~] = strtok(temp);
+      end_time(ind2) = str2double( temp );
+      ind2 = ind2 + 1;
+   end
+   
 end % for ii
 
 
-% Now parse the EVENTS file for saccades, fixations, blinks, GAZE and/or HREF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Now parse the EVENTS file for saccades, fixations, blinks, GAZE and/or HREF
 events = importdata([pn fname '_events.asc'],char(13)); % '13' is CR char.
 f_found=1; s_found=1; b_found=1;
 out_found=0; out_type = 'not found';
+recnum = 1;
 for jj = 1:length(events)
+   %disp(events{jj})
+   if length(events{jj})>=17
+      split_line = proclinec(events{jj});
+      if length(split_line) > 3
+         % use the event time (3rd value in the split/processed event line and start_time array to determine the recnum
+         % if there is an event (EFIX, ESACC, EBLINK) before the first
+         % START  event, then there will be an error!
+         recnum = find(start_time <= str2double(split_line{3}), 1, 'last');
+      end
+      %       temptime = isdigit(events{jj}(1:17));
+      % 	  tt = find(temptime==1);
+      % 	  if ~isempty(tt)
+      % 		  start = tt(1);
+      % 		  stop = tt( diff(tt)>1 );
+      % 		  temptime = str2double(events{jj}(start:stop)); % the time of the event
+      
+      
+      % 		  if length(start_time) > recnum && temptime >= start_time(recnum+1)
+      % 			  recnum = recnum+1;
+      % 		  end
+      
+      % 	  end
+   end
    
    str_temp = strfind( events{jj}, 'EVENTS');
    if isempty(str_temp), str_temp = 0; end
    if str_temp == 1 && out_found == 0
-      if strfind( events{jj}, 'GAZE');
+      if strfind( events{jj}, 'GAZE')
          out_type = 'gaze';
          out_found = 1;
-      elseif strfind( events{jj}, 'HREF');
+      elseif strfind( events{jj}, 'HREF')
          out_type = 'href';
          out_found = 1;
       else
@@ -165,16 +249,16 @@ for jj = 1:length(events)
    str_temp = strfind( events{jj}, 'EFIX');
    if str_temp
       [fix_words, numwords]=proclinec(events{jj});
-      fix.eye{f_found}=fix_words{2};
-      fix.start(f_found) = str2double(fix_words{3});
-      fix.end(f_found) = str2double(fix_words{4});
-      fix.dur(f_found) = str2double(fix_words{5});
-      fix.xpos(f_found) = str2double(fix_words{6});
-      fix.ypos(f_found) = str2double(fix_words{7});
-      fix.pupi(f_found) = str2double(fix_words{8});
+      fix(recnum).eye{f_found}=fix_words{2};
+      fix(recnum).start(f_found) = str2double(fix_words{3});
+      fix(recnum).end(f_found) = str2double(fix_words{4});
+      fix(recnum).dur(f_found) = str2double(fix_words{5});
+      fix(recnum).xpos(f_found) = str2double(fix_words{6});
+      fix(recnum).ypos(f_found) = str2double(fix_words{7});
+      fix(recnum).pupi(f_found) = str2double(fix_words{8});
       if numwords > 8
-         fix.xres(f_found) = str2double(fix_words{9});
-         fix.yres(f_found) = str2double(fix_words{10});
+         fix(recnum).xres(f_found) = str2double(fix_words{9});
+         fix(recnum).yres(f_found) = str2double(fix_words{10});
       end
       f_found = f_found+1;
    end
@@ -182,19 +266,19 @@ for jj = 1:length(events)
    str_temp = strfind( events{jj}, 'ESACC');
    if str_temp
       [sac_words, numwords]=proclinec(events{jj});
-      sacc.eye{s_found}=sac_words{2};
-      sacc.start(s_found) = str2double(sac_words{3});
-      sacc.end(s_found) = str2double(sac_words{4});
-      sacc.dur(s_found) = str2double(sac_words{5});
-      sacc.xpos(s_found) = str2double(sac_words{6});
-      sacc.ypos(s_found) = str2double(sac_words{7});
-      sacc.xposend(s_found) = str2double(sac_words{8});
-      sacc.yposend(s_found) = str2double(sac_words{9});
-      sacc.ampl(s_found) = str2double(sac_words{10});
-      sacc.pvel(s_found) = str2double(sac_words{11});
+      sacc(recnum).eye{s_found}=sac_words{2};
+      sacc(recnum).start(s_found) = str2double(sac_words{3});
+      sacc(recnum).end(s_found) = str2double(sac_words{4});
+      sacc(recnum).dur(s_found) = str2double(sac_words{5});
+      sacc(recnum).xpos(s_found) = str2double(sac_words{6});
+      sacc(recnum).ypos(s_found) = str2double(sac_words{7});
+      sacc(recnum).xposend(s_found) = str2double(sac_words{8});
+      sacc(recnum).yposend(s_found) = str2double(sac_words{9});
+      sacc(recnum).ampl(s_found) = str2double(sac_words{10});
+      sacc(recnum).pvel(s_found) = str2double(sac_words{11});
       if numwords > 11
-         sacc.xres(s_found) = str2double(sac_words{12});
-         sacc.yres(s_found) = str2double(sac_words{13});
+         sacc(recnum).xres(s_found) = str2double(sac_words{12});
+         sacc(recnum).yres(s_found) = str2double(sac_words{13});
       end
       s_found=s_found+1;
    end
@@ -202,17 +286,19 @@ for jj = 1:length(events)
    str_temp = strfind( events{jj}, 'EBLINK');
    if str_temp
       [blink_words, ~]=proclinec(events{jj});
-      blink.eye{b_found} = blink_words{2};
-      blink.start(b_found) = str2double(blink_words{3});
-      blink.end(b_found) = str2double(blink_words{4});
-      blink.dur(b_found) = str2double(blink_words{5});
+      blink(recnum).eye{b_found} = blink_words{2};
+      blink(recnum).start(b_found) = str2double(blink_words{3});
+      blink(recnum).end(b_found) = str2double(blink_words{4});
+      blink(recnum).dur(b_found) = str2double(blink_words{5});
       b_found=b_found+1;
    end
-end %jj
+end %jj EVENTS scan loop
 
 
-% now we'll export the samples.
-eval([ '! ./edf2asc ' inputfile  ' ' datafile ' -s -y -miss NaN' ] )
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% now we'll export the samples.
+disp('')
+eval([ '! '  rd_path_str '/edf2asc ' inputfile ' ' datafile exp ' -s -t -y -miss NaN' ] )
 disp('EDF to ASCII conversion completed.')
 disp('Importing converted data into MATLAB.  Patience is a virtue.')
 raw = importdata([pn fname '_data.asc']);
@@ -236,7 +322,7 @@ for i = 1:rawlen
    tabs = find(temp == 9);
    numcols(i) = length(tabs);
    timecol{i} = raw{i}(1:tabs(1)-1);
-   out{i,:} = raw{i}(tabs(1): tabs(end)-1);
+   out{i,:} = pad( raw{i}(tabs(1): tabs(end)-1), 100 );
 end
 
 % check num of entries in each line, because number of channels
@@ -259,13 +345,15 @@ end
 numblocks=length(block);
 disp('')
 
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 cd(pn)
 files = 0;
 %filestarts = NaN(1,length(block));
 %filestops = NaN(1,length(block));
 for z = 1:length(block)
    temp = block{z};
-   out = str2num(temp); % because str2double gives 'NaN' for array
+   out  = str2num(temp); %#ok<ST2NM> % because str2double gives 'NaN' for array
    
    % display the number of channels, ask whether user wants to view them
    % or simply enter/verify channel order.
@@ -283,7 +371,7 @@ for z = 1:length(block)
    % For multiple records in a single EDF file, there will be gaps in time between
    % each experiment. Use them to separate the experiments.
    tdiff=t(2:end) - t(1:end-1);
-   filestops = find(tdiff > 100 )';
+   filestops = find(tdiff > 30 )';	% changed 100 to 30
    filestops =  [ filestops numsamps ];
    filestarts = [ 1 filestops(1:end-1)+1];
    numfilestops = length(filestops);
@@ -317,7 +405,7 @@ for z = 1:length(block)
       clear rh_chan rv_chan lh_chan lv_chan
       disp(' ')
       disp( [' Record ' num2str(files+x)] )
-      disp( ['  Starting time: ' num2str(start_times(x)) ])
+      disp( ['  Starting time: ' num2str(start_time(x)) ])
       disp( ['  Sampling frequency: ' num2str( sf(files+1) ) ])
       switch numcols
          case 7
@@ -392,65 +480,82 @@ for z = 1:length(block)
          end
       end
       
-      % time to write out to file(s)
       clear temp
+      if singleton, temp{x} = subjstr;
+      else,         temp{x} = [subjstr '_' num2str(files+x)]; end
+      
+      % save all the accessory data
+      % h_pix_deg, v_pix_deg, start_timess sacc, fix, blink
+      if exist('fix','var'),   extras.fix   = fix(x);   end
+      if exist('sacc','var'),  extras.sacc  = sacc(x);  end
+      if exist('blink','var'), extras.blink = blink(x); end
+      if exist('vf','var') && ~isempty(vf)
+         extras.vf = vf(x);
+      else
+         extras.vf = [];
+      end
+      extras.start_times = start_time(x);
+      extras.end_times   = end_time(x);
+      extras.out_type = out_type;
+      %extras.numsamps = numsamps; % total samples in the file
+      extras.numsamps = filestops(x)-filestarts(x)+1; % samples in this trial/record
+      extras.samptype = samptype;
+      extras.sampfreq = sf(x);
+      extras.h_pix_z = h_pix_z;
+      extras.v_pix_z = v_pix_z;
+      extras.h_pix_deg = h_pix_deg(x);	% each trial has its resolution in the msg.asc file
+      extras.v_pix_deg = v_pix_deg(x);
+      %extras.vf = vf;
+      eval( [temp{x} '_extras = extras;'] )
+      save([temp{x} '_extras.mat'],[temp{x} '_extras'] )
+      
+      % Conversion from EL GAZE values to degrees:
       dat = NaN();
+      seg = filestarts(x):filestops(x);
       if exist('lh_chan','var')
-         dat = -(out(filestarts(x):filestops(x),lh_chan)-h_pix_z) / h_pix_deg;
+         dat = ( out(seg,lh_chan)-h_pix_z )/h_pix_deg(x);
       end
       if exist('rh_chan','var')
-         dat = [dat,-(out(filestarts(x):filestops(x),rh_chan)-h_pix_z) / h_pix_deg];
+         dat = [dat,( out(seg,rh_chan)-h_pix_z )/h_pix_deg(x)];
       end
       if exist('lv_chan','var')
-         dat = [dat, (out(filestarts(x):filestops(x),lv_chan)-v_pix_z) / v_pix_deg];
+         dat = [dat, -( out(seg,lv_chan)-v_pix_z )/v_pix_deg(x)];
       end
       if exist('rv_chan','var')
-         dat = [dat, (out(filestarts(x):filestops(x),rv_chan)-v_pix_z) /v_pix_deg];
+         dat = [dat, -( out(seg,rv_chan)-v_pix_z )/v_pix_deg(x)];
       end
-      if singleton
-         temp{x} = [subjstr '.bin'];
-      else
-         temp{x} = [subjstr '_' num2str(files+x) '.bin'];
-      end
-      fid = fopen(temp{x}, 'w', 'n');
+      
+      % look for st,sv data?
+      stsv=0;
+      yorn=input('Do you want to try to add target data (y/n)? ','s');
+      if strcmpi(yorn,'y')
+         [st,sv] = tgt_recon(fname);
+         dat = [dat st];
+         dat = [dat sv];
+         stsv=1;
+      end      
+      
+      % Conversion from EL HREF values to degrees:            
+      
+      % write the EM data to file
+      fid = fopen([temp{x} '.bin'], 'w', 'n');
       fwrite(fid, dat, 'float');
       fclose(fid);
-      disp(['  Saved as ' '''' pn temp{x} ''''])
+      disp(['  Saved as ' pn temp{x} '.bin' ])
    end
    files = files + length(filestops);
 end % for z
 
-% save all the accessory data
-% h_pix_deg, v_pix_deg, start_timess sacc, fix, blink
-if exist('fix','var')
-   assignin('base','fix',fix);     extras.fix = fix;
-end
-if exist('sacc','var')
-   assignin('base','sacc',sacc);   extras.sacc = sacc;
-end
-if exist('blink','var')
-   assignin('base','blink',blink); extras.blink = blink;
-end
-
-extras.start_times = start_times;
-extras.out_type = out_type;
-extras.numsamps = numsamps;
-extras.h_pix_z = h_pix_z;
-extras.v_pix_z = v_pix_z;
-extras.h_pix_deg = h_pix_deg;
-extras.v_pix_deg = v_pix_deg;
-eval( [fname '_extras = extras;'] )
-save([fname '_extras.mat'],[fname '_extras'] )
-
 try cd(curdir); catch, cd(matlabroot); end
 
 disp(' ')
-disp(['Horizontal pixels/deg: ' num2str(v_pix_deg)])
-disp(['Vertical pixels/deg: '   num2str(h_pix_deg)])
-disp(' ')
+%disp(['Horizontal pixels/deg: ' num2str(v_pix_deg)])
+%disp(['Vertical pixels/deg: '   num2str(h_pix_deg)])
+%disp(' ')
 
 % because why would you record several records, each w/separate sampfreq?
-edfbiasgen(fname,pn,sf(1),files)
+edfbiasgen(fname,pn,sf(1),files,stsv);
+success=1;
 
 disp('If you don''t like the bias file, delete it and recreate it by running')
 disp('"biasgen" yourself. You will need to know the sampling frequency')

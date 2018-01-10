@@ -28,9 +28,11 @@
 % and strip away digits until we reach either an underscore or letters.  If letters,
 % we are done.  If an underscore remove it and then we are done.
 
-%function samp_freq = getbias(shortname);
+% tempSampFreq is read from the bias file for asyst, ascii or rawbin formatted files
+% tempSampFreq is read directly from file header for labview, ober and rtrv files
 
-tempfname=shortname;
+%tempfname=shortname;
+seriesname = getseriesname(shortname);
 
 numcand = 0;
 adj_cand = [];
@@ -51,51 +53,25 @@ end
 [r,c]=size(adj_cand);
 if c==1
    adj_fname = adj_cand{1};
- else
+else
    adj_fname = '';
 end
 
-% case 1 -- remove series number, i.e. the 1 or two digits at the end of name
-% and then strip the underescore.
-%while isdigit(tempfname(end))
-%   tempfname = tempfname(1:end-1);
-%end	
-%if strcmp(tempfname(end),'_')
-%   tempfname = tempfname(1:end-1);   
-%end
-
-% case 1 and case 2
-%adj_fname = lower(['adjbias_' tempfname '.txt']);
-%clear tempfname
-
 % plan b...
-if ~exist(adj_fname,'file'), adj_fname = 'adjbias.txt'; end
+%if ~exist(adj_fname,'file'), adj_fname = 'adjbias.txt'; end
 
 adjbias_err_flag = 1;
 if exist(adj_fname,'file')  % success will clear the flag.
-   readbias
- else
-   disp('   ')
-   disp('  ** No appropriately named adjust bias file found.')
-   yorn = lower(input('  ** Do you wish to search for a bias file? ','s'));
-   if strcmp(yorn,'y')
-      [adj_fname] = uigetfile('*.*', 'Select a adjust bias file');
-   end
-   disp('    ')
-   if exist(adj_fname,'file')
-      readbias(adj_fname)
-     else 
-      adj_fname = 'adjbias.txt';
+   % no need to look for another file.
+else
+   disp(' ')
+   disp(' ** No appropriately named adjust bias file found.')   
+   s_or_c = input(' ** Do you wish to (s)earch for or (c)reate one? ','s');
+   switch s_or_c
+      case 's'
+         [adj_fname] = uigetfile('*.*', 'Select an adjust bias file');
+      case 'c'
+         adj_fname = biasgen(seriesname);
    end
 end
-
-% maybe we have to enter by hand.  if there is no existing file or if does not
-% contain a reference to the loaded data file.
-if (~exist(adj_fname,'file')) || (adjbias_err_flag == 1)
-   inputbias
-end
-
-% tempSampFreq is read from the bias file for asyst, ascii or rawbin formatted files
-% tempSampFreq is read directly from file header for labview, ober and rtrv files
-%samp_freq_vect(total_files) = tempSampFreq;
-samp_freq = tempSampFreq;
+adjbiasvals = readbias(adj_fname,filename);
