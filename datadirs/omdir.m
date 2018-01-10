@@ -1,1 +1,0 @@
-function omdir( whatdir )global OMrootif ~exist('OMroot')   OMroot = '';endcd(findomtools)   if nargin == 1   eval( ['cd ' '''' whatdir ''''] )end
