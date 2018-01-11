@@ -113,7 +113,7 @@ disp('Searching for channel and frequency information.')
 % Use carriage return as delimiter. Each line of msgs is a single MSG.
 ind = 0; ind2 = 1; sfpos=NaN(); sf=NaN();
 msgs = importdata([pn fname '_msgs.asc'],char(13)); % '13' is CR char.
-eyes=cell(1); chname=cell();
+eyes=cell(1); chname=cell(1);
 v_found=1; %gaze = 0; href = 0;
 vf = struct;
 fix = struct;
@@ -367,10 +367,10 @@ for z = 1:length(block)
    % 6-digit time becomes 7-digit time during recording session.
    times_str = timecol(blockstarts(z):blockstops(z),1);
    %t=zeros(size(times_str,1),size(times_str,2));
-   t=str2double(times_str);
+   t_el=str2double(times_str);
    % For multiple records in a single EDF file, there will be gaps in time between
    % each experiment. Use them to separate the experiments.
-   tdiff=t(2:end) - t(1:end-1);
+   tdiff=t_el(2:end) - t_el(1:end-1);
    filestops = find(tdiff > 30 )';	% changed 100 to 30
    filestops =  [ filestops numsamps ];
    filestarts = [ 1 filestops(1:end-1)+1];
@@ -494,10 +494,10 @@ for z = 1:length(block)
       else
          extras.vf = [];
       end
-      extras.start_times = start_time(x);
-      extras.end_times   = end_time(x);
+      extras.start_times = start_time(x); 
+      extras.end_times   = end_time(x); % actually 1ms AFTER final sample!!!!!
       extras.out_type = out_type;
-      %extras.numsamps = numsamps; % total samples in the file
+
       extras.numsamps = filestops(x)-filestarts(x)+1; % samples in this trial/record
       extras.samptype = samptype;
       extras.sampfreq = sf(x);
@@ -505,6 +505,8 @@ for z = 1:length(block)
       extras.v_pix_z = v_pix_z;
       extras.h_pix_deg = h_pix_deg(x);	% each trial has its resolution in the msg.asc file
       extras.v_pix_deg = v_pix_deg(x);
+      extras.t_el.first = t_el(1);
+      extras.t_el.last  = t_el(end);
       %extras.vf = vf;
       eval( [temp{x} '_extras = extras;'] )
       save([temp{x} '_extras.mat'],[temp{x} '_extras'] )
