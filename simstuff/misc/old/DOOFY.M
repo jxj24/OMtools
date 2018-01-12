@@ -1,1 +1,0 @@
-function [y] = doofy(u)y(1) = u(1) + u(2);y(2) = u(1) - u(2);

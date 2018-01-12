@@ -29,7 +29,7 @@ points = str2double(char(f4')) ;
 
 %fseek(fid,1,'cof') ;
 f5 = fread(fid,4,'uchar') ;
-tempSampFreq = str2double(char(f5')) ;
+samp_freq = str2double(char(f5')) ;
 
 fseek(fid,1,'cof') ;
 f6 = fread(fid,100,'uchar') ;
@@ -99,7 +99,7 @@ internal = fread(fid, [n_int_arrays,n_ao_pts(1)], 'float32');
 internal = internal';
 
 if (~isempty(internal))
-   interp_factor = tempSampFreq/ao_smpf ;
+   interp_factor = samp_freq/ao_smpf ;
    cat_factor = ceil(points/(n_ao_pts*interp_factor)) ;
    clear n_ao_pts ao_smpf 
    %chair scaled to degs/sec

@@ -1,0 +1,140 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration build-checksum="2770960106" file="/Users/jacobs/Documents/MATLAB/OMtools/OMtools.prj" location="/Users/jacobs/Documents/MATLAB/OMtools" name="OMtools" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>OMtools</param.appname>
+    <param.authnamewatermark>Jonathan Jacobs</param.authnamewatermark>
+    <param.email>jxj24@case.edu</param.email>
+    <param.company>Daroff-Dell'Osso Ocular Motility Lab</param.company>
+    <param.summary>Read, explore, analyze and display eye-movement data.</param.summary>
+    <param.description />
+    <param.screenshot />
+    <param.version>2017.03</param.version>
+    <param.output>${PROJECT_ROOT}/OMtools.mltbx</param.output>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.guid>c2792607-e1b4-4b4b-8052-0df0f038d0af</param.guid>
+    <param.exclude.filters>% List files contained in your toolbox folder that you would like to exclude
+% from packaging.  Excludes should be listed relative to the toolbox folder.
+% Some examples of how to specify excludes are provided below:
+%
+% A single file in the toolbox folder:
+% .svn
+%
+% A single file in a subfolder of the toolbox folder:
+% example/.svn
+%
+% All files in a subfolder of the toolbox folder:
+% example/*
+%
+% All files of a certain name in all subfolders of the toolbox folder:
+% **/.svn
+%
+% All files matching a pattern in all subfolders of the toolbox folder:
+% **/*.bak
+%
+_other_omtools
+_Hackneyed_SIXa
+DATA
+_omtools_changes
+omprefs
+om_X_prefs
+personal
+plans for OMtools v2.txt
+_exclude.txt
+Icon
+.DS_Store
+.git
+.gitignore</param.exclude.filters>
+    <param.examples />
+    <param.demosxml />
+    <param.apps />
+    <param.docs />
+    <param.matlabpath.excludes>
+      <item>/omprefs</item>
+    </param.matlabpath.excludes>
+    <unset>
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
+      <param.description />
+      <param.screenshot />
+      <param.output />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.examples />
+      <param.demosxml />
+      <param.apps />
+      <param.docs />
+    </unset>
+    <fileset.rootdir>
+      <file>/Users/jacobs/Documents/MATLAB/OMtools</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>${PROJECT_ROOT}/analysis</file>
+      <file>${PROJECT_ROOT}/documentation</file>
+      <file>${PROJECT_ROOT}/eyeballs3d</file>
+      <file>${PROJECT_ROOT}/graphing</file>
+      <file>${PROJECT_ROOT}/labels</file>
+      <file>${PROJECT_ROOT}/omtoolsdirs</file>
+      <file>${PROJECT_ROOT}/overrides</file>
+      <file>${PROJECT_ROOT}/quick start.pdf</file>
+      <file>${PROJECT_ROOT}/rd</file>
+      <file>${PROJECT_ROOT}/utils</file>
+      <file>${PROJECT_ROOT}/zoomtool</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="/Users/jacobs/Documents/MATLAB/OMtools" name="OMtools.mltbx" optional="false">/Users/jacobs/Documents/MATLAB/OMtools/OMtools.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>/Applications/MATLAB_2016a/MATLAB_R2016a.app</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabcoder" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="embeddedcoder" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>true</unix>
+      <mac>true</mac>
+      <windows>false</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.12.4</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>maci64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

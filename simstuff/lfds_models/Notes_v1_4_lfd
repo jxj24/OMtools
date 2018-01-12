@@ -1,1 +1,0 @@
-Notes: v1.4_lfd4/21/09: Added a formula for the gain P1 in Target Velocity Reconstruction circuit that is based on the value put into Model Params for "Tenotomy Effect" (see TrgtReconGain_Tenot.xls file)

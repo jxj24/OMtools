@@ -59,8 +59,8 @@ cd(findomprefs)
 % Make sure that it will be drawn completely on the screen.
 % If not, move it so that it will.
 dErrFlag=0; fErrFlag=0;
-if ~exist('nafxXPos'), nafxXPos = []; end
-if ~exist('nafxYPos'), nafxYPos = []; end
+if ~exist('nafxXPos','var'), nafxXPos = []; end
+if ~exist('nafxYPos','var'), nafxYPos = []; end
 if isempty(nafxXPos)
    if ~dErrFlag
       eval(['load nafxprefs.mat'],'fErrFlag=1;');
@@ -77,12 +77,12 @@ if isempty(nafxXPos)
   cd(oldpath) 
 end
 
-if dErrFlag | fErrFlag
+if dErrFlag || fErrFlag
    nafxXPos = 20;
    nafxYPos = (maxHgt - fig_height)/2;
 end
 
-%% this is the first step towards eliminating the use of globals.
+% this is the first step towards eliminating the use of globals.
 nafxHandList = {qstr posArrayNAFXH velArrayNAFXH posLimNAFXH velLimNAFXH ...
           tauNAFXH numFovNAFXH fovCritNAFXH dblPlotNAFXH fovStatNAFXH tauVersH};
                 
@@ -180,7 +180,7 @@ posLimNAFXH = uicontrol('Style','popup','Units','pixels',...
     'tau_temp=tau_surf_temp(get(velLimNAFXH,''value''), get(posLimNAFXH,''value''));',...
     'set(tauNAFXH,''String'',num2str(tau_temp));',...
     'clear tau_temp tau_surf_temp']);
-%% 09/18/07: added code to set "tau" field to "empty" whenever pos/vel lims are changed %%
+% 09/18/07: added code to set "tau" field to "empty" whenever pos/vel lims are changed %
 
 y_pos=y_pos-30;
 uicontrol('Style', 'text', 'Units', 'pixels',...
@@ -201,7 +201,7 @@ velLimNAFXH = uicontrol('Style','popup','Units','pixels',...
     'tau_temp=tau_surf_temp(get(velLimNAFXH,''value''), get(posLimNAFXH,''value''));',...
     'set(tauNAFXH,''String'',num2str(tau_temp));',...
     'clear tau_temp tau_surf_temp']);
-%% 09/18/07: added code to set "tau" field to "empty" whenever pos/vel lims are changed %%
+% 09/18/07: added code to set "tau" field to "empty" whenever pos/vel lims are changed %
 
 
 y_pos=y_pos-30;
@@ -412,10 +412,10 @@ doneH = uicontrol('Style','Push','Units','Pixels',...
     'clear age_range numfov oldpath tau_vers2,',...
     'clear dblplot fovstat nafxtemp posArray velArray posLim velLim curdir',...
    ]);
-%%    'velLim   = str2num(get(velLimNAFXH,''string''));',...
+%    'velLim   = str2num(get(velLimNAFXH,''string''));',...
 
-%% finish up by calculating the initial Tau value based on the
-%% stored pos and vel settings
+% finish up by calculating the initial Tau value based on the
+% stored pos and vel settings
 tau_surf_temp=tau_surface(get(tauVersH,'value'));
 tau_temp=tau_surf_temp(get(velLimNAFXH,'value'), get(posLimNAFXH,'value'));
 set(tauNAFXH,'String',num2str(tau_temp));

@@ -4,7 +4,7 @@ function ztprefpath = findztprefs
 %              February 2011
 
 ztprefpath=[];
-[sep, sep2] = getsep;
+sep = getsep;
 
 % Does omprefs folder exist?  If it does, use zt preferences saved loose in omprefs folder.
 % If it does not exist, use 'findztprefs' and use ztprefs folder in zoomtool folder.
@@ -17,94 +17,130 @@ ztprefpath=[];
 %end
 
 comp = lower( computer('arch') );
-if strcmp(comp(1),'m') | strcmp(comp(1),'g')
-	homedir = getenv('HOME');
-	documents = 'documents';
- elseif strcmp(comp(1),'p')| strcmp(comp(1),'w')
+if strcmp(comp(1),'m') || strcmp(comp(1),'g')
+   homedir = getenv('HOME');
+   documents = 'documents';
+elseif strcmp(comp(1),'p') || strcmp(comp(1),'w')
    homedir = getenv('USERPROFILE');
    documents = 'My Documents';
-end 
+end
 
 oldpath = pwd;
 cd(matlabroot)
 cd ..
 matlabdir = pwd;
 
-% known locations for zoomtool prefs on OS X as of ML2010b
+% possible locations for zoomtool prefs as of ML2010b
 locations = {
-              {'matlabdir', 'omtools', 'zoomtool'}; ...
-				  {'matlabroot', 'omtools', 'zoomtool'}; ...
-				  {'matlabroot', 'toolbox', 'omtools', 'zoomtool'}; ...
-			     {'homedir', 'documents', 'MATLAB', 'zoomtool'}; ...
-			     {'homedir', 'documents', 'MATLAB', 'omtools', 'zoomtool'}; ...
-			   };
+   {'matlabdir','omtools','zoomtool'}; ...
+   {'matlabroot','omtools','zoomtool'}; ...
+   {'matlabroot','toolbox','omtools', 'zoomtool'}; ...
+   {'homedir','documents','MATLAB','omtools_prefs'}; ...
+   {'homedir','documents','MATLAB','zoomtool'}; ...
+   {'homedir','documents','MATLAB','omtools','zoomtool'}; ...
+   {'homedir','documents','MATLAB','Add-Ons','toolboxes','omtools','code','zoomtool'}; ...
+   };
 
 ztf=0; ztpf=0;             %% zoomtool folders found, ztprefs folders found
 for j=1:length(locations)
-	dir_err=0;
-	temp=eval(char( locations{j}(1) ));
-   if ~exist( temp, 'dir')    
-       disp( ['dir_error: ' locations{j}] );
-       continue;
+   dir_err=0;
+   temp=eval(char( locations{j}(1) ));
+   if ~exist( temp, 'dir')
+      disp( ['dir_error: ' locations{j}] );
+      continue;
    end
    cd(temp)
-	
-	% if there are given subdirectories, navigate to them.
-	numsubdir = length(locations{j});
-	if numsubdir > 1
-		dir_err=0;
-		for k=2:numsubdir
-			temp=char( locations{j}(k) );
-			eval('cd(temp)','dir_err=1;')
-		end % for k
-	end %if numsubdir
-	
-	if ~dir_err   %% we have found a valid zoomtools folder
-	   ztf = ztf+1;
-	   ztpath{ztf} = pwd;
-		dirfiles = dir;
-		for i = 1:length(dirfiles)
-			  temp = lower( deblank(dirfiles(i).name) );
-			if strcmp( temp, 'ztprefs')				%% we have found a valid zt prefs folder
-				ztpf = ztpf+1;
-				ztprefpath{ztpf} = [pwd sep 'ztprefs'];				
-				%return
-			end
-		end %for i
-	end %if ~dir_err	
-
+   
+   % if there are given subdirectories, navigate to them.
+   numsubdir = length(locations{j});
+   if numsubdir > 1
+      dir_err=0;
+      for k=2:numsubdir
+         temp=char( locations{j}(k) );
+         eval('cd(temp)','dir_err=1;')
+      end % for k
+   end %if numsubdir
+   
+   if ~dir_err   % we have found a valid zoomtools folder
+      ztf = ztf+1;
+      ztpath{ztf} = pwd;
+      dirfiles = dir;
+      for i = 1:length(dirfiles)
+         temp = deblank(dirfiles(i).name);
+         if strcmpi( temp, 'ztprefs')				% we have found a valid zt prefs folder
+            ztpf = ztpf+1;
+            ztprefpath{ztpf} = [pwd sep 'ztprefs'];
+            %return
+         end
+      end %for i
+   end %if ~dir_err
+   
 end %for j
 
 if ztpf<1
-	disp('Could not find any zoomtool prefs location. ')
-	disp('I will create the folder ''ztprefs'' in the zoomtool folder. ')
-	if ztf == 1 % unlikely that ztf=0 since we are running a program from zoomtool
-		ztpath = char(ztpath{1});
-		cd(ztpath)
-		mkdir('ztprefs')
-		ztprefpath = [ztpath sep 'ztprefs'];
-		cd('ztprefs')
-	  elseif ztf > 1
-	   ztprefpath = '';
-	   disp('Multiple zoomtool folders found. You should only have one zoomtool folder')
-	   disp('on your MATLAB path. Please remove or rename all redundant zoomtool folders.')
-	   error('Cannot save zoomtool preferences. Aborting.')
-	  else
-	   disp('Could not find a zoomtool folder. Make sure it is on your MATLAB path.')
-	   error('Can not save zoomtool preferences. Aborting. [ztf==0]')
-	end
- elseif ztpf == 1
- 	ztprefpath = char(ztprefpath{1});
- elseif ztpf >1
+   disp('Could not find any zoomtool prefs location. ')
+   disp('I will create a "ztprefs" folder.')
+   disp('Where do you want me to make it?')
+   disp(' 1. In your existing zoomtool folder.')
+   disp([' 2. In ' homedir sep documents sep ' omtools_prefs (recommended)' ])
+   ztchoice = input('--> ');
+   
+   if ztchoice == 1
+      if ztf == 1 % unlikely that ztf=0 since we are running a program from zoomtool
+         ztpath = char(ztpath{1});
+         cd(ztpath)
+         mkdir('ztprefs')
+         ztprefpath = [ztpath sep 'ztprefs'];
+         cd('ztprefs')
+      elseif ztf > 1
+         %ztprefpath = '';
+         disp('Multiple zoomtool folders found. You should only have one zoomtool folder')
+         disp('on your MATLAB path. Please remove or rename all redundant zoomtool folders.')
+         error('Cannot save zoomtool preferences. Aborting.')
+      else
+         disp('Could not find a zoomtool folder. Make sure it is on your MATLAB path.')
+         error('Can not save zoomtool preferences. Aborting. [ztf==0]')
+      end
+      
+   elseif ztchoice==2
+      cd([homedir sep documents sep 'MATLAB'])
+      if ~exist( [homedir sep documents sep 'MATLAB' sep 'omtools_prefs'],'dir' )
+         mkdir('omtools_prefs')
+      end
+      cd('omtools_prefs')
+      mkdir('ztprefs'); cd('ztprefs')
+      ztprefpath = pwd;
+      cd(oldpath)
+   end
+   
+elseif ztpf == 1
+   ztprefpath = char(ztprefpath{1});
+elseif ztpf >1
    disp('Multiple zoomtool pref locations found:')
    for m=1:ztpf
-   	disp( [ num2str(m) ':  ' char(ztprefpath{m}) ] )
+      disp( [ num2str(m) ':  ' char(ztprefpath{m}) ] )
    end
-   %% which zt dir to prefer?
-   m=-1;
-   while(m<0 | m>ztpf)
-   	m = input('Which zoomtool preferences folder should I use? ("0" to abort.)');
+   disp([char(13) 'Current best practice is to use one in your home directory.'])
+   disp('Which one would you like to use? ')
+   choice = 0;
+   while choice < 1
+      choice = input('--> ');
    end
-   if m==0, return; end
+   temp = char(ztprefpath{ztpf});
+   disp('Would you like to inactivate the other preference directory? (y/n)')
+   yorn=input('--> ','s');
+   if strcmpi(yorn,'y')
+      for m=1:ztpf
+         if choice == m
+            % do nothing
+         else
+            % add an 'x' into the name of the other omtools folders
+            a = strfind(ztprefpath{m}, 'ztprefs');
+            b = [ ztprefpath{m}(1:a-1) 'zt_x_' ztprefpath{m}(a+2:end) ];
+            movefile(ztprefpath{m}, b);
+         end
+      end
+   end
    ztprefpath = char(ztprefpath{m});
 end
+cd(oldpath)

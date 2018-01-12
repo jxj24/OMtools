@@ -1,1 +1,0 @@
-pts = find(pwout==0);stimdur = twClock(pts(2)-1) - twClock(pts(1))

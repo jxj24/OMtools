@@ -8,6 +8,7 @@ classdef emData
       filename = '';
       comments = '';
       %iscalibrated=0;
+      vframes = [];
       calibrations = [];
       samp_freq = 0; % uint?
       numsamps =  0; % ?, uint32?

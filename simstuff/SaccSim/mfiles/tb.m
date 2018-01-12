@@ -1,1 +1,0 @@
-% tb.m: run testbedfunction tb(rundur)if nargin == 0   rundur = 1.0;endtic;[a,b,c]=rk45('testbed', rundur, [], [1e-3,0.001,0.001,0,0,2]);a=toc;disp(['Elapsed time: ' num2str(a) ' seconds.'])

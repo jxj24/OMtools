@@ -1,1 +1,0 @@
-ln -s <path to target OMsat in ML5> ./<path to ML6.5 root>OMroot.txt and dataroot.txt files NO LONGER contain drive name, but rather start from root, e.g./Applications/Matlab13or /Volumes/Wandering Eye/OMlab/DATA

@@ -1,0 +1,12 @@
+_other_omtools
+_Hackneyed_SIXa
+DATA
+_OMtools_pub
+omprefs
+personal
+omtools_installer
+plans for OMtools v2.txt
+_exclude.txt
+.DS_Store
+.git
+.gitignore
