@@ -89,6 +89,7 @@ if ztpf<1
    disp(' 1. In your existing zoomtool folder.')
    disp([' 2. In ' homedir sep documents sep ' omtools_prefs (recommended)' ])
    disp([' 3. In ' sharedir sep 'omtools_prefs (if multiple user accounts run MATLAB)' ])
+   commandwindow
    ztchoice = input('--> ');
    
    if ztchoice == 1
@@ -140,10 +141,12 @@ elseif ztpf >1
    disp('Which one would you like to use? ')
    choice = 0;
    while choice < 1
+      commandwindow
       choice = input('--> ');
    end
    temp = char(ztprefpath{ztpf});
    disp('Would you like to inactivate the other preference directory? (y/n)')
+   commandwindow
    yorn=input('--> ','s');
    if strcmpi(yorn,'y')
       for m=1:ztpf
@@ -159,4 +162,8 @@ elseif ztpf >1
    end
    ztprefpath = char(ztprefpath{m});
 end
-cd(oldpath)
+
+try
+   cd(oldpath)
+catch
+end
