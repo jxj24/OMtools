@@ -1,0 +1,1 @@
+Changing axis label ticks:Select plotUse axisedit to change limits if neededÈset(gca,'xtick',[1.5 2.0 2.5 3.0])Èset(gca,'xtickl',['0  ';'0.5';'1  ';'1.5'])  [sets ticks to 0,0.5,1,1.5]	Note spaces after 0 and 1 to preserve # of columns per entry]	Same for 'ytick' and 'ytickl'
