@@ -35,6 +35,7 @@ locations = {
    };
 
 omtf=0;								%% omtools folders found
+omtoolspath=[];
 for j=1:length(locations)   
    dir_err=0;
    temp=eval( char(locations{j}(1)) );
@@ -73,6 +74,7 @@ if length(omtoolspath) > 1
    end
    omtp=0;
    while omtp <1 || omtp > length(omtoolspath)
+      commandwindow
       omtp = input('Select which OMtools you want to use: ');
    end
    omtoolspath = char(omtoolspath{omtp});

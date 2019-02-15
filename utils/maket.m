@@ -14,8 +14,8 @@ end
 
 if nargin == 1
    samp_vect = samp_freq;
-   if (isempty(samp_vect)) | (samp_vect == 0)
-      while (isempty(samp_vect)) | (samp_vect == 0)
+   if (isempty(samp_vect)) || (samp_vect == 0)
+      while (isempty(samp_vect)) || (samp_vect == 0)
          samp_vect = input( 'Enter the sampling frequency: ');
       end
    end

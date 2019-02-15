@@ -88,6 +88,7 @@ if ompf<1
    disp( ' 1. In your existing OMtools folder.')
    disp([' 2. In ' homedir sep documents sep 'MATLAB' sep 'omtools_prefs (recommended)' ])
    disp([' 3. In ' sharedir sep 'MATLAB' sep 'omtools_prefs (if multiple user accounts run MATLAB)' ])
+   commandwindow
    ompchoice = input('--> ');
    
    if ompchoice == 1
@@ -134,10 +135,12 @@ elseif ompf >1
    disp('(Best practice is to use one in your home directory.)')
    choice = 0;
    while choice < 1
+      commandwindow
       choice = input('--> ');
    end
    temp = char(omprefpath{ompf});
    disp('Would you like to inactivate the other installations? (y/n)')
+   commandwindow
    yorn=input('--> ','s');
    if strcmpi(yorn,'y')
       for m=1:ompf
@@ -155,4 +158,7 @@ elseif ompf >1
    return
 end %if ompf
 %cd(omtoolspath); cd('..')
-cd(oldpath)
+try
+   cd(oldpath)
+catch
+end

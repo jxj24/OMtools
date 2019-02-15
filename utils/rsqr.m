@@ -1,1 +1,0 @@
-function [Rsq] = rsqr(y,ypred)dev = y - mean(y);          % deviations - measure of spreadSST = sum(dev.^2);          % total variation to be accounted forresid = y - ypred;          % residuals - measure of mismatchSSE = sum(resid.^2);        % variation NOT accounted forRsq = 1 - SSE/SST;          % percent of error explained

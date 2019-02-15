@@ -13,7 +13,7 @@ if nargin == 0
    return
 end
 
-sep = filesep;
+%sep = filesep;
 omtf = size(omtoolspath,1);
 
 if omtf < 1
@@ -25,13 +25,13 @@ if omtf < 1
    return
 elseif omtf == 1
    %omtoolspath = char(omtoolspath{1});
-   disp( ['Using the OMtools installation located at ' omtoolspath])
+   disp( ['Using the OMtools located at ' omtoolspath])
 elseif omtf > 1
    disp('Multiple OMtools folders found:')
    for m = 1:omtf
       disp([num2str(m) ': ' char(omtoolspath{m}) ] )
    end
-   disp([char(13) 'Current best practice is to use one in your home directory.'])
+   disp([newline 'Best practice is to use one in your home directory.'])
    disp('Which one would you like to use? ')
    choice = 0;
    while choice < 1
