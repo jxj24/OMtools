@@ -1,0 +1,1 @@
+% linetggl.m: Used by zoomtool to toggle data traces on and off.% Written by: Jonathan Jacobs%             February 1996  (last mod: 02/13/97) function linetoggl(lineH, plotFig) oldstate = get(lineH,'visible');if strcmp(oldstate, 'on')   newstate = 'off'; elseif strcmp(oldstate, 'off')   newstate = 'on';endset(lineH,'Visible', newstate);figure(plotFig);

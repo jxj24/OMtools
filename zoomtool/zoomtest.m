@@ -1,0 +1,1 @@
+function zoomtest(y)x=1:2500;if nargin == 0   y = 1;endfigureif y == 1   plot(x,sin(pi*x/125), x,1.5*sin(pi*x/250), x,0.5*sin(pi*x/500)); elseif y == 2    plot(x, 1+sin(pi*x/250), x,sin(pi*x/250), x,-1+sin(pi*x/250)); endzoomtool
