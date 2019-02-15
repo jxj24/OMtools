@@ -8,52 +8,37 @@ function [EMD,emd_info] = getEMD(emd_name)
 
 EMD = [];
 % check for emData struct in memory. if only one, assume it.
-varnames=evalin('base','whos');
+temp=evalin('base','whos');
 cnt=0;
-vn_len=length(varnames);
-name=cell(vn_len,1);
+tlen=length(temp);
+name=cell(tlen,1);
 
-% look at data already in memory
-for i=1:vn_len   
-   if strcmpi(varnames(i).class,'emData')
-      % no name specified, collect all names
+for i=1:tlen
+   if strcmpi(temp(i).class,'emData')
       if nargin==0
          cnt=cnt+1;
-         name{cnt}=varnames(i).name;
+         name{cnt}=temp(i).name;
       else
-         if strcmpi( strtok(emd_name,'.'),varnames(i).name )
-            %can only have one match
-            name{1}=varnames(i).name;
+         if strcmpi( strtok(emd_name,'.'),temp(i).name )
+            name{1}=temp(i).name;
             cnt=1;
             break
          end
       end
-   end      
-end
+   elseif strcmpi(temp(i).class,'char')
 
-if nargin==0
-   disp('0) Cancel')
-   for i=1:cnt
-      disp([num2str(i) ') ' name{i}] )
    end
-   which=-1;
-   while which<0 || which>cnt
-      which=input('Which data do you want to use? ');
-   end
-   if which==0,disp('Canceled.');return;end
-   EMD = evalin('base',name{which});
-   cnt = 1;
 end
 
 switch cnt
    case 0
-      disp(['No data matching ' emd_name ' in memory. '])
-      disp('You need to load a file using "rd".')
+      disp('No data in memory. You need to load a file using "rd".')
       EMD=[];
       emd_info = [];
       return
    case 1
       EMD = evalin('base',name{1});
+      %evalin('base', ['tempEMD=' a{1} ';']);
       if nargin==1
       else
          fprintf('%s selected\r',name{1});
@@ -68,13 +53,29 @@ switch cnt
             for j=1:length(f_info)
                if strcmpi(name{i},f_info(j).filename)
                   EMD = evalin('base',name{i});
-                  if strcmpi(EMD.pathname,f_info(j)) % bingo!
+                  if strcmpi(EMD.pathname,f_info(j))
+                     % bingo!
                      break
+                  else
+                     %
                   end
                end %if strcmpi(name
             end
          end %for i
-      end % if ishandle(
+         
+      else % prompt for which one
+         disp('0) Cancel')
+         for i=1:cnt
+            disp([num2str(i) ') ' name{i}] )
+         end
+         which=-1;
+         while which<0 || which>cnt
+            which=input('Which data do you want to use? ');
+         end
+         if which==0,disp('Canceled.');return;end
+         EMD = evalin('base',name{which});
+         %evalin('base', ['tempEMD=' a{which} ';']);
+      end
 end %switch
 
 emd_info.filename = EMD.filename;

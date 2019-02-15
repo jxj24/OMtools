@@ -1,0 +1,1 @@
+% datstat: show what data is loaded/selected.if ~exist('namearray')   disp('No files loaded')   returnenddisp('Files loaded:')disp(namearray)disp(' ')disp('Files selected:')disp(what_f_array)

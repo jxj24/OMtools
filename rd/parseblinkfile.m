@@ -6,7 +6,8 @@ field_name = cell2mat( fieldnames(a) );
 extras = eval([ 'a.' field_name] );
 
 if isfield(extras, 'blink')
-	blink = extras.blink;
+	blink = extras.blink;   
+   if isempty(fieldnames(blink)), return; end
 	numblinks=length(blink.eye);
 	data.start_times = extras.start_times;
 	data.h_pix_z = extras.h_pix_z;

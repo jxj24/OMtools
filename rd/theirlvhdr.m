@@ -52,19 +52,19 @@ if (new_flag)
    fseek(fid,1,'cof') ;
    f8 = fread(fid,6,'uchar') ;
    ao_smpf = str2double(char(f8')) ;
-
+   
    fseek(fid,1,'cof') ;
    f9 = fread(fid,6,'uchar') ;
    n_ao_pts = str2double(char(f9')) ;
-
+   
    fseek(fid,1,'cof') ;
    f10 = fread(fid,2,'uchar') ;
    n_int_arrays = str2double(char(f10')) ;
-
+   
    fseek(fid,1,'cof') ;
    f11 = fread(fid,40,'uchar') ;
    ch_labels = char(f11') ;
-
+   
    ch_lab_temp = lower(ch_labels) ;
 elseif (only_ai_flag)
    n_int_arrays = 0 ;
@@ -73,27 +73,27 @@ elseif (only_ai_flag)
    fseek(fid,1,'cof') ;
    f11 = fread(fid,40,'uchar') ;
    ch_labels = char(f11') ;
-
+   
    ch_lab_temp = lower(ch_labels) ;
 else
    fseek(fid,-10,'cof') ;
    ao_smpf = 100 ;
    n_int_arrays = 6 ;
    n_ao_pts = input('No of points in Analog Out: ') ;
-end   
+end
 
 vpixx_stim = 'none';
 verge_stim = 'none';
 
 clear f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11
-clear new_flag only_ai_flag 
+clear new_flag only_ai_flag
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %internal arrays
 % data in volts
-% since AO may have a different frequency than AI 
+% since AO may have a different frequency than AI
 % we need to interpolate to get correct array lengths
-% arrays must be concatenated depending on length 
+% arrays must be concatenated depending on length
 % of input
 internal = fread(fid, [n_int_arrays,n_ao_pts(1)], 'float32');
 internal = internal';
@@ -101,7 +101,7 @@ internal = internal';
 if (~isempty(internal))
    interp_factor = samp_freq/ao_smpf ;
    cat_factor = ceil(points/(n_ao_pts*interp_factor)) ;
-   clear n_ao_pts ao_smpf 
+   clear n_ao_pts ao_smpf
    %chair scaled to degs/sec
    chair = internal(:,1).*30 ;
    chair = interp(chair,interp_factor) ;
@@ -118,7 +118,7 @@ if (~isempty(internal))
    for i=1:cat_factor
       th = cat(1,th,th1) ;
    end
-   clear th1 
+   clear th1
    th = th(1:points) ;
    %y_laser scaled to degs
    tv = internal(:,3).*4.508 ;
@@ -142,78 +142,78 @@ if (~isempty(internal))
    
    switch n_int_arrays
       
-   case 5,
-      dig_p0 = internal(:,5) ;
-      dig_p0 = interp(dig_p0,interp_factor) ;
-      dig_temp = zeros(length(dig_p0),1) ;
-      dig_temp1 = dig_temp ;
-      for i=1:cat_factor
-         dig_p0 = cat(1,dig_p0,dig_temp1) ;
-      end
-      clear dig_temp1
-      dig_p0 = dig_p0(1:points) ;
-      
-      
-   case 6,
-      %shutters and laser diode are pre-sclaed
-      xy = internal(:,5) ;
-      xy = interp(xy,interp_factor) ;
-      xy1 = xy ;
-      for i=1:cat_factor
-         xy = cat(1,xy,xy1) ;
-      end
-      xy = xy(1:points) ;
-      %to take care that laser diode on is logic high
-      xy = 1-xy ;
-      
-      proj_sh = internal(:,6) ;
-      proj_sh = interp(proj_sh,interp_factor) ;
-      proj_sh1 = proj_sh ;
-      for i=1:cat_factor
-         proj_sh = cat(1,proj_sh,proj_sh1) ;
-      end
-      proj_sh = proj_sh(1:points) ;
-      
-   case 8,
-      %port 0
-      dig_p0 = internal(:,5) ;
-      dig_p0 = interp(dig_p0,interp_factor) ;
-      dig_temp = zeros(length(dig_p0),1) ;
-      for i=1:cat_factor
-         dig_p0 = cat(1,dig_p0,dig_temp) ;
-      end
-      dig_p0 = dig_p0(1:points) ;
-      
-      %port 1
-      dig_p1 = internal(:,6) ;
-      dig_p1 = interp(dig_p1,interp_factor) ;
-      dig_temp = zeros(length(dig_p1),1) ;
-      for i=1:cat_factor
-         dig_p1 = cat(1,dig_p1,dig_temp) ;
-      end
-      dig_p1 = dig_p1(1:points) ;
-      
-      %port 2
-      dig_p2 = internal(:,7) ;
-      dig_p2 = interp(dig_p2,interp_factor) ;
-      dig_temp = zeros(length(dig_p2),1) ;
-      for i=1:cat_factor
-         dig_p2 = cat(1,dig_p2,dig_temp) ;
-      end
-      dig_p2 = dig_p2(1:points) ;
-      
-      %port 3
-      dig_p3 = internal(:,8) ;
-      dig_p3 = interp(dig_p3,interp_factor) ;
-      dig_temp = zeros(length(dig_p3),1) ;
-      for i=1:cat_factor
-         dig_p3 = cat(1,dig_p3,dig_temp) ;
-      end
-      clear dig_temp
-      dig_p3 = dig_p3(1:points) ;
-      
-   otherwise,
+      case 5
+         dig_p0 = internal(:,5) ;
+         dig_p0 = interp(dig_p0,interp_factor) ;
+         dig_temp = zeros(length(dig_p0),1) ;
+         dig_temp1 = dig_temp ;
+         for i=1:cat_factor
+            dig_p0 = cat(1,dig_p0,dig_temp1) ;
+         end
+         clear dig_temp1
+         dig_p0 = dig_p0(1:points) ;
+         
+         
+      case 6
+         %shutters and laser diode are pre-sclaed
+         xy = internal(:,5) ;
+         xy = interp(xy,interp_factor) ;
+         xy1 = xy ;
+         for i=1:cat_factor
+            xy = cat(1,xy,xy1) ;
+         end
+         xy = xy(1:points) ;
+         %to take care that laser diode on is logic high
+         xy = 1-xy ;
+         
+         proj_sh = internal(:,6) ;
+         proj_sh = interp(proj_sh,interp_factor) ;
+         proj_sh1 = proj_sh ;
+         for i=1:cat_factor
+            proj_sh = cat(1,proj_sh,proj_sh1) ;
+         end
+         proj_sh = proj_sh(1:points) ;
+         
+      case 8
+         %port 0
+         dig_p0 = internal(:,5) ;
+         dig_p0 = interp(dig_p0,interp_factor) ;
+         dig_temp = zeros(length(dig_p0),1) ;
+         for i=1:cat_factor
+            dig_p0 = cat(1,dig_p0,dig_temp) ;
+         end
+         dig_p0 = dig_p0(1:points) ;
+         
+         %port 1
+         dig_p1 = internal(:,6) ;
+         dig_p1 = interp(dig_p1,interp_factor) ;
+         dig_temp = zeros(length(dig_p1),1) ;
+         for i=1:cat_factor
+            dig_p1 = cat(1,dig_p1,dig_temp) ;
+         end
+         dig_p1 = dig_p1(1:points) ;
+         
+         %port 2
+         dig_p2 = internal(:,7) ;
+         dig_p2 = interp(dig_p2,interp_factor) ;
+         dig_temp = zeros(length(dig_p2),1) ;
+         for i=1:cat_factor
+            dig_p2 = cat(1,dig_p2,dig_temp) ;
+         end
+         dig_p2 = dig_p2(1:points) ;
+         
+         %port 3
+         dig_p3 = internal(:,8) ;
+         dig_p3 = interp(dig_p3,interp_factor) ;
+         dig_temp = zeros(length(dig_p3),1) ;
+         for i=1:cat_factor
+            dig_p3 = cat(1,dig_p3,dig_temp) ;
+         end
+         clear dig_temp
+         dig_p3 = dig_p3(1:points) ;
+         
+      otherwise
    end
    
- else
+else
 end

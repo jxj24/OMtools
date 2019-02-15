@@ -1,17 +1,43 @@
 % findfilepath.m: search macOS filesystem for path of requested file
-% usage: pn = findfilepath(fn)
-% where fn is a text string of the file's name
+% usage: [pathname,filename] = findfilepath(searchname)
+% where searchname is a text string of the file's name
+%
+% If there are multiple results, you will be prompted to select the desired
+% file from a displayed list.
+%
+% Currently Mac ONLY, because it uses the OS X shell command 'mdfind'
+% Windows probably would use the WHERE /R command
 
 % Written by: Jonathan Jacobs
-% January 2018
+% January 8 2018
 
-function pn = findfilepath(fn)
+function [pn, fn] = findfilepath(fn, start_dir)
 
-if isempty(fn),return;end
+if ~contains(computer,'MAC')
+   disp('Sorry, "findfilepath" is Mac ONLY')
+   pn=[];
+   return
+end
+pn = [];
 
-srchstr = ['mdfind -name ' fn];
+switch nargin
+	case 0
+		help findfilepath
+		return
+	case 1
+		srchstr = ['mdfind -name ' fn];
+	case 2
+		srchstr = ['mdfind -name ' fn ' -onlyin ' start_dir];
+	otherwise
+		return
+end
 
 [~,res] = system(srchstr);
+if isempty(res)
+	disp('No matching files found')
+	return
+end
+
 linends=find(res==10);
 
 if length(linends)==1
@@ -32,6 +58,8 @@ else
    end
    if which==0,disp('Canceled.');return;end
 end
+
 res=fname{which};
-seps = find(res=='/');
+seps = find(res==filesep);
 pn = res(1: seps(end));
+fn = res(seps(end)+1:end-1);

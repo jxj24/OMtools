@@ -32,35 +32,56 @@
 % tempSampFreq is read directly from file header for labview, ober and rtrv files
 
 %tempfname=shortname;
+function [adj_fname,adjbiasvals] = getbias(filename)
+
+global samp_freq
+
+[shortname,~] = strtok(filename,'.');
 seriesname = getseriesname(shortname);
 
 numcand = 0;
-adj_cand = [];
 adjlist = dir('adjbias*');
+if isempty(adjlist)
+   %disp('No bias file available!')
+   adj_fname='no adjbias file found';
+   adjbiasvals=[];
+   return
+end
+
 numfiles = length(adjlist);
+adj_cand = cell(numfiles);
+orig_adjbiasname=[];
 for j = 1:numfiles
    adjfilename = adjlist(j).name;
+   if strcmpi(adjfilename,'adjbias.txt')
+      orig_adjbiasname=adjfilename;
+   end
    adjfilename = strtok(adjfilename,'.');
-   [temp,adjfilename] = strtok(adjfilename,'_');
-   adjfilename = adjfilename(2:end);
-   
+   [temp,adjfilename] = strtok(adjfilename,'_'); %#ok<STTOK>
+   if isempty(adjfilename)
+      adjfilename=temp;
+   else
+      adjfilename = adjfilename(2:end);
+   end
    if strfind( lower(shortname),lower(adjfilename) ) == 1
       numcand = numcand + 1;
       adj_cand{numcand} = adjlist(j).name;
    end
 end
 
-[r,c]=size(adj_cand);
-if c==1
+%[~,c]=size(adj_cand);
+if numcand==0 && ~isempty(orig_adjbiasname)
+   adj_fname = orig_adjbiasname;
+elseif numcand==1
    adj_fname = adj_cand{1};
 else
-   adj_fname = '';
+   disp('multiple candidates!')
 end
 
 % plan b...
 %if ~exist(adj_fname,'file'), adj_fname = 'adjbias.txt'; end
 
-adjbias_err_flag = 1;
+%adjbias_err_flag = 1;
 if exist(adj_fname,'file')  % success will clear the flag.
    % no need to look for another file.
 else
@@ -69,9 +90,13 @@ else
    s_or_c = input(' ** Do you wish to (s)earch for or (c)reate one? ','s');
    switch s_or_c
       case 's'
-         [adj_fname] = uigetfile('*.*', 'Select an adjust bias file');
+         adj_fname = uigetfile('*.*', 'Select an adjust bias file');
       case 'c'
          adj_fname = biasgen(seriesname);
+      otherwise
+         disp('Canceling.')
+         adj_fname=[]; adjbiasvals=[];
+         return
    end
 end
-adjbiasvals = readbias(adj_fname,filename);
+adjbiasvals = readbias(adj_fname,filename,samp_freq);

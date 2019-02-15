@@ -4,18 +4,13 @@
 % written by: Jonathan Jacobs
 %             February 2004  (last mod: 03/13/17)
 
+function newdata = applybias(newdata,adjbiasvals)
+
 % clear the eyelink blinks
 %newdata=deblink(newdata);  % BIG problem with deblink is that
 % many MATLAB routines choke on NaNs.  Dumb.
 % So-so sol'n: use 'zeronans' and 'renanify' on
 % either side of troubled routines.
-
-% we now know the channel names, so we can
-% read in the unfolding file, if it exists, and apply the fixes.
-% Only needed for IR data that has saturated, and reflected the data beyond the
-% saturation limit to be LESS than the limit. Should never occur anymore.
-% This is maintained for historical reasons
-unfold
 
 z_adj = adjbiasvals.z_adj;
 max_adj = adjbiasvals.max_adj;
@@ -26,10 +21,10 @@ rectype = lower(adjbiasvals.rectype);
 chName = adjbiasvals.chName;
 numcalpts = size(max_adj,2);
 
-doScaling = enviroG(3);
-if ~doScaling
-   return
-end
+%doScaling = enviroG(3);
+%if ~doScaling
+%   return
+%end
 
 % if the data file does not have its own stored channel names, we will use the ones
 % read in from the bias file.
@@ -51,27 +46,27 @@ end
 %	return % break?
 %end
 
-hor_stm=[]; vrt_stm=[];
+%hor_stm=[]; vrt_stm=[];
 %rem = strtrim(lower(chnlstr));
+[~,chan_count]=size(newdata);
 for i=1:chan_count   
    if strcmp('st', chName{i} ), hor_ind=i; end
    if strcmp('sv', chName{i} ), vrt_ind=i; end
 end
 
+%if exist('hor_ind','var')
+%   hor_stm = newdata(:,hor_ind);
+%   hor_stm = hor_stm - hor_stm(1);
+%end
 
-if exist('hor_ind','var')
-   hor_stm = newdata(:,hor_ind);
-   hor_stm = hor_stm - hor_stm(1);
-end
-
-if exist('vrt_ind','var')
-   vrt_stm = newdata(:,vrt_ind);
-   vrt_stm = vrt_stm - vrt_stm(1);
-end
+%if exist('vrt_ind','var')
+%   vrt_stm = newdata(:,vrt_ind);
+%   vrt_stm = vrt_stm - vrt_stm(1);
+%end
 
 % create a vector with st, sv as first two entries so that they are calibrated first
 % and therefore available for the other data channels to refer to for the smooth cal
-neworder = [1:chan_count];
+neworder = 1:chan_count;
 if exist('hor_ind','var')
    neworder(hor_ind) = NaN;
 else
@@ -91,15 +86,14 @@ neworder=stripnan(neworder);
 % we now have the data and the needed offset/scaling factors.
 % so let's do the offset and scaling
 %scalemethod = lower(input('Use old piecewise (l)inear or new (s)mooth scaling? ','s'));
-scalemethod = 'l';
-
-for i = neworder;
+%scalemethod = 'l';
+for i = neworder
    if lower(rectype(1)) == 'c' || lower(rectype(1)) == 's'
       newdata(:,i) = newdata(:,i) - z_adj(i);
-      newdata(:,i) = newdata(:,i) / c_scale(i);
+      newdata(:,i) = newdata(:,i) / max_adj(i,1);
       
    elseif lower(rectype(1)) == 'r'
-      newdata(:,i) = sincorrect( newdata(:,i), r_offset(i), r_scale(i), r_calpt(i) );
+      newdata(:,i) = sincorrect( newdata(:,i), z_adj(i), max_adj(i,1), maxcalpt(i,1) );
       
    elseif lower(rectype(1)) == 'i' || lower(rectype(1)) == 'v'
       if numcalpts == 1
@@ -108,14 +102,14 @@ for i = neworder;
             maxcalpt(i,:), max_adj(i,:), mincalpt(i,:), min_adj(i,:));
       else
          % extended calibration
-         unscaled = newdata(:,i);
+         %unscaled = newdata(:,i);
          newdata(:,i) = adj(newdata(:,i), z_adj(i),...
             maxcalpt(i,:), max_adj(i,:), mincalpt(i,:), min_adj(i,:));
          
          if (0) %if strcmp( scalemethod(1),'s' )
             % the smooth scaling will only be applied to eye-movement data channels
             % we leave stim channels alone because there is no reason to use it.
-            if ( strcmp(chName{i},'rh') || strcmp(chName{i},'lh') )
+            if ( strcmp(chName{i},'rh') || strcmp(chName{i},'lh') ) %#ok<UNRCH>
                % which plane are we working in, and which is the corresponding stim?
                temp = chName{i};
                plane = temp(2);
@@ -131,11 +125,9 @@ for i = neworder;
                % Simplest simple solution: apply old-style cal to a vector of [-lim ... lim]
                % and then pick out the points that have scaled to match the calibration points.
                % Perform the cal here, pass the result to smoothscale and do the real work there.
-               testvect = [mincalpt(i,end) : 0.01 : maxcalpt(i,end)]';
-               
+               testvect = (mincalpt(i,end):0.01:maxcalpt(i,end))';               
                scaled_vect = adj(testvect, 0,...
-                  maxcalpt(i,:), max_adj(i,:), mincalpt(i,:), min_adj(i,:));
-               
+                  maxcalpt(i,:), max_adj(i,:), mincalpt(i,:), min_adj(i,:));               
                newdata(:,i) = smoothscale( scaled_vect, newdata(:,i), z_adj(i),...
                   maxcalpt(i,:), mincalpt(i,:), stim );
             end

@@ -1,4 +1,4 @@
-function savedata
+function emd_save
 
 varlist = evalin('base','whos');
 
